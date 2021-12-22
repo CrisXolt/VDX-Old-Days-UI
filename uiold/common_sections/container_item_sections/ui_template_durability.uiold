@@ -1,0 +1,242 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "common_durability_old",
+
+  ////*/ Original Main Durability Bar /*////
+
+  "original_durability_bar": {
+    "ignored": "(not $durability_bar_required)",
+    "type": "custom",
+    "renderer": "progress_bar_renderer",
+    "layer": 10,
+    "$durability_bar_size|default": [ 12, 1 ],
+    "$durability_bar_offset|default": [ 0, 5 ],
+    "offset": "$durability_bar_offset",
+    "size": "$durability_bar_size",
+    "property_bag": {
+      "is_durability": true,
+      "round_value": true
+    },
+    "bindings": [
+      {
+        "binding_name": "#item_durability_visible",
+        "binding_name_override": "#progress_bar_visible",
+        "binding_type": "collection",
+        "binding_collection_name": "$item_collection_name"
+      },
+      {
+        "binding_name": "#item_durability_total_amount",
+        "binding_name_override": "#progress_bar_total_amount",
+        "binding_type": "collection",
+        "binding_collection_name": "$item_collection_name"
+      },
+      {
+        "binding_name": "#item_durability_current_amount",
+        "binding_name_override": "#progress_bar_current_amount",
+        "binding_type": "collection",
+        "binding_collection_name": "$item_collection_name"
+      }
+    ]
+  },
+
+  "original_durability_bar_grabbed@common_durability_old.original_durability_bar": {
+    "layer": 61,
+    "offset": [ "-10%", 4.5 ],
+    "size": [ "100%", 1 ],
+    "bindings": [
+      {
+        "binding_name": "#selected_item_durability_visible",
+        "binding_name_override": "#progress_bar_visible",
+        "binding_condition": "always_when_visible"
+      },
+      {
+        "binding_name": "#selected_item_durability_total_amount",
+        "binding_name_override": "#progress_bar_total_amount",
+        "binding_condition": "always_when_visible"
+      },
+      {
+        "binding_name": "#selected_item_durability_current_amount",
+        "binding_name_override": "#progress_bar_current_amount",
+        "binding_condition": "always_when_visible"
+      }
+    ]
+  },
+
+  ////*/ Main Durability Bar /*////
+
+  "durability_bar_common": {
+    "type": "panel",
+    "size": [ 16, 16 ],
+    "controls": [
+      {
+        "durability_bar_hold": {
+          "type": "panel",
+          "size": [ 16, 16 ],
+          "ignored": "($custom_durability_bar or $is_java_aspects)",
+          "controls": [
+            { 
+              "durability_bar@common_durability_old.original_durability_bar": {
+                "layer": 0,
+                "size": [ 13, 1 ],
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "offset": [ 2, -2 ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "custom_durability_bar_hold": {
+          "type": "panel",
+          "size": [ 16, 16 ],
+          "visible": "($custom_durability_bar or $is_java_aspects)",
+          "controls": [
+            { "durability_bar@common_durability_old.durability_bar": { } }
+          ]
+        }
+      }
+    ]
+  },
+
+  ////*/ Durability Bar For Selected Icon /*////
+
+  "durability_bar_selected_icon": {
+    "type": "panel",
+    "size": [ 16, 16 ],
+    "controls": [
+      {
+        "durability_bar_hold": {
+          "type": "panel",
+          "size": [ 16, 16 ],
+          "ignored": "($custom_durability_bar or $is_java_aspects)",
+          "controls": [
+            { 
+              "durability_bar_grabbed@common_durability_old.original_durability_bar_grabbed": {
+                "size": [ 13, 1 ],
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "offset": [ 2, -2 ],
+                "layer": 61
+              }
+            }
+          ]
+        }
+      },
+      {
+        "custom_durability_bar_hold": {
+          "type": "panel",
+          "size": [ 16, 16 ],
+          "visible": "($custom_durability_bar or $is_java_aspects)",
+          "controls": [
+            { 
+              "durability_bar_grabbed@common_durability_old.durability_bar": {
+                "layer": 61,
+                "$item_renderer_size": [ 16, 16 ],
+                "$is_grabbed": true,
+                "$total_amount": "#selected_item_durability_total_amount",
+                "$current_amount": "#selected_item_durability_current_amount",
+                "bindings": [
+                  {
+                    "binding_name": "$total_amount"
+                  },
+                  {
+                    "binding_type": "view",
+                    "source_property_name": "(not ($total_amount = 0))",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  ////*/ Resources /*////
+
+  /* Durability textures */
+
+  "durability_bindings": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "bindings": [
+      {
+        "ignored": "$is_grabbed",
+        "binding_name": "$total_amount",
+        "binding_type": "collection",
+        "binding_collection_name": "$item_collection_name"
+      },
+      {
+        "ignored": "$is_grabbed",
+        "binding_name": "$current_amount",
+        "binding_type": "collection",
+        "binding_collection_name": "$item_collection_name"
+      },
+      {
+        "ignored": "(not $is_grabbed)",
+        "binding_name": "$total_amount"
+      },
+      {
+        "ignored": "(not $is_grabbed)",
+        "binding_name": "$current_amount"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((($current_amount / $total_amount) > $min_amount) and (($current_amount / $total_amount) < $max_amount) or (($current_amount / $total_amount) = $min_amount))",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "durability_bar_00@common_durability_old.durability_bindings": { "texture": "textures/uidx/durability_bar/00" },
+  "durability_bar_01@common_durability_old.durability_bindings": { "texture": "textures/uidx/durability_bar/01" },
+  "durability_bar_02@common_durability_old.durability_bindings": { "texture": "textures/uidx/durability_bar/02" },
+  "durability_bar_03@common_durability_old.durability_bindings": { "texture": "textures/uidx/durability_bar/03" },
+  "durability_bar_04@common_durability_old.durability_bindings": { "texture": "textures/uidx/durability_bar/04" },
+  "durability_bar_05@common_durability_old.durability_bindings": { "texture": "textures/uidx/durability_bar/05" },
+  "durability_bar_06@common_durability_old.durability_bindings": { "texture": "textures/uidx/durability_bar/06" },
+  "durability_bar_07@common_durability_old.durability_bindings": { "texture": "textures/uidx/durability_bar/07" },
+  "durability_bar_08@common_durability_old.durability_bindings": { "texture": "textures/uidx/durability_bar/08" },
+  "durability_bar_09@common_durability_old.durability_bindings": { "texture": "textures/uidx/durability_bar/09" },
+  "durability_bar_10@common_durability_old.durability_bindings": { "texture": "textures/uidx/durability_bar/10" },
+  "durability_bar_11@common_durability_old.durability_bindings": { "texture": "textures/uidx/durability_bar/11" },
+  "durability_bar_12@common_durability_old.durability_bindings": { "texture": "textures/uidx/durability_bar/12" },
+  "durability_bar_13@common_durability_old.durability_bindings": { "texture": "textures/uidx/durability_bar/13" },
+
+  /* Durability Bar */
+
+  "durability_bar": {
+    "type": "panel",
+    "size": "$item_renderer_size",
+    "$total_amount": "#item_durability_total_amount",
+    "$current_amount": "#item_durability_current_amount",
+    "$is_grabbed": false,
+    "bindings": [
+      {
+        "binding_name": "(not ($total_amount = 0))",
+        "binding_name_override": "#visible",
+        "binding_type": "collection",
+        "binding_collection_name": "$item_collection_name"
+      }
+    ],
+    "controls": [
+      { "durability_bar_00@common_durability_old.durability_bar_00": { "$min_amount": 0.0000, "$max_amount": 0.0714 } },
+      { "durability_bar_01@common_durability_old.durability_bar_01": { "$min_amount": 0.0714, "$max_amount": 0.1428 } },
+      { "durability_bar_02@common_durability_old.durability_bar_02": { "$min_amount": 0.1428, "$max_amount": 0.2142 } },
+      { "durability_bar_03@common_durability_old.durability_bar_03": { "$min_amount": 0.2142, "$max_amount": 0.2856 } },
+      { "durability_bar_04@common_durability_old.durability_bar_04": { "$min_amount": 0.2856, "$max_amount": 0.3570 } },
+      { "durability_bar_05@common_durability_old.durability_bar_05": { "$min_amount": 0.3570, "$max_amount": 0.4284 } },
+      { "durability_bar_06@common_durability_old.durability_bar_06": { "$min_amount": 0.4284, "$max_amount": 0.4998 } },
+      { "durability_bar_07@common_durability_old.durability_bar_07": { "$min_amount": 0.4998, "$max_amount": 0.5712 } },
+      { "durability_bar_08@common_durability_old.durability_bar_08": { "$min_amount": 0.5712, "$max_amount": 0.6426 } },
+      { "durability_bar_09@common_durability_old.durability_bar_09": { "$min_amount": 0.6426, "$max_amount": 0.7140 } },
+      { "durability_bar_10@common_durability_old.durability_bar_10": { "$min_amount": 0.7140, "$max_amount": 0.7854 } },
+      { "durability_bar_11@common_durability_old.durability_bar_11": { "$min_amount": 0.7854, "$max_amount": 0.8568 } },
+      { "durability_bar_12@common_durability_old.durability_bar_12": { "$min_amount": 0.8568, "$max_amount": 0.9282 } },
+      { "durability_bar_13@common_durability_old.durability_bar_13": { "$min_amount": 0.9282, "$max_amount": 1.0000 } }
+    ]
+  }
+}

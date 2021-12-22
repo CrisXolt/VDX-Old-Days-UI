@@ -1,0 +1,16 @@
+/*File modified by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "play_screen@common.base_screen": {
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_content": "play_desktop_midalpha_old.play_screen_content"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "play_pocket_midalpha_old.play_screen_content"
+      }
+    ]
+  }
+}

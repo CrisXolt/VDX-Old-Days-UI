@@ -1,0 +1,283 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "progress_old",
+
+  /*//// Resources /////*/
+
+  "classic_progress_loading_bars": {
+    "type": "panel",
+    "size": [ 140, 10 ],
+    "offset": [ 0, 115 ],
+    "clips_children": true,
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "layer": 3,
+    "controls": [
+      { "server_loading_bar@progress_anim_old.server_loading_bar": { } }
+    ]
+  },
+
+  "text_panel": {
+    "type": "panel",
+    "size": [ "100%", 10 ],
+    "controls": [
+      {
+        "pointer_text_tip_panel@progress.progress_bar_text": {
+          "localize": false,
+          "shadow": true,
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "text_alignment": "center",
+          "color": "$item_hover_text_color",
+          "size": [ "default", 55 ],
+          "max_size": [ 300, 55 ],
+          "offset": [ 0, 65 ]
+        }
+      }
+    ]
+  },
+
+  "progress_title_text@progress.progress_screen_text": {
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": [ "default", 20 ],
+    "shadow": true,
+    "max_size": [ "100% - 8px", 20 ],
+    "offset": [ 0, 69 ],
+    "text": "#title_text",
+    "font_size": "medium",
+    "bindings": [
+      {
+        "binding_name": "#title_text"
+      }
+    ]
+  },
+
+  "gamepad_helpers@start.gamepad_helpers": {
+    "anchor_from": "bottom_left",
+    "anchor_to": "bottom_left",
+    "offset": [ 0, 0 ],
+    "controls": [
+      { "gamepad_helper_a@common.gamepad_helper_a": {} }
+    ]
+  },
+
+  "cancel_button@common_buttons_old.main_button": {
+    "size": [ 66, 26 ],
+    "$pressed_button_name": "button.menu_exit",
+    "layer": 10,
+    "$button_text": "gui.cancel",
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "bindings": [
+      {
+        "binding_name": "#cancel_visible",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
+
+  /*//// World Loading Screen /////*/
+
+  "world_loading_progress_screen_content": {
+    "type": "panel",
+    "layer": 4,
+    "controls": [
+      { "title_panel@progress_old.title_stack_panel": {} },
+      { "cancel_button@progress_old.cancel_button": { "offset": [ 0, -56 ] } },
+      { "popup_dialog_factory@progress.popup_dialog_factory": {} },
+      { "gamepad_helpers@progress_old.gamepad_helpers": {} }
+    ]
+  },
+
+  "title_stack_panel": {
+    "type": "stack_panel",
+    "size": [ 300, "100%" ],
+    "orientation": "vertical",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "controls": [
+      {
+        "padding_0": {
+          "type": "panel",
+          "size": [ "100%", 69 ],
+          "bindings": [
+            {
+              "binding_name": "(not #loading_bar_visible)",
+              "binding_name_override": "#visible"
+            }
+          ],
+          "controls": [
+            { "progress_title_text@progress_old.progress_title_text": {} }
+          ]
+        }
+      },
+      {
+        "padding_1": {
+          "type": "panel",
+          "size": [ "100%", 195 ],
+          "bindings": [
+            {
+              "binding_name": "#loading_bar_visible",
+              "binding_name_override": "#visible"
+            }
+          ],
+          "controls": [
+            { 
+              "progress_title_text@progress_old.progress_title_text": {
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "offset": [ 0, 69 ]
+              }
+            },
+            { 
+              "padding_3@progress.progress_bar_text": {
+                "localize": false,
+                "shadow": true,
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "text_alignment": "center",
+                "offset": [ 0, 93 ]
+              }
+            },
+            {
+              "progress_bar@progress.progress_bar": {
+                "primary_color": "$classic_progress_bar_color",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "offset": [ 0, 108 ]
+              }
+            }
+          ]
+        }
+      },
+      { "padding_2": { "type": "panel", "size": [ 1, 4 ] } },
+      { 
+        "padding_3@progress_old.text_panel": {
+          "bindings": [
+            {
+              "binding_name": "(not #loading_bar_visible)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      { "padding_4": { "type": "panel", "size": [ 1, 33 ] } },
+      {
+        "padding_5": {
+          "type": "panel",
+          "size": [ "100%", 10 ],
+          "controls": [
+            { "classic_progress_loading_bars@progress_old.classic_progress_loading_bars": { "offset": [ 0, 0 ] } }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#bar_animation_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*//// World Dimension Loading Screen /////*/
+  
+  "world_dimension_progress_screen_content": {
+    "type": "panel",
+    "layer": 4,
+    "controls": [
+      { "title_dimension_panel@progress_old.title_dimension_panel": {} },
+      { "popup_dialog_factory@progress.popup_dialog_factory": {} },
+      { "gamepad_helpers@progress_old.gamepad_helpers": {} }
+    ]
+  },
+  
+  "title_dimension_panel": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "controls": [
+      { "progress_title_text@progress_old.progress_title_text": {} },
+      {
+        "progress_bar_text@progress.progress_bar_text": {
+          "shadow": true,
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "offset": [ 0, 93 ],
+          "text": "#progress_text",
+          "bindings": [
+            {
+              "binding_name": "#progress_text"
+            },
+            {
+              "binding_name": "#loading_bar_visible",
+              "binding_name_override": "#progress_bar_visible"
+            }
+          ]
+        }
+      },
+      { "classic_progress_loading_bars@progress_old.classic_progress_loading_bars": {} },
+      { "cancel_button@progress_old.cancel_button": { "offset": [ 0, -56 ] } }
+    ]
+  },
+
+  /*//// World Saving Screen /////*/
+
+  "world_saving_progress_screen_content": {
+    "type": "panel",
+    "layer": 4,
+    "controls": [
+      { "title_panel@progress_old.title_saving_panel": {} },
+      { "popup_dialog_factory@progress.popup_dialog_factory": {} }
+    ]
+  },
+
+  "title_saving_panel": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "controls": [
+      { "progress_title_text@progress_old.progress_title_text": {} },
+      {
+        "progress_bar_text@progress.progress_bar_text": {
+          "shadow": true,
+          "offset": [ 0, 93 ],
+          "text": "#progress_text",
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "bindings": [
+            {
+              "binding_name": "#progress_text"
+            },
+            {
+              "binding_name": "#loading_bar_visible",
+              "binding_name_override": "#progress_bar_visible"
+            }
+          ]
+        }
+      },
+      { "auto_save_icon@progress_old.auto_save": { } }
+    ]
+  },
+
+  "auto_save_animation": {
+    "anim_type": "flip_book",
+    "initial_uv": [ 0, 0 ],
+    "frame_count": 9,
+    "frame_step": 18,
+    "fps": 10,
+    "reversible": true,
+    "easing": "linear"
+  },
+
+  "auto_save@progress.auto_save": {
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "offset": [ 0, 115 ],
+    "uv": "@progress_old.auto_save_animation"
+  }
+}

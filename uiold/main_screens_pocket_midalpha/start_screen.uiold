@@ -1,0 +1,129 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "start_pocket_midalpha_old",
+
+  /*//// Text Panel ////*/
+
+  "minecraft_text@common_old.global_label": {
+    "color": "$main_header_text_color",
+    "anchor_from": "bottom_left",
+    "anchor_to": "bottom_left",
+    "shadow": true
+  },
+
+  "copyright_text@start_pocket_midalpha_old.minecraft_text": {
+    "offset": [ 2, -1 ],
+    "text": "menu.copyright"
+  },
+
+  "version_text@start_pocket_midalpha_old.minecraft_text": {
+    "offset": [ 2, -12 ],
+    "text": "#version",
+    "bindings": [ { "binding_name": "#version" } ]
+  },
+
+  /*//// Buttons ////*/
+
+  "start_main_button@common_buttons_old.main_button": {
+    "size": [ "100%", 25 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+
+  "play_button@start_pocket_midalpha_old.start_main_button": {
+    "$pressed_button_name": "button.menu_play",
+    "$button_text": "menu.play"
+  },
+
+  "profile_button@start_pocket_midalpha_old.start_main_button": {
+    "$pressed_button_name": "button.to_profile_screen",
+    "$button_text": "menu.skins"
+  },
+
+  "store_button@start_pocket_midalpha_old.start_main_button": {
+    "$pressed_button_name": "button.menu_store",
+    "$button_text": "menu.store"
+  },
+
+  "stacked_row": {
+    "type": "panel",
+    "size": [ "100%", 27 ]
+  },
+
+  "main_buttons_panel": {
+    "type": "stack_panel",
+    "anchor_from": "center",
+    "anchor_to": "top_middle",
+    "size": [ 100, "100%c" ],
+    "offset": [ 0, "-10%" ],
+    "controls": [
+      { "stacked_row_0@start_pocket_midalpha_old.stacked_row": { "controls": [ { "play_button@start_pocket_midalpha_old.play_button": { } } ] } },
+      { "stacked_row_1@start_pocket_midalpha_old.stacked_row": { "controls": [ { "profile_button@start_pocket_midalpha_old.profile_button": { } } ] } },
+      { "stacked_row_2@start_pocket_midalpha_old.stacked_row": { "controls": [ { "store_button@start_pocket_midalpha_old.store_button": { } } ] } }
+    ]
+  },
+
+  /*//// Panels ////*/
+
+  "title_panel": {
+    "type": "panel",
+    "offset":  [0, "10%"],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": ["100%", "12.5%x"],
+    "controls": [
+      { 
+        "title_image@old_pocket_textures_common.title": {
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "layer": 1
+        }
+      },
+      {
+        "splash_text@common_art.splash_text": {
+          "offset": ["-28%", "-4%x"],
+          "layer": 2
+        }
+      }
+    ]
+  },
+
+  /*//// Screens ////*/
+  
+  "start_screen_content": {
+    "type": "panel",
+    "controls": [
+      { "title_panel_content@start_pocket_midalpha_old.title_panel": { } },
+      { "version_text@start_pocket_midalpha_old.version_text": { } },
+      { "copyright_text@start_pocket_midalpha_old.copyright_text": { } },
+      { "main_buttons_panel@start_pocket_midalpha_old.main_buttons_panel": { } },
+      {
+        "achievements_button@common_buttons_old.secondary_button": {
+          "anchor_from": "bottom_right",
+          "anchor_to": "bottom_right",
+          "offset": [ -36, -2 ],
+          "size": [ 32, 32 ],
+          "$pressed_button_name": "button.menu_achievements",
+          "$button_content": "old_pocket_textures_common.achievements_button_icon"
+        }
+      },
+      {
+        "settings_button@common_buttons_old.secondary_button": {
+          "anchor_from": "bottom_right",
+          "anchor_to": "bottom_right",
+          "offset": [ -2, -2 ],
+          "size": [ 32, 32 ],
+          "$pressed_button_name": "button.menu_settings",
+          "$button_content": "old_pocket_textures_common.settings_button_icon"
+        }
+      },
+      {
+        "realms_pending_invite_panel@start.realms_pending_invite_panel": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      }
+    ]
+  }
+}

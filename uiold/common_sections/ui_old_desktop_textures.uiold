@@ -1,0 +1,248 @@
+{
+  "namespace": "old_desktop_textures_common",
+
+  /*//// Main Button ////*/
+
+  "menu_button_default": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_desktop/buttons/menu_button_default"
+  },
+
+  "menu_button_hover": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_desktop/buttons/menu_button_hover"
+  },
+
+  "menu_button_pressed": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_desktop/buttons/menu_button_pressed"
+  },
+
+  "menu_button_locked": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_desktop/buttons/menu_button_locked"
+  },
+
+  /*//// Dark Button ////*/
+
+  "dark_button_default": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_desktop/buttons/dark_button_default"
+  },
+
+  "dark_button_hover": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_desktop/buttons/dark_button_hover"
+  },
+
+  "dark_button_pressed": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_desktop/buttons/dark_button_pressed"
+  },
+
+  "dark_button_locked": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_desktop/buttons/dark_button_locked"
+  },
+
+  /*//// Dark Button Indent ////*/
+
+  "dark_indent_default": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_desktop/buttons/dark_indent_default"
+  },
+
+  "dark_indent_hover": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_desktop/buttons/dark_indent_hover"
+  },
+
+  "dark_indent_pressed": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_desktop/buttons/dark_indent_pressed"
+  },
+
+  /*//// Close Button ////*/
+
+  "close_button_default": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_desktop/buttons/close_button_default"
+  },
+
+  "close_button_hover": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_desktop/buttons/close_button_hover"
+  },
+
+  "close_button_pressed": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_desktop/buttons/close_button_pressed"
+  },
+
+  "close_button_x": {
+    "type": "image",
+    "size": [ 7, 7 ],
+    "texture": "textures/uiold_desktop/buttons/close_button_x"
+  },
+
+  /*//// Tabs ////*/
+
+  "TabTopBack": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_desktop/tabs/TabTopBack"
+  },
+
+  "TabTopBackLeftMost": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_desktop/tabs/TabTopBackLeftMost"
+  },
+
+  "TabTopBackRightMost": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_desktop/tabs/TabTopBackRightMost"
+  },
+
+  "TabTopFront": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_desktop/tabs/TabTopFront"
+  },
+
+  "TabTopFrontLeftMost": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_desktop/tabs/TabTopFrontLeftMost"
+  },
+
+  "TabTopFrontRightMost": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_desktop/tabs/TabTopFrontRightMost"
+  },
+
+  /*//// Icons ////*/
+
+  "feedback_icon": {
+    "type": "image",
+    "texture": "textures/uiold_desktop/icons/feedback_icon",
+    "size": [ 16, 16 ]
+  },
+
+  "store_icon": {
+    "type": "image",
+    "texture": "textures/uiold_desktop/icons/store_icon",
+    "size": [ 16, 16 ]
+  },
+
+  "world_icon": {
+    "type": "image",
+    "texture": "textures/uiold_desktop/icons/world_icon",
+    "size": [ 16, 16 ]
+  },
+
+  "server_icon": {
+    "type": "image",
+    "texture": "textures/uiold_desktop/icons/server_icon",
+    "size": [ 16, 16 ]
+  },
+
+  "edit_icon": {
+    "type": "image",
+    "texture": "textures/uiold_desktop/icons/edit_icon",
+    "size": [ 16, 16 ]
+  },
+
+  "feed_icon": {
+    "type": "image",
+    "texture": "textures/uiold_desktop/icons/feed_icon",
+    "size": [ 16, 16 ]
+  },
+
+  "remove_icon": {
+    "type": "image",
+    "texture": "textures/uiold_desktop/icons/remove_icon",
+    "size": [ 16, 16 ]
+  },
+
+  /*//// Network ////*/
+
+  "dot_1": {
+    "type": "image",
+    "size": [ 9, 9 ],
+    "texture": "textures/uiold_desktop/network/dot_1"
+  },
+
+  "dot_2": {
+    "type": "image",
+    "size": [ 9, 9 ],
+    "texture": "textures/uiold_desktop/network/dot_2"
+  },
+
+  "dot_3": {
+    "type": "image",
+    "size": [ 9, 9 ],
+    "texture": "textures/uiold_desktop/network/dot_3"
+  },
+
+  "Ping_Green": {
+    "type": "image",
+    "size": [ 9, 9 ],
+    "texture": "textures/uiold_desktop/network/Ping_Green"
+  },
+
+  "Ping_Offline_Red": {
+    "type": "image",
+    "size": [ 9, 9 ],
+    "texture": "textures/uiold_desktop/network/Ping_Offline_Red"
+  },
+
+  "Ping_Red": {
+    "type": "image",
+    "size": [ 9, 9 ],
+    "texture": "textures/uiold_desktop/network/Ping_Red"
+  },
+
+  "Ping_Yellow": {
+    "type": "image",
+    "size": [ 9, 9 ],
+    "texture": "textures/uiold_desktop/network/Ping_Yellow"
+  },
+
+  /*//// Panels ////*/
+
+  "dialog_background": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_desktop/panels/dialog_background"
+  },
+
+  "scroll_panel": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_desktop/panels/scroll_panel"
+  },
+
+  /*//// Global ////*/
+
+  "titleOriginal": {
+    "type": "image",
+    "texture": "textures/uiold_desktop/global/titleOriginal"
+  }
+}

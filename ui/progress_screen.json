@@ -1,0 +1,38 @@
+/*File modified by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "world_loading_progress_screen": {
+    "$screen_bg_content": "old_pocket_textures_common.options_background",
+    "$screen_content": "progress_old.world_loading_progress_screen_content"
+  },
+
+  "overworld_loading_progress_screen": {
+    "$screen_bg_content": "old_pocket_textures_common.options_background",
+    "$screen_content": "progress_old.world_dimension_progress_screen_content"
+  },
+
+  "nether_loading_progress_screen": {
+    "$screen_bg_content": "old_pocket_textures_common.options_background",
+    "$screen_content": "progress_old.world_dimension_progress_screen_content"
+  },
+
+  "theend_loading_progress_screen": {
+    "$screen_bg_content": "old_pocket_textures_common.options_background",
+    "$screen_content": "progress_old.world_dimension_progress_screen_content"
+  },
+
+  "world_saving_progress_screen": {
+    "$screen_bg_content": "old_pocket_textures_common.options_background",
+    "$screen_content": "progress_old.world_saving_progress_screen_content"
+  },
+
+  "world_convert_modal_progress_screen": {
+    "$screen_bg_content": "old_pocket_textures_common.options_background",
+    "$screen_content": "progress_old.world_loading_progress_screen_content"
+  },
+
+  "realms_loading_progress_screen": {
+    "$screen_bg_content": "old_pocket_textures_common.options_background",
+    "$screen_content": "progress_old.world_dimension_progress_screen_content"
+  }
+}

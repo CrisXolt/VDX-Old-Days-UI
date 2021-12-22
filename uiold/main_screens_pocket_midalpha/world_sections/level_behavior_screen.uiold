@@ -1,0 +1,78 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "level_behavior_midalpha_old",
+
+  "selected_pack_grid@global_resources_midalpha_old.resource_packs_item_grid_base": {
+    "factory": {
+      "name": "selected_pack_factory",
+      "control_name": "global_resources_midalpha_old.pack_panel"
+    },
+    "$pack_items_type": "#selected_pack_items_addon",
+    "$button.deselected_pack": "button.deselected_pack_addon",
+    "$pressed_button_name_type": "button.selected_pack_addon",
+    "$is_selected": true,
+    "$button.move_left": "button.move_left_addon",
+    "$button.sort_up": "button.sort_up_addon",
+    "$button.sort_down": "button.sort_down_addon",
+    "$button.pack_settings": "button.pack_settings_addon",
+    "$button.report_errors": "button.report_errors_addon",
+    "collection_name": "$pack_items_type",
+    "bindings": [
+      {
+        "binding_name": "#selected_grid_dimensions_addon",
+        "binding_name_override": "#collection_length"
+      }
+    ]
+  },
+
+  "available_pack_grid@global_resources_midalpha_old.resource_packs_item_grid_base": {
+    "factory": {
+      "name": "available_pack_factory",
+      "control_name": "global_resources_midalpha_old.pack_panel"
+    },
+    "$pack_items_type": "#available_pack_items_addon",
+    "$button.deselected_pack": "button.deselected_pack_addon",
+    "$pressed_button_name_type": "button.available_pack_addon",
+    "$is_selected": false,
+    "$button.move_left": "button.move_left_addon",
+    "$button.sort_up": "button.sort_up_addon",
+    "$button.sort_down": "button.sort_down_addon",
+    "collection_name": "$pack_items_type",
+    "$available_grid_visible_binding_name|default": "",
+    "$available_grid_visible_binding_type|default": "none",
+    "bindings": [
+      {
+        "binding_name": "#available_grid_dimensions_addon",
+        "binding_name_override": "#collection_length"
+      },
+      {
+        "binding_name": "$available_grid_visible_binding_name",
+        "binding_name_override": "#visible",
+        "binding_type": "$available_grid_visible_binding_type"
+      }
+    ]
+  },
+
+  "level_behavior_screen_content": {
+    "type": "panel",
+    "$resources_title_text": "menu.behaviors",
+    "$back_button": "world_game_settings_pocket_midalpha_old.addons_back_button",
+
+    "$available_grid_visible_binding_type": "level",
+    "$available_pack_grid": "level_behavior_midalpha_old.available_pack_grid",
+    "$available_label_text": "resourcePack.available.title.behaviorPacks",
+    
+    "$default_item_zip": "#default_item_zip_global",
+    "$default_item_file_system": "#default_item_file_system_global",
+    "$default_item_texture": "#default_item_texture_global",
+    "$default_pack_name": "gui.default",
+    "$default_pack_description": "resourcePack.description.default.behaviorPacks",
+    "$selected_pack_grid": "level_behavior_midalpha_old.selected_pack_grid",
+    "$selected_label_text": "resourcePack.selected.title.behaviorPacks",
+    "$default_bottom_description": "resourcePack.description.bottom.behaviorPacks",
+    "controls": [
+      { "main_screen_panel@global_resources_midalpha_old.main_screen_panel": { } }
+    ]
+  }
+}

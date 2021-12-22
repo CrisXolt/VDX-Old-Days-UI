@@ -1,0 +1,581 @@
+/*File made by @CrisXolt and @agentms_.
+//(c) Don't use any code design without permission!*/
+/*  NOTE: I used the panels to make renderer inside of it. In order to make compatibility for other resource packs. */
+{
+  "namespace": "item_renderer_old",
+
+  ////*/ Item Renderer /*////
+
+  "item_renderer": {
+    "type": "panel",
+    "size": [ 16, 16 ],
+    "controls": [
+      {
+        "item_renderer": {
+          "ignored": "$is_java_aspects",
+          "type": "custom",
+          "renderer": "inventory_item_renderer",
+          "$item_renderer_binding_condition|default": "none",
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "$item_collection_name"
+            },
+            {
+              "binding_name": "#item_id_aux",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name",
+              "binding_condition": "$item_renderer_binding_condition"
+            },
+            {
+              "binding_name": "#charged_item",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name",
+              "binding_condition": "$item_renderer_binding_condition"
+            },
+            {
+              "binding_name": "#item_custom_color",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name",
+              "binding_condition": "$item_renderer_binding_condition"
+            },
+            {
+              "binding_name": "#item_pickup_time",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name",
+              "binding_condition": "$item_renderer_binding_condition"
+            },
+            {
+              "binding_name": "#banner_patterns",
+              "binding_condition": "visible",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name"
+            },
+            {
+              "binding_name": "#banner_colors",
+              "binding_condition": "visible",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name"
+            },
+            {
+              "binding_name": "#banner_type",
+              "binding_condition": "visible",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name"
+            },
+            {
+              "binding_type": "collection",
+              "binding_name": "#show_item",
+              "binding_name_override": "#visible",
+              "binding_collection_name": "$item_collection_name",
+              "binding_condition": "$item_renderer_binding_condition"
+            },
+            {
+              "binding_name": "#inactive_item",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name",
+              "binding_name_override": "#disabled_filter_visible",
+              "binding_condition": "$item_renderer_binding_condition"
+            },
+            {
+              "binding_name": "#shield_is_active",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name"
+            },
+            {
+              "binding_name": "#item_lodestone_tracking_handle",
+              "binding_condition": "visible",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name"
+            }
+          ]
+        }
+      },
+      {
+        "java_aspects_assets": {
+          "type": "panel",
+          "size": [ 16, 16 ],
+          "$icon_size": [ 16, 16 ],
+          "$use_item_icons|default": true,
+          "ignored": "(not $is_java_aspects)",
+          "variables": [
+            {
+              "requires": "$is_multipixel_bedrock",
+              "$use_item_icons": false
+            }
+          ],
+          "controls": [
+            {
+              "specific_item_renderer@common.specific_item_renderer": { }
+            },
+            {
+              "chest_image@common.chest_image": { } //Disabling vanilla chest icons uses a different system than other item icons. Because of that, chests are the only item icons that cannot be disabled.
+            },
+            {
+              "trapped_chest_image@common.trapped_chest_image": {}
+            },
+            {
+              "ender_chest_image@common.ender_chest_image": {}
+            },
+            {
+              "item_list@common.item_list": {
+                "ignored": "(not $use_item_icons)"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  ////*/ Item Renderer For Selected Icon /*////
+
+  "item_renderer_selected_icon": {
+    "type": "panel",
+    "size": [ 16, 16 ],
+    "controls": [
+      {
+        "item_renderer_selected_icon": {
+          "ignored": "$is_java_aspects",
+          "type": "custom",
+          "renderer": "inventory_item_renderer",
+          "size": [ 16, 16 ],
+          "bindings": [
+            {
+              "binding_name": "#inventory_selected_item",
+              "binding_name_override": "#item_id_aux",
+              "binding_condition": "always_when_visible"
+            },
+            {
+              "binding_name": "#inventory_selected_item_charged_item",
+              "binding_name_override": "#charged_item",
+              "binding_condition": "always_when_visible"
+            },
+            {
+              "binding_name": "#inventory_selected_item_color",
+              "binding_name_override": "#item_custom_color",
+              "binding_condition": "always_when_visible"
+            },
+            {
+              "binding_name": "#inventory_selected_banner_patterns",
+              "binding_name_override": "#banner_patterns",
+              "binding_condition": "always_when_visible"
+            },
+            {
+              "binding_name": "#inventory_selected_banner_colors",
+              "binding_name_override": "#banner_colors",
+              "binding_condition": "always_when_visible"
+            },
+            {
+              "binding_name": "#inventory_selected_banner_type",
+              "binding_name_override": "#banner_type",
+              "binding_condition": "always_when_visible"
+            }
+          ]
+        }
+      },
+      {
+        "java_aspects_assets": {
+          "type": "panel",
+          "size": [ 16, 16 ],
+          "$icon_size": [ 16, 16 ],
+          "$selected_size": [ 16, 16 ],
+          "$use_item_icons|default": true,
+          "ignored": "(not $is_java_aspects)",
+          "variables": [
+            {
+              "requires": "$is_multipixel_bedrock",
+              "$use_item_icons": false
+            }
+          ],
+          "controls": [
+            { "selected_item_icon@common.inventory_selected_icon": { "$use_item_icons|default": true, "layer": 0, "offset": [ 0.5, 0.5 ], "min_size": [ 16, 16 ] } }
+          ]
+        }
+      }
+    ]
+  },
+
+  ////*/ Item Renderer For Auto Complete in Chat Screen /*////
+
+  "auto_complete_item_renderer": {
+    "type": "panel",
+    "size": [ 8, 8 ],
+    "controls": [
+      {
+        "auto_complete_item_renderer": {
+          "type": "custom",
+          "renderer": "inventory_item_renderer",
+          "size": [ 8, 8 ],
+          "offset": [ 2, 0 ],
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "layer": 2,
+          "bindings": [
+            {
+              "binding_name": "#auto_complete_item",
+              "binding_type": "collection",
+              "binding_name_override": "#item_id_aux",
+              "binding_collection_name": "auto_complete"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  ////*/ Item Renderer For HUD Hotbar /*////
+
+  "hotbar_hud_item_icon": {
+    "type": "panel",
+    "size": [ 16, 16 ],
+    "controls": [
+      {
+        "item_renderer": {
+          "ignored": "$is_java_aspects",
+          "type": "custom",
+          "renderer": "inventory_item_renderer",
+          "$item_renderer_binding_condition|default": "none",
+          "$item_collection_name": "$hotbar_collection_name",
+          "property_bag": {
+            "force_update": true
+          },
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "$item_collection_name"
+            },
+            {
+              "binding_name": "#item_id_aux",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name",
+              "binding_condition": "$item_renderer_binding_condition"
+            },
+            {
+              "binding_name": "#charged_item",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name",
+              "binding_condition": "$item_renderer_binding_condition"
+            },
+            {
+              "binding_name": "#item_custom_color",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name",
+              "binding_condition": "$item_renderer_binding_condition"
+            },
+            {
+              "binding_name": "#item_pickup_time",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name",
+              "binding_condition": "$item_renderer_binding_condition"
+            },
+            {
+              "binding_name": "#banner_patterns",
+              "binding_condition": "visible",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name"
+            },
+            {
+              "binding_name": "#banner_colors",
+              "binding_condition": "visible",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name"
+            },
+            {
+              "binding_name": "#banner_type",
+              "binding_condition": "visible",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name"
+            },
+            {
+              "binding_type": "collection",
+              "binding_name": "#show_item",
+              "binding_name_override": "#visible",
+              "binding_collection_name": "$item_collection_name",
+              "binding_condition": "$item_renderer_binding_condition"
+            },
+            {
+              "binding_name": "#inactive_item",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name",
+              "binding_name_override": "#disabled_filter_visible",
+              "binding_condition": "$item_renderer_binding_condition"
+            },
+            {
+              "binding_name": "#shield_is_active",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name"
+            },
+            {
+              "binding_name": "#item_lodestone_tracking_handle",
+              "binding_condition": "visible",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name"
+            }
+          ]
+        }
+      },
+      {
+        "java_aspects_assets": {
+          "type": "panel",
+          "size": [ 16, 16 ],
+          "$icon_size": [ 16, 16 ],
+          "$use_item_icons|default": true,
+          "ignored": "(not $is_java_aspects)",
+          "$item_collection_name": "$hotbar_collection_name",
+          "property_bag": {
+            "force_update": true
+          },
+          "variables": [
+            {
+              "requires": "$is_multipixel_bedrock",
+              "$use_item_icons": false
+            }
+          ],
+          "controls": [
+            {
+              "specific_item_renderer@common.specific_item_renderer": { }
+            },
+            {
+              "chest_image@common.chest_image": { } //Disabling vanilla chest icons uses a different system than other item icons. Because of that, chests are the only item icons that cannot be disabled.
+            },
+            {
+              "trapped_chest_image@common.trapped_chest_image": {}
+            },
+            {
+              "ender_chest_image@common.ender_chest_image": {}
+            },
+            {
+              "item_list@common.item_list": {
+                "ignored": "(not $use_item_icons)"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  ////*/ Item Renderer For Stone Pattern /*////
+
+  "item_renderer_for_stone_pattern": {
+    "type": "panel",
+    "size": [ 16, 16 ],
+    "controls": [
+      {
+        "item_renderer": {
+          "ignored": "$is_java_aspects",
+          "type": "custom",
+          "renderer": "inventory_item_renderer",
+          "size": [ 16, 16 ],
+          "bindings": [
+            {
+              "binding_name": "#item_id_aux",
+              "binding_condition": "visible",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name"
+            }
+          ]
+        }
+      },
+      {
+        "java_aspects_assets": {
+          "type": "panel",
+          "size": [ 16, 16 ],
+          "$icon_size": [ 16, 16 ],
+          "$use_item_icons|default": true,
+          "ignored": "(not $is_java_aspects)",
+          "property_bag": {
+            "force_update": true
+          },
+          "variables": [
+            {
+              "requires": "$is_multipixel_bedrock",
+              "$use_item_icons": false
+            }
+          ],
+          "controls": [
+            {
+              "specific_item_renderer@stonecutter.specific_item_renderer": {}
+            },
+            {
+              "andesite_wall_image@common.andesite_wall_image": {}
+            },
+            {
+              "blackstone_wall_image@common.blackstone_wall_image": {}
+            },
+            {
+              "brick_wall_image@common.brick_wall_image": {}
+            },
+            {
+              "cobbled_deepslate_wall_image@common.cobbled_deepslate_wall_image": {}
+            },
+            {
+              "cobblestone_wall_image@common.cobblestone_wall_image": {}
+            },
+            {
+              "deepslate_brick_wall_image@common.deepslate_brick_wall_image": {}
+            },
+            {
+              "deepslate_tile_wall_image@common.deepslate_tile_wall_image": {}
+            },
+            {
+              "diorite_wall_image@common.diorite_wall_image": {}
+            },
+            {
+              "end_stone_brick_wall_image@common.end_stone_brick_wall_image": {}
+            },
+            {
+              "granite_wall_image@common.granite_wall_image": {}
+            },
+            {
+              "mossy_cobblestone_wall_image@common.mossy_cobblestone_wall_image": {}
+            },
+            {
+              "mossy_stone_brick_wall_image@common.mossy_stone_brick_wall_image": {}
+            },
+            {
+              "nether_brick_wall_image@common.nether_brick_wall_image": {}
+            },
+            {
+              "polished_blackstone_brick_wall_image@common.polished_blackstone_brick_wall_image": {}
+            },
+            {
+              "polished_blackstone_wall_image@common.polished_blackstone_wall_image": {}
+            },
+            {
+              "polished_deepslate_wall_image@common.polished_deepslate_wall_image": {}
+            },
+            {
+              "prismarine_wall_image@common.prismarine_wall_image": {}
+            },
+            {
+              "red_nether_brick_wall_image@common.red_nether_brick_wall_image": {}
+            },
+            {
+              "red_sandstone_wall_image@common.red_sandstone_wall_image": {}
+            },
+            {
+              "sandstone_wall_image@common.sandstone_wall_image": {}
+            },
+            {
+              "stone_brick_wall_image@common.stone_brick_wall_image": {}
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  ////*/ Item Renderer For Trade2 Items /*////
+
+  "item_renderer_for_trade2": {
+    "type": "panel",
+    "size": [ 16, 16 ],
+    "controls": [
+      {
+        "item_renderer": {
+          "type": "custom",
+          "ignored": "$is_java_aspects",
+          "renderer": "inventory_item_renderer",
+          "size": [ 16, 16 ],
+          "bindings": [
+            {
+              "binding_type": "collection_details"
+            },
+            {
+              "binding_name": "#item_id_aux"
+            },
+            {
+              "binding_name": "#item_custom_color"
+            },
+            {
+              "binding_name": "#item_pickup_time"
+            },
+            {
+              "binding_name": "#banner_patterns"
+            },
+            {
+              "binding_name": "#banner_colors"
+            },
+            {
+              "binding_name": "#banner_type"
+            }
+          ]
+        }
+      },
+      {
+        "java_aspects_assets": {
+          "type": "panel",
+          "size": [ 16, 16 ],
+          "$icon_size": [ 16, 16 ],
+          "$use_item_icons|default": true,
+          "ignored": "(not $is_java_aspects)",
+          "variables": [
+            {
+              "requires": "$is_multipixel_bedrock",
+              "$use_item_icons": false
+            }
+          ],
+          "controls": [
+            { "specific_trade_icon_renderer@trade2.specific_trade_icon_renderer": { "layer": 0 } },
+            { "glass_pane_icon@trade2.glass_pane_icon": { "layer": 0 } }
+          ]
+        }
+      }
+    ]
+  },
+
+  ////*/ Item Renderer For Trade Items /*////
+
+  "item_renderer_for_trade": {
+    "type": "panel",
+    "size": [ 16, 16 ],
+    "controls": [
+      {
+        "item_renderer": {
+          "type": "custom",
+          //"ignored": "$is_java_aspects",
+          "renderer": "inventory_item_renderer",
+          "size": [ 16, 16 ],
+          "bindings": [
+            {
+              "binding_name": "#item_id_aux",
+              "binding_condition": "visible",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "greyed_item_renderer_for_trade": {
+    "type": "panel",
+    "size": [ 16, 16 ],
+    "controls": [
+      {
+        "item_renderer": {
+          "type": "custom",
+          //"ignored": "$is_java_aspects",
+          "renderer": "inventory_item_renderer",
+          "size": [ 16, 16 ],
+          "bindings": [
+            {
+              "binding_name": "#item_id_aux",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name"
+            },
+            {
+              "binding_name": "#item_grayed_out",
+              "binding_name_override": "#disabled_filter_visible",
+              "binding_type": "collection",
+              "binding_collection_name": "$item_collection_name"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

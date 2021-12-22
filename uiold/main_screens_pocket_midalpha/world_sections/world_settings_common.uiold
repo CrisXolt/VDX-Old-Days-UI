@@ -1,0 +1,262 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "world_settings_common_pocket_midalpha_old",
+  
+  "option_generic@settings_common.option_generic_core": {
+    "type": "panel",
+    "$enabled|default": true,
+    "$option_enabled_binding_name|default": "",
+    "size": [ "100%", 29 ],
+    "variables": [
+      {
+        "requires": "(not $enabled or not $option_enabled_binding_name)",
+        "$option_enabled_binding_type": "none",
+        "$option_enabled_binding_name": "#not_data_bound"
+      }
+    ]
+  },
+  
+  "option_label_control@common_old.global_label": {
+    "shadow": true,
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ 1, 0 ],
+    "layer": 5,
+    "color": [ 1.0, 1.0, 1.0 ],
+    "text": "$option_label",
+    "locked_alpha": 0.5,
+    "bindings": "$label_bindings",
+    "$label_bindings|default": "unset"
+  },
+
+  /*//// Option Dropdown ////*/
+
+  "option_dropdown@world_settings_common_pocket_midalpha_old.option_generic": {
+    "$option_dropdown_type": "common.dropdown",
+    "controls": [
+      { "option_label_control@world_settings_common_pocket_midalpha_old.option_label_control": { } },
+      {
+        "button_panel": {
+          "type": "panel",
+          "size": [ "100%", 18 ],
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+          "$button_text": "$options_dropdown_toggle_label_binding",
+          "$dropdown_background_control|default": "common.dropdown_background",
+          "controls": [
+            {
+              "dropdown@$option_dropdown_type": {
+                "size": [ "100%", 18 ],
+                "$dropdown_toggle": "settings_common_pocket_midalpha_old.options_dropdown_toggle_control",
+                "$dropdown_background": "$dropdown_background_control",
+                "$dropdown_content|default": "unset_dropdown_content",
+                "$dropdown_name|default": "unset $dropdown_name",
+                "$options_dropdown_toggle_label_binding|default": "unset $options_dropdown_toggle_label_text",
+                "$locked_alpha": 0.5,
+                "$toggle_tts_header": "$option_label"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "option_dropdown_no_scroll@world_settings_common_pocket_midalpha_old.option_dropdown": {
+    "$option_dropdown_type": "common.dropdown_no_scrollpanel"
+  },
+
+  /*//// Dropdown Radio ////*/
+
+  "dropdown_radio_button@world_settings_common_pocket_midalpha_old.option_generic": {
+    "controls": [
+      { 
+        "radio_with_label_core@settings_common.radio_with_label_core": {
+          "size": [ "100%", "100%" ],
+          "$button_content": "common_buttons_old.button_label",
+
+          "$unchecked_control": "common_buttons_old.main_button_default",
+          "$checked_control": "common_buttons_old.main_button_pressed",
+          "$unchecked_hover_control": "common_buttons_old.main_button_hover",
+          "$checked_hover_control": "common_buttons_old.main_button_pressed_hover",
+
+          "$unchecked_locked_control": "common_buttons_old.main_button_locked",
+          "$checked_locked_control": "common_buttons_old.main_button_locked",
+          "$unchecked_locked_hover_control": "common_buttons_old.main_button_locked",
+          "$checked_locked_hover_control": "common_buttons_old.main_button_locked"
+        }
+      }
+    ]
+  },
+
+  /*//// Option Text Edit ////*/
+
+  "option_text_edit@world_settings_common_pocket_midalpha_old.option_generic": {
+    "$with_button": false,
+    "$option_place_holder_text|default": "",
+    "$max_text_edit_length|default": 30,
+    "$text_edit_button_size": [ 18, 18 ],
+    "controls": [
+      { "option_label_control@world_settings_common_pocket_midalpha_old.option_label_control": { } },
+      {
+        "text_edit_control": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+          "size": [ "100%", 18 ],
+          "controls": [
+            {
+              "text_box@common.text_edit_box": {
+                "$text_edit_box_label_offset": [ 1, 0 ],
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "$text_background_default": "old_pocket_textures_common.text_input",
+                "$text_background_hover": "old_pocket_textures_common.text_input_hover",
+                "$text_background_locked": "old_pocket_textures_common.text_input_locked",
+                
+                "size": [ "fill", 18 ],
+                "max_length": "$max_text_edit_length",
+                "$text_edit_box_content_binding_name": "$option_binding_name",
+                "$text_edit_box_binding_collection_name": "$option_binding_name",
+                "$text_edit_box_binding_type": "global",
+                "$text_box_enabled_binding_name": "$option_enabled_binding_name",
+                "enabled": "$enabled",
+                "$place_holder_text": "$option_place_holder_text",
+      
+                "$text_box_tts_header": "$option_label",
+                "$text_box_tts_name": "",
+            
+                "variables": [
+                  {
+                    "requires": "(not $option_enabled_binding_name or not $enabled)",
+                    "$text_box_enabled_binding_name": "#not_data_bound",
+                    "$text_edit_box_enabled_binding_type": "none"
+                  }
+                ]
+              }
+            },
+            {
+              "button@common_buttons_old.main_button": {
+                "ignored": "(not $with_button)",
+                "$pressed_button_name|default": "unset_button_name",
+                "$button_content|default": "unset $button_content",
+                "$button_text|default": "unset $button_text",
+                "$option_button_control_size|default": [ "fill", "100%" ],
+                "size": "$text_edit_button_size"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*//// Option Slider ////*/
+
+  "option_slider@world_settings_common_pocket_midalpha_old.option_generic": {
+    "$side_steps_visible|default": false,
+    "controls": [
+      { "option_label_control@world_settings_common_pocket_midalpha_old.option_label_control": { } },
+      {
+        "slider@common.slider": {
+          "size": [ "100%-12px", 17 ],
+          "offset": [ 6, 0 ],
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+
+          "$slider_step_factory_control_ids": {
+            "slider_step": "@old_pocket_textures_common.slider_step",
+            "slider_step_hover": "@old_pocket_textures_common.slider_step",
+            "slider_step_progress": "@old_pocket_textures_common.slider_step",
+            "slider_step_progress_hover": "@old_pocket_textures_common.slider_step"
+          },
+
+          "enabled": "$enabled",
+
+          "$slider_tts_header": "$option_label",
+          "$slider_tts_header_binding_type": "global",
+          
+          "$slider_enabled_binding_name": "$option_enabled_binding_name",
+          "$slider_enabled_binding_type": "global",
+          "variables": [
+            {
+              "requires": "(not $option_enabled_binding_name or not $enabled)",
+              "$slider_enabled_binding_name": "#not_data_bound",
+              "$slider_enabled_binding_type": "none"
+            }
+          ],
+          "controls": [
+            {
+              "slider_box@common.slider_box": {
+                "$slider_box_layout": "$slider_box_layout",
+                "$slider_box_size": [ 11, 17 ],
+                "$slider_track_button": "$slider_name",
+                "controls": [
+                  { "default@old_pocket_textures_common.slider_box_default": { } },
+                  { "hover@old_pocket_textures_common.slider_box_hover": { } },
+                  { "indent@old_pocket_textures_common.slider_box_hover": { } },
+                  { "locked@old_pocket_textures_common.slider_box_locked": { } }
+                ]
+              }
+            },
+            {
+              "slider_bar_default@settings_common_pocket_midalpha_old.slider_bar_default": {}
+            },
+            {
+              "slider_bar_hover@settings_common_pocket_midalpha_old.slider_bar_hover": {
+                "visible": false
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*//// Option Toggle ////*/
+
+  "option_toggle@world_settings_common_pocket_midalpha_old.option_generic": {
+    "controls": [
+      { "option_label_control@world_settings_common_pocket_midalpha_old.option_label_control": { } },
+      {
+        "option_toggle_control@common.toggle": {
+          "sound_name": "console.select",
+          "layer": 2,
+          "$toggle_state_binding_name|default": "$option_binding_name",
+          "$toggle_enabled_binding_name|default": "$option_enabled_binding_name",
+          "$toggle_enabled_binding_type|default": "global",
+          "size": [ 38, 19 ],
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+          "$binding_type": "global",
+          "$binding_condition": "once",
+      
+          "$unchecked_control": "old_pocket_textures_common.toggle_off",
+          "$checked_control": "old_pocket_textures_common.toggle_on",
+          "$unchecked_hover_control": "old_pocket_textures_common.toggle_off_hover",
+          "$checked_hover_control": "old_pocket_textures_common.toggle_on_hover",
+          
+          "$unchecked_locked_control": "old_pocket_textures_common.toggle_off_locked",
+          "$unchecked_locked_hover_control": "old_pocket_textures_common.toggle_on_locked",
+          "$checked_locked_control": "old_pocket_textures_common.toggle_off_locked",
+          "$checked_locked_hover_control": "old_pocket_textures_common.toggle_on_locked",
+      
+          "$enable_directional_toggling": false,
+      
+          "$toggle_tts_name": "$option_label",
+      
+          "enabled": "$enabled",
+          "variables": [
+            {
+              "requires": "(not $option_enabled_binding_name or not $enabled)",
+              "$toggle_enabled_binding_name": "#not_data_bound",
+              "$toggle_enabled_binding_type": "none"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

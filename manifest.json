@@ -1,0 +1,17 @@
+{
+    "format_version": 2,
+    "header": {
+        "description": "Rewritten from scratch by §b@CrisXolt§r, brings back some old MCPE/Win10E UI style designs from v0.12.0 to v0.14.0!\nBefore UI pack by §f@SirZeusOficial/@SirZeusSecond§r.",
+        "name": "VDX: Old Days UI - MidAlpha v1.0.0",
+        "uuid": "4f1bd3e6-015f-4c26-a3d7-dabb71a68ed3",
+        "version": [1, 0, 0],
+        "min_engine_version": [1, 17, 10]
+    },
+    "modules": [
+        {
+            "type": "resources",
+            "uuid": "46a29492-9fea-4af3-b24d-a1160ed4d430",
+            "version": [1, 0, 0]
+        }
+    ]
+}

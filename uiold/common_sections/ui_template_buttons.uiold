@@ -1,0 +1,214 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "common_buttons_old",
+
+  /*//// Classic Button ////*/
+  
+  "classic_button@common.button": {
+    "locked_control": "locked",
+    "controls": [
+      { "default@common_buttons_old.classic_button_default": { } },
+      { "hover@common_buttons_old.classic_button_hover": { } },
+      { "pressed@common_buttons_old.classic_button_pressed": { } },
+      { "locked@common_buttons_old.classic_button_locked": { } }
+    ]
+  },
+
+  "classic_button_default@common_buttons_old.default_base": {
+    "$button_texture": "old_pocket_textures_common.classic_button_default"
+  },
+
+  "classic_button_hover@common_buttons_old.hover_base": {
+    "$button_texture": "old_pocket_textures_common.classic_button_hover"
+  },
+
+  "classic_button_pressed@common_buttons_old.pressed_base": {
+    "$button_texture": "old_pocket_textures_common.classic_button_pressed"
+  },
+
+  "classic_button_locked@common_buttons_old.locked_base": {
+    "$button_texture": "old_pocket_textures_common.main_button_locked"
+  },
+
+  /*//// Main Button ////*/
+  
+  "main_button@common.button": {
+    "locked_control": "locked",
+    "controls": [
+      { "default@common_buttons_old.main_button_default": { } },
+      { "hover@common_buttons_old.main_button_hover": { } },
+      { "pressed@common_buttons_old.main_button_pressed": { } },
+      { "locked@common_buttons_old.main_button_locked": { } }
+    ]
+  },
+
+  "main_button_default@common_buttons_old.default_base": {
+    "$button_texture": "old_pocket_textures_common.main_button_default"
+  },
+
+  "main_button_hover@common_buttons_old.hover_base": {
+    "$button_texture": "old_pocket_textures_common.main_button_hover"
+  },
+
+  "main_button_pressed@common_buttons_old.pressed_base": {
+    "$button_texture": "old_pocket_textures_common.main_button_pressed"
+  },
+
+  "main_button_locked@common_buttons_old.locked_base": {
+    "$button_texture": "old_pocket_textures_common.main_button_locked"
+  },
+
+  "main_button_pressed_hover@common_buttons_old.default_base": {
+    "$button_texture": "old_pocket_textures_common.main_button_pressed_hover"
+  },
+
+  /*//// Secondary Button ////*/
+
+  "secondary_button@common.button": {
+    "locked_control": "locked",
+    "controls": [
+      { "default@common_buttons_old.secondary_button_default": { } },
+      { "hover@common_buttons_old.secondary_button_hover": { } },
+      { "pressed@common_buttons_old.secondary_button_pressed": { } },
+      { "locked@common_buttons_old.secondary_button_locked": { } }
+    ]
+  },
+
+  "secondary_button_default@common_buttons_old.default_base": {
+    "$button_texture": "old_pocket_textures_common.secondary_button_default"
+  },
+
+  "secondary_button_hover@common_buttons_old.hover_base": {
+    "$button_texture": "old_pocket_textures_common.secondary_button_hover"
+  },
+
+  "secondary_button_pressed@common_buttons_old.pressed_base": {
+    "$button_texture": "old_pocket_textures_common.secondary_button_pressed"
+  },
+
+  "secondary_button_locked@common_buttons_old.locked_base": {
+    "$button_texture": "old_pocket_textures_common.main_button_locked"
+  },
+
+  "secondary_button_checked@common_buttons_old.default_base": {
+    "$button_texture": "old_pocket_textures_common.secondary_button_checked"
+  },
+
+  "secondary_button_checked_hover@common_buttons_old.hover_base": {
+    "$button_texture": "old_pocket_textures_common.secondary_button_checked_hover"
+  },
+
+  /*//// Desktop menu Button ////*/
+  
+  "menu_button@common.button": {
+    "locked_control": "locked",
+    "controls": [
+      { "default@common_buttons_old.menu_button_default": { } },
+      { "hover@common_buttons_old.menu_button_hover": { } },
+      { "pressed@common_buttons_old.menu_button_pressed": { } },
+      { "locked@common_buttons_old.menu_button_locked": { } }
+    ]
+  },
+
+  "menu_button_default@common_buttons_old.default_base": {
+    "$button_texture": "old_desktop_textures_common.menu_button_default"
+  },
+
+  "menu_button_hover@common_buttons_old.hover_base": {
+    "$button_texture": "old_desktop_textures_common.menu_button_hover"
+  },
+
+  "menu_button_pressed@common_buttons_old.pressed_base": {
+    "$button_texture": "old_desktop_textures_common.menu_button_pressed"
+  },
+
+  "menu_button_locked@common_buttons_old.locked_base": {
+    "$button_texture": "old_desktop_textures_common.menu_button_locked"
+  },
+
+  /*//// Desktop Dark Button ////*/
+  
+  "dark_button@common.button": {
+    "locked_control": "locked",
+    "controls": [
+      { "default@common_buttons_old.dark_button_default": { } },
+      { "hover@common_buttons_old.dark_button_hover": { } },
+      { "pressed@common_buttons_old.dark_button_pressed": { } },
+      { "locked@common_buttons_old.dark_button_locked": { } }
+    ]
+  },
+
+  "dark_button_default@common_buttons_old.default_base": {
+    "$button_texture": "old_desktop_textures_common.dark_button_default"
+  },
+
+  "dark_button_hover@common_buttons_old.hover_base": {
+    "$button_texture": "old_desktop_textures_common.dark_button_hover"
+  },
+
+  "dark_button_pressed@common_buttons_old.pressed_base": {
+    "$button_texture": "old_desktop_textures_common.dark_button_pressed"
+  },
+
+  "dark_button_locked@common_buttons_old.locked_base": {
+    "$button_texture": "old_desktop_textures_common.dark_button_locked"
+  },
+
+  /*//// Resources ////*/
+
+  "default_base@common_buttons_old.button_panel": {
+    "$default_state": true,
+    "$text_color": "$main_menu_button_default_color"
+  },
+
+  "hover_base@common_buttons_old.button_panel": {
+    "$hover_state": true,
+    "$text_color": "$main_menu_button_hover_color"
+  },
+
+  "pressed_base@common_buttons_old.button_panel": {
+    "$pressed_state": true,
+    "$text_color": "$main_menu_button_preesed_color"
+  },
+
+  "locked_base@common_buttons_old.button_panel": {
+    "$locked_state": true,
+    "$text_color": "$main_menu_button_locked_color"
+  },
+
+  "button_panel": {
+    "type": "panel",
+    "size": "$button_size",
+    "$button_size|default": [ "100%", "100%" ],
+    "$button_content|default": "common_buttons_old.button_label",
+    "$button_texture|default": "",
+    "$default_state": false,
+    "$hover_state": false,
+    "$pressed_state": false,
+    "$locked_state": false,
+    "controls": [
+      { 
+        "button_texture@$button_texture": {
+          "size": "$button_texture_size",
+          "$button_texture_size|default": [ "100%", "100%" ],
+          "layer": 1,
+          "controls": [
+            { "button_content@$button_content": { "layer": 2 } }
+          ]
+        }
+      }
+    ]
+  },
+
+  "button_label@common_old.global_label": {
+    "shadow": true,
+    "size": [ "default", "default" ],
+    "color": "$text_color",
+    "text": "$button_text"
+  },
+
+  "button_label_remove@common_buttons_old.button_label": {
+    "color": [ 1.0, 0.0, 0.0 ]
+  }
+}

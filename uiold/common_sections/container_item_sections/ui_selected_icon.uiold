@@ -1,0 +1,130 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "selected_icon_old",
+
+  /*//// Selected Icon ////*/
+
+  "inventory_selected_icon_button": {
+    "type": "button",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "locked_control": "",
+    "default_control": "default",
+    "hover_control": "hover",
+    "pressed_control": "pressed",
+    "layer": -10,
+    "size": [ 16, 16 ],
+    "follows_cursor": true,
+    "sound_name": "random.click",
+    "sound_volume": 1.0,
+    "sound_pitch": 1.0,
+    "always_handle_pointer": true,
+    "$durability_bar_required|default": true,
+    "controls": [
+      { "default@selected_icon_old.inventory_icon_panel": {} },
+      { "pressed@selected_icon_old.inventory_icon_panel": {} },
+      { "hover@selected_icon_old.inventory_icon_panel": {} }
+    ]
+  },
+
+  "inventory_icon_panel": {
+    "type": "panel",
+    "size": [ 16, 16 ],
+    "controls": [
+      { 
+        "zero_panel": {
+          "type": "custom",
+          "renderer": "inventory_item_renderer",
+          "size": [ 0, 0 ], /* I put zero values because the is the decoy object */
+          "anchor_to": "top_left",
+          "anchor_from": "top_left",
+          "bindings": [
+            {
+              "binding_name": "#inventory_selected_item",
+              "binding_name_override": "#item_id_aux",
+              "binding_condition": "always_when_visible"
+            },
+            {
+              "binding_name": "#inventory_selected_item_charged_item",
+              "binding_name_override": "#charged_item",
+              "binding_condition": "always_when_visible"
+            },
+            {
+              "binding_name": "#inventory_selected_item_color",
+              "binding_name_override": "#item_custom_color",
+              "binding_condition": "always_when_visible"
+            },
+            {
+              "binding_name": "#inventory_selected_banner_patterns",
+              "binding_name_override": "#banner_patterns",
+              "binding_condition": "always_when_visible"
+            },
+            {
+              "binding_name": "#inventory_selected_banner_colors",
+              "binding_name_override": "#banner_colors",
+              "binding_condition": "always_when_visible"
+            },
+            {
+              "binding_name": "#inventory_selected_banner_type",
+              "binding_name_override": "#banner_type",
+              "binding_condition": "always_when_visible"
+            }
+          ],
+          "controls": [
+            { 
+              "icon@item_renderer_old.item_renderer_selected_icon": {
+                "anchor_to": "top_left",
+                "anchor_from": "top_left",
+                "layer": 50
+              }
+            },
+            { 
+              "selected_item_lock_overlay@common.inventory_selected_item_lock_overlay": {
+                "anchor_to": "top_left",
+                "anchor_from": "top_left",
+                "layer": 54,
+                "size": [ 24, 24 ]
+              }
+            },
+            { 
+              "durability_bar_selected_icon@common_durability_old.durability_bar_selected_icon": {
+                "anchor_to": "top_left",
+                "anchor_from": "top_left",
+                "layer": 52
+              }
+            }
+          ]
+        }
+      },
+      { 
+        "selected_stack_size_text@common_old.global_label_numbers": {
+          "color": "$item_stack_count_color",
+          "offset": [ 1, 2 ],
+          "anchor_to": "bottom_right",
+          "anchor_from": "bottom_right",
+          "layer": 53,
+          "shadow": true,
+          "text": "#inventory_selected_item_stack_count",
+          "bindings": [
+            {
+              "binding_name": "#inventory_selected_item_stack_count",
+              "binding_condition": "always_when_visible"
+            }
+          ]
+        }
+      },
+      {
+        "hover_text@common.hover_text": {
+          "layer": 59,
+          "bindings": [
+            {
+              "binding_name": "#using_touch",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

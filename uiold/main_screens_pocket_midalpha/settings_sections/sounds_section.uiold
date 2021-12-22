@@ -1,0 +1,245 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "sounds_pocket_midalpha_old",
+
+  "sound_section": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "controls": [
+      {
+        "title_label@settings_common_pocket_midalpha_old.option_group_text": {
+          "$option_label": "options.sounds"
+        }
+      },
+      {
+        "option_slider_0_alt@settings_common_pocket_midalpha_old.option_slider": {
+          "$option_label": "#main_volume_slider_label",
+          "$slider_name": "main_volume",
+          "$slider_value_binding_name": "#main_volume",
+          "$slider_tts_text_value": "#main_volume_text_value",
+          "$option_enabled_binding_name": "#main_volume_enabled",
+          "$focus_override_up": "FOCUS_OVERRIDE_STOP",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ]
+        }
+      },
+      {
+        "option_slider_1_alt@settings_common_pocket_midalpha_old.option_slider": {
+          "$option_label": "#music_volume_slider_label",
+          "$slider_name": "music_volume",
+          "$slider_value_binding_name": "#music_volume",
+          "$slider_tts_text_value": "#music_volume_text_value",
+          "$option_enabled_binding_name": "#music_volume_enabled",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ]
+        }
+      },
+      {
+        "option_slider_2_alt@settings_common_pocket_midalpha_old.option_slider": {
+          "$option_label": "#sound_volume_slider_label",
+          "$slider_name": "sound_volume",
+          "$slider_value_binding_name": "#sound_volume",
+          "$slider_tts_text_value": "#sound_volume_text_value",
+          "$option_enabled_binding_name": "#sound_volume_enabled",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ]
+        }
+      },
+      {
+        "option_slider_3_alt@settings_common_pocket_midalpha_old.option_slider": {
+          "$option_label": "#ambient_volume_slider_label",
+          "$slider_name": "ambient_volume",
+          "$slider_value_binding_name": "#ambient_volume",
+          "$slider_tts_text_value": "#ambient_volume_text_value",
+          "$option_enabled_binding_name": "#ambient_volume_enabled",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ]
+        }
+      },
+      {
+        "option_slider_4_alt@settings_common_pocket_midalpha_old.option_slider": {
+          "$option_label": "#block_volume_slider_label",
+          "$slider_name": "block_volume",
+          "$slider_value_binding_name": "#block_volume",
+          "$slider_tts_text_value": "#block_volume_text_value",
+          "$option_enabled_binding_name": "#block_volume_enabled",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ]
+        }
+      },
+      {
+        "option_slider_5_alt@settings_common_pocket_midalpha_old.option_slider": {
+          "$option_label": "#hostile_volume_slider_label",
+          "$slider_name": "hostile_volume",
+          "$slider_value_binding_name": "#hostile_volume",
+          "$slider_tts_text_value": "#hostile_volume_text_value",
+          "$option_enabled_binding_name": "#hostile_volume_enabled",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ]
+        }
+      },
+      {
+        "option_slider_6_alt@settings_common_pocket_midalpha_old.option_slider": {
+          "$option_label": "#neutral_volume_slider_label",
+          "$slider_name": "neutral_volume",
+          "$slider_value_binding_name": "#neutral_volume",
+          "$slider_tts_text_value": "#neutral_volume_text_value",
+          "$option_enabled_binding_name": "#neutral_volume_enabled",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ]
+        }
+      },
+      {
+        "option_slider_7_alt@settings_common_pocket_midalpha_old.option_slider": {
+          "$option_label": "#player_volume_slider_label",
+          "$slider_name": "player_volume",
+          "$slider_value_binding_name": "#player_volume",
+          "$slider_tts_text_value": "#player_volume_text_value",
+          "$option_enabled_binding_name": "#player_volume_enabled",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ]
+
+        }
+      },
+      {
+        "option_slider_8_alt@settings_common_pocket_midalpha_old.option_slider": {
+          "$option_label": "#record_volume_slider_label",
+          "$slider_name": "record_volume",
+          "$slider_value_binding_name": "#record_volume",
+          "$slider_tts_text_value": "#record_volume_text_value",
+          "$option_enabled_binding_name": "#record_volume_enabled",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ]
+        }
+      },
+      {
+        "option_slider_9_alt@settings_common_pocket_midalpha_old.option_slider": {
+          "$option_label": "#weather_volume_slider_label",
+          "$slider_name": "weather_volume",
+          "$slider_value_binding_name": "#weather_volume",
+          "$slider_tts_text_value": "#weather_volume_text_value",
+          "$option_enabled_binding_name": "#weather_volume_enabled",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ]
+        }
+      },
+      {
+        "sounds_reset_button": {
+          "type": "panel",
+          "size": [ "100%", 23 ],
+          "ignored": "(not $is_pregame)",
+          "controls": [
+            {
+              "action_button@common_buttons_old.main_button": {
+                "$pressed_button_name": "button.reset_settings",
+                "$button_text": "options.resetSettings",
+                "size": [ 200, 18 ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "offset": [ 20, 0 ],
+                "property_bag": {
+                  "reset_group": "audio"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "accessibility_title_label@settings_common_pocket_midalpha_old.option_group_text": {
+          "ignored": "(not $text_to_speech_supported)",
+          "$option_label": "options.accessibility.title"
+        }
+      },
+      {
+        "option_toggle0@settings_common_pocket_midalpha_old.option_toggle": {
+          "ignored": "(not $text_to_speech_supported)",
+          "$option_label": "options.enableAutoPlatformTextToSpeech",
+          "$option_binding_name": "#enable_auto_text_to_speech",
+          "$option_enabled_binding_name": "#enable_auto_text_to_speech_enabled",
+          "$toggle_name": "enable_auto_text_to_speech"
+        }
+      },
+      {
+        "option_toggle1@settings_common_pocket_midalpha_old.option_toggle": {
+          "ignored": "(not $text_to_speech_supported)",
+          "$option_label": "options.enableUITextToSpeech",
+          "$option_binding_name": "#enable_ui_text_to_speech",
+          "$option_enabled_binding_name": "#enable_ui_text_to_speech_enabled",
+          "$toggle_name": "enable_ui_text_to_speech"
+        }
+      },
+      {
+        "option_toggle2@settings_common_pocket_midalpha_old.option_toggle": {
+          "ignored": "(not $text_to_speech_supported)",
+          "$option_label": "options.enableChatTextToSpeech",
+          "$option_binding_name": "#enable_chat_text_to_speech",
+          "$option_enabled_binding_name": "#enable_chat_text_to_speech_enabled",
+          "$toggle_name": "enable_chat_text_to_speech"
+        }
+      },
+      {
+        "option_toggle3@settings_common_pocket_midalpha_old.option_toggle": {
+          "ignored": "(not $text_to_speech_supported)",
+          "$option_label": "options.enableOpenChatMessage",
+          "$option_binding_name": "#enable_open_chat_message",
+          "$option_enabled_binding_name": "#enable_open_chat_message_enabled",
+          "$toggle_name": "enable_open_chat_message"
+        }
+      },
+      {
+        "accessibility_reset_button": {
+          "type": "panel",
+          "size": [ "100%", 23 ],
+          "ignored": "(not $is_pregame or not $text_to_speech_supported)",
+          "controls": [
+            {
+              "action_button@common_buttons_old.main_button": {
+                "$pressed_button_name": "button.reset_settings",
+                "$button_text": "options.resetSettings",
+                "size": [ 200, 18 ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "offset": [ 20, 0 ],
+                "property_bag": {
+                  "reset_group": "accessibility"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

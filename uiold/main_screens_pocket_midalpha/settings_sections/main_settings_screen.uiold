@@ -1,0 +1,372 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "settings_pocket_midalpha_old",
+
+  /*//// Button Tab ////*/
+
+  "left_button_tab@common_toggles_old.toggle_panel": {
+    "size": [ 28, 28 ],
+    "layer": 10,
+
+    "$button_content": "common_buttons_old.button_label",
+
+    "$toggle_focus_enabled": true,
+    "$radio_toggle_group": true,
+
+    "$unchecked_control": "common_buttons_old.main_button_default",
+    "$checked_control": "common_buttons_old.main_button_pressed",
+    "$unchecked_hover_control": "common_buttons_old.main_button_hover",
+    "$checked_hover_control": "common_buttons_old.main_button_pressed_hover",
+    "$toggle_name": "left_buttons_tab"
+  },
+
+  "game_navigation_tab@settings_pocket_midalpha_old.left_button_tab": {
+    "$button_text": "options.category.game",
+    "$button_content": "old_pocket_textures_common.options_game_icon",
+    "$tab_view_binding_name": "game_tab_toggle",
+    "$toggle_default_state": true,
+    "$toggle_group_forced_index": 0
+  },
+
+  "controls_navigation_tab@settings_pocket_midalpha_old.left_button_tab": {
+    "$button_text": "controls.title",
+    "$button_content": "old_pocket_textures_common.options_controller_icon",
+    "$tab_view_binding_name": "controls_tab_toggle",
+    "$toggle_group_forced_index": 103
+  },
+
+  "video_navigation_tab@settings_pocket_midalpha_old.left_button_tab": {
+    "$button_text": "options.video",
+    "$button_content": "old_pocket_textures_common.options_graphics_icon",
+    "$tab_view_binding_name": "video_tab_toggle",
+    "$toggle_group_forced_index": 104
+  },
+
+  "sound_navigation_tab@settings_pocket_midalpha_old.left_button_tab": {
+    "$button_text": "options.sounds",
+    "$button_content": "old_pocket_textures_common.options_sounds_icon",
+    "$tab_view_binding_name": "sound_tab_toggle",
+    "$toggle_group_forced_index": 105
+  },
+
+  "global_resources_button_tab@settings_pocket_midalpha_old.left_button_tab": {
+    "size": [ 75, 18 ],
+    "$button_text": "options.manage",
+    "$button_content": "common_buttons_old.button_label",
+    "$tab_view_binding_name": "global_resources_tab_toggle",
+    "$toggle_group_forced_index": 106,
+    "$toggle_name": "navigation_tab"
+  },
+
+  "language_button_tab@settings_pocket_midalpha_old.left_button_tab": {
+    "size": [ 75, 18 ],
+    "$button_text": "options.change",
+    "$button_content": "common_buttons_old.button_label",
+    "$tab_view_binding_name": "language_tab_toggle",
+    "$toggle_group_forced_index": 107,
+    "$toggle_name": "navigation_tab"
+  },
+
+  "storage_management_button_tab@settings_pocket_midalpha_old.left_button_tab": {
+    "size": [ 75, 18 ],
+    "$button_text": "options.manage",
+    "$button_content": "common_buttons_old.button_label",
+    "$tab_view_binding_name": "storage_management_button_toggle",
+    "$toggle_group_forced_index": "$storage_management_forced_index",
+    "$toggle_property_bag": {
+      "#panel_title": "menu.storageManagement"
+    },
+    "$toggle_name": "navigation_tab"
+  },
+
+  "game_settings_button_tab@settings_pocket_midalpha_old.left_button_tab": {
+    "size": [ 75, 18 ],
+    "$button_text": "createWorldScreen.game.settings",
+    "$button_content": "common_buttons_old.button_label",
+    "$tab_view_binding_name": "game_settings_button_toggle",
+    "$toggle_group_forced_index": 108,
+    "$toggle_name": "navigation_tab"
+  },
+
+  "back_navigation_tab@settings_pocket_midalpha_old.left_button_tab": {
+    "$toggle_default_state": true,
+    "$toggle_group_forced_index": 0,
+    "$is_back_button": true,
+    "$toggle_name": "navigation_tab"
+  },
+
+  /*//// Top Panel Content ////*/
+  
+  "top_bar": {
+    "type": "panel",
+    "size": [ "100%-8px", "100%-8px" ],
+    "controls": [
+      {
+        "back_button@common_buttons_old.main_button": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "size": [ "100%c", "100%" ],
+          "$button_size": [ "100%c", "100%" ],
+          "$button_texture_size": [ "100%c+16px", "100%" ],
+          "$pressed_button_name": "button.menu_exit",
+          "$button_text": "gui.back"
+        }
+      },
+      {
+        "title_label@common_old.global_label": {
+          "layer": 10,
+          "shadow": true,
+          "size": [ "default", "default" ],
+          "color": "$main_menu_button_default_color",
+          "text": "menu.options"
+        }
+      }//,
+      //{ "about_navigation_tab@settings_pocket_midalpha_old.about_navigation_tab": { } }
+    ]
+  },
+
+  /*//// Main Panel Content ////*/
+
+  "scroll_content": {
+    "type": "panel",
+    "size": [ "100%", "100%c" ],
+    "controls": [
+      { 
+        "content@$options_panel_content": {
+          "size": [ "100%", "100%c" ],
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle"
+        }
+      }
+    ]
+  },
+
+  "main_panel_cotent": {
+    "type": "panel",
+    "controls": [
+      {
+        "tab_panel@old_pocket_textures_common.tab_panel": {
+          "size": [ 38, "100%" ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "controls": [
+            {
+              "selector_stack_panel": {
+                "type": "stack_panel",
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "offset": [ 5, 0 ],
+                "orientation": "vertical",
+                "controls": [
+                  { "spacer_0": { "type": "panel", "size": [ 1, 1 ] } },
+                  { "game_button_toggle@settings_pocket_midalpha_old.game_navigation_tab": { } },
+                  { "spacer_1": { "type": "panel", "size": [ 1, 1 ] } },
+                  { "controls_button_toggle@settings_pocket_midalpha_old.controls_navigation_tab": { } },
+                  { "spacer_2": { "type": "panel", "size": [ 1, 1 ] } },
+                  { "video_button_toggle@settings_pocket_midalpha_old.video_navigation_tab": { } },
+                  { "spacer_3": { "type": "panel", "size": [ 1, 1 ] } },
+                  { "sound_button_toggle@settings_pocket_midalpha_old.sound_navigation_tab": { } },
+                  { "spacer_4": { "type": "panel", "size": [ 1, 1 ] } }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "scroll_panel": {
+          "type": "panel",
+          "size": [ "100%-38px", "100%" ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "controls": [
+            { 
+              "game_tab_scroll_content@play_pocket_midalpha_old.common_tab_content_panel": {
+                "type": "panel",
+                "$visible_bind_toggle_source_control": "game_tab_toggle",
+                "controls": [
+                  {
+                    "worlds_scrolling_panel@play_pocket_midalpha_old.common_scrolling_panel": {
+                      "layer": 1,
+                      "$scroll_main_panel_content": "game_profile_pocket_midalpha_old.game_profile_section"
+                    }
+                  }
+                ]
+              }
+            },
+            { 
+              "controls_tab_scroll_content@play_pocket_midalpha_old.common_tab_content_panel": {
+                "type": "panel",
+                "$visible_bind_toggle_source_control": "controls_tab_toggle",
+                "controls": [
+                  {
+                    "friends_scrolling_panel@play_pocket_midalpha_old.common_scrolling_panel": {
+                      "layer": 1,
+                      "$scroll_main_panel_content": "controls_pocket_midalpha_old.controls_section"
+                    }
+                  }
+                ]
+              }
+            },
+            { 
+              "graphics_tab_scroll_content_panel@play_pocket_midalpha_old.common_tab_content_panel": {
+                "type": "panel",
+                "$visible_bind_toggle_source_control": "video_tab_toggle",
+                "controls": [
+                  {
+                    "server_scrolling_panel@play_pocket_midalpha_old.common_scrolling_panel": {
+                      "layer": 1,
+                      "$scroll_main_panel_content": "graphics_pocket_midalpha_old.graphics_section"
+                    }
+                  }
+                ]
+              }
+            },
+            { 
+              "sounds_tab_scroll_content_panel@play_pocket_midalpha_old.common_tab_content_panel": {
+                "type": "panel",
+                "$visible_bind_toggle_source_control": "sound_tab_toggle",
+                "controls": [
+                  {
+                    "server_scrolling_panel@play_pocket_midalpha_old.common_scrolling_panel": {
+                      "layer": 1,
+                      "$scroll_main_panel_content": "sounds_pocket_midalpha_old.sound_section"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*//// Screen ////*/
+
+  "screen_background": {
+    "type": "image",
+    "texture": "textures/ui/Black",
+    "size": [ "100%", "100%" ],
+    "alpha": 0.5,
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "global_resources_tab_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "storage_management_button_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "game_settings_button_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "settings_screen_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "main_control@common_menus_old.menu_screen_template": {
+          "$top_bar_panel_conent": "settings_pocket_midalpha_old.top_bar",
+          "$menu_panel_conent": "settings_pocket_midalpha_old.main_panel_cotent",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "language_tab_toggle",
+              "source_property_name": "(not #toggle_state)",
+              "target_property_name": "#visible"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "global_resources_tab_toggle",
+              "source_property_name": "(not #toggle_state)",
+              "target_property_name": "#visible"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "storage_management_button_toggle",
+              "source_property_name": "(not #toggle_state)",
+              "target_property_name": "#visible"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "game_settings_button_toggle",
+              "source_property_name": "(not #toggle_state)",
+              "target_property_name": "#visible"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "about_tab_toggle",
+              "source_property_name": "(not #toggle_state)",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "language_screen_control@common_menus_old.menu_screen_template": {
+          "$top_bar_panel_conent": "language_pocket_midalpha_old.top_bar",
+          "$menu_panel_conent": "language_pocket_midalpha_old.language_scrolling_panel",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "language_tab_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }, 
+      { 
+        "global_resources_screen@global_resources_midalpha_old.global_resources_screen_content": {
+          "ignored": "(not $is_pregame)",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "global_resources_tab_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      { 
+        "storage_management_screen@storage_management_midalpha_old.main_screen_panel": {
+          "ignored": "(not $is_pregame)",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "storage_management_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      { 
+        "game_settings_screen@world_game_settings_pocket_midalpha_old.game_settings_panel": {
+          "$back_button": "language_pocket_midalpha_old.back_button",
+          "ignored": "$is_pregame",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "game_settings_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

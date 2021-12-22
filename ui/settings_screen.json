@@ -1,0 +1,46 @@
+/*File modified by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "screen_world_create": {
+    "$screen_content": "create_world_pocket_midalpha_old.create_world_screen_content",
+    "$title_text": "createWorldScreen.header.local",
+    "$screen_bg_content": "common.empty_panel",
+    "$header_safezone_control": "common.empty_panel",
+    "$header_bar_control": "common.empty_panel",
+    "$is_full_screen_layout": false
+  },
+
+  "screen_template_create": {
+    "$screen_content": "create_world_pocket_midalpha_old.create_world_screen_content",
+    "$title_text": "createWorldScreen.header.local",
+    "$screen_bg_content": "common.empty_panel",
+    "$header_safezone_control": "common.empty_panel",
+    "$header_bar_control": "common.empty_panel",
+    "$is_full_screen_layout": false
+  },
+
+  "screen_world_edit": {
+    "$screen_content": "create_world_pocket_midalpha_old.create_world_screen_content",
+    "$title_text": "createWorldScreen.header.editLocal",
+    "$screen_bg_content": "common.empty_panel",
+    "$header_safezone_control": "common.empty_panel",
+    "$header_bar_control": "common.empty_panel",
+    "$is_full_screen_layout": false
+  },
+
+  "screen_controls_and_settings": {
+    "$screen_content": "settings_pocket_midalpha_old.settings_screen_content",
+    "$screen_bg_content": "settings_pocket_midalpha_old.screen_background",
+    "$header_safezone_control": "common.empty_panel",
+    "$header_bar_control": "common.empty_panel",
+    "$is_full_screen_layout": false
+  },
+
+  "screen_world_controls_and_settings": {
+    "$screen_content": "settings_pocket_midalpha_old.settings_screen_content",
+    "$screen_bg_content": "settings_pocket_midalpha_old.screen_background",
+    "$header_safezone_control": "common.empty_panel",
+    "$header_bar_control": "common.empty_panel",
+    "$is_full_screen_layout": false
+  }
+}

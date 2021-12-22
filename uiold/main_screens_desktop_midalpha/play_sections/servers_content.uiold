@@ -1,0 +1,399 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "servers_desktop_midalpha_old",
+
+  "servers_stack_panel": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "controls": [
+      {
+        "third_party_servers_panel": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%c" ],
+          "bindings": [
+            {
+              "binding_name": "#featured_servers_visible",
+              "binding_name_override": "#visible"
+            }
+          ],
+          "controls": [
+            {
+              "label_panel": {
+                "type": "panel",
+                "size": [ "100%", 14 ],
+                "controls": [
+                  {
+                    "label@common_old.global_label": {
+                      "size": [ "default", 10 ],
+                      "anchor_from": "left_middle",
+                      "anchor_to": "left_middle",
+                      "text": "thirdPartyWorld.Featured",
+                      "layer": 10
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "third_party_featured_grid@play.third_party_featured_server_grid": {
+                "grid_item_template": "servers_desktop_midalpha_old.featured_server_world_item",
+                "$tts_section_header": "thirdPartyWorld.Featured"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "more_servers_panel": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%c" ],
+          "bindings": [
+            {
+              "binding_name": "#servers_grid_visible",
+              "binding_name_override": "#visible"
+            }
+          ],
+          "controls": [
+            {
+              "label_panel": {
+                "type": "panel",
+                "size": [ "100%", 14 ],
+                "controls": [
+                  {
+                    "label@common_old.global_label": {
+                      "size": [ "default", 10 ],
+                      "anchor_from": "left_middle",
+                      "anchor_to": "left_middle",
+                      "text": "networkWorld.more_servers",
+                      "layer": 10
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "more_servers_grid@play.more_servers_grid": {
+                "grid_item_template": "servers_desktop_midalpha_old.more_server_world_item"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "final_padding": {
+          "type": "panel",
+          "size": [ "100%", 1 ]
+        }
+      }
+    ]
+  },
+
+  /*//// Servers World Item ////*/
+
+  "featured_server_world_item": {
+    "type": "stack_panel",
+    "size": [ "100%", 32 ],
+    "orientation": "horizontal",
+    "$more_servers": false,
+    "controls": [
+      { 
+        "servers_world_item_button@common_buttons_old.dark_button": {
+          "size": [ "fill", 32 ],
+          "$pressed_button_name": "button.menu_network_world_item",
+          "$button_content": "servers_desktop_midalpha_old.servers_world_item_button_content",
+          "layer": 4,
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "$collection_name"
+            }
+          ]
+        }
+      },
+      { 
+        "network_server_world_edit_button@common_buttons_old.dark_button": {
+          "size": [ 32, 32 ],
+          "$pressed_button_name": "button.menu_network_server_world_edit",
+          "$button_content": "old_desktop_textures_common.edit_icon",
+          "layer": 4,
+          "ignored": "(not $more_servers)",
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "$collection_name"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  
+  "more_server_world_item@servers_desktop_midalpha_old.featured_server_world_item": {
+    "$more_servers": true
+  },
+
+  "servers_world_item_button_content": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "size": [ "100%-10px", "100%-8px" ],
+    "layer": 4,
+    "controls": [
+      {
+        "server_world_screenshot": {
+          "ignored": "$more_servers",
+          "type": "panel",
+          "size": [ 40.3333, "100%" ],
+          "$border_texture|default": "old_desktop_textures_common.dark_indent_default",
+          "variables": [
+            {
+              "requires": "$default_state",
+              "$border_texture": "old_desktop_textures_common.dark_indent_default"
+            },
+            {
+              "requires": "$hover_state",
+              "$border_texture": "old_desktop_textures_common.dark_indent_hover"
+            },
+            {
+              "requires": "$pressed_state",
+              "$border_texture": "old_desktop_textures_common.dark_indent_pressed"
+            }
+          ],
+          "controls": [
+            { "border@$border_texture": { "size": [ "100%", "100%" ], "layer": 3 } },
+            {
+              "screenshot_picture": {
+                "type": "image",
+                "layer": 5,
+                "force_texture_reload": true,
+                "size": [ 38.3333, "100% - 2px" ],
+                "fill": true,
+                "bindings": [
+                  {
+                    "binding_name": "#third_party_server_logo_texture_path",
+                    "binding_type": "collection",
+                    "binding_name_override": "#texture",
+                    "binding_collection_name": "$collection_name"
+                  },
+                  {
+                    "binding_name": "#third_party_server_logo_resource_location",
+                    "binding_type": "collection",
+                    "binding_name_override": "#texture_file_system",
+                    "binding_collection_name": "$collection_name"
+                  },
+                  {
+                    "binding_name": "#third_party_server_logo_resource_location",
+                    "binding_name_override": "#texture_file_system"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "padding": {
+          "ignored": "$more_servers",
+          "type": "panel",
+          "size": [ 5, "100%" ]
+        }
+      },
+      {
+        "text_panel": {
+          "type": "panel",
+          "size": [ "fill", "100%" ],
+          "controls": [
+            { 
+              "network_world_header@common_old.global_label": {
+                "shadow": true,
+                "layer": 5,
+                "size": [ "100%", 10 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "color": "$text_color",
+                "text": "#network_world_header",
+                "bindings": [
+                  {
+                    "binding_name": "#network_world_header",
+                    "binding_type": "collection",
+                    "binding_collection_name": "$collection_name"
+                  }
+                ]
+              }
+            },
+            { 
+              "network_world_details@common_old.global_label": {
+                "shadow": true,
+                "layer": 5,
+                "size": [ "100%", 10 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 0, 12 ],
+                "color": [ 0.75, 0.75, 0.75 ],
+                "text": "#network_world_details",
+                "bindings": [
+                  {
+                    "binding_name": "#network_world_details",
+                    "binding_type": "collection",
+                    "binding_collection_name": "$collection_name"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "player_count_panel": {
+          "type": "panel",
+          "size": [ "100%c", "100%" ],
+          "controls": [
+            {
+              "player_count@common_old.global_label": {
+                "text": "#server_player_count",
+                "shadow": true,
+                "layer": 5,
+                "color": [ 0.75, 0.75, 0.75 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "offset": [ 0, 7.5 ],
+                "size": [ "default", 10 ],
+                "bindings": [
+                  {
+                    "binding_type": "collection",
+                    "binding_name": "#server_player_count",
+                    "binding_collection_name": "$collection_name"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "padding_1": {
+          "type": "panel",
+          "size": [ 5, 0 ]
+        }
+      },
+      { "ping_rate_icon@servers_desktop_midalpha_old.ping_rate_icon": {} },
+      {
+        "padding_3": {
+          "type": "panel",
+          "size": [ 5, 0 ]
+        }
+      }
+    ]
+  },
+
+  "ping_rate_icon": {
+    "type": "panel",
+    "size": [ 10, "100%" ],
+    "controls": [
+      { 
+        "ping_green_dark_icon@old_desktop_textures_common.Ping_Green": {
+          "size": [ 9, 9 ],
+          "bindings": [
+            {
+              "binding_name": "(#texture_name = 'textures/ui/Ping_Green_Dark')",
+              "binding_name_override": "#visible",
+              "binding_type": "collection",
+              "binding_collection_name": "$collection_name"
+            }
+          ]
+        }
+      },
+      { 
+        "ping_green_icon@old_desktop_textures_common.Ping_Green": {
+          "size": [ 9, 9 ],
+          "bindings": [
+            {
+              "binding_name": "(#texture_name = 'textures/ui/Ping_Green')",
+              "binding_name_override": "#visible",
+              "binding_type": "collection",
+              "binding_collection_name": "$collection_name"
+            }
+          ]
+        }
+      },
+      { 
+        "ping_yellow_dark_icon@old_desktop_textures_common.Ping_Yellow": {
+          "size": [ 9, 9 ],
+          "bindings": [
+            {
+              "binding_name": "(#texture_name = 'textures/ui/Ping_Yellow_Dark')",
+              "binding_name_override": "#visible",
+              "binding_type": "collection",
+              "binding_collection_name": "$collection_name"
+            }
+          ]
+        }
+      },
+      { 
+        "ping_yellow_icon@old_desktop_textures_common.Ping_Yellow": {
+          "size": [ 9, 9 ],
+          "bindings": [
+            {
+              "binding_name": "(#texture_name = 'textures/ui/Ping_Yellow')",
+              "binding_name_override": "#visible",
+              "binding_type": "collection",
+              "binding_collection_name": "$collection_name"
+            }
+          ]
+        }
+      },
+      { 
+        "ping_red_dark_icon@old_desktop_textures_common.Ping_Red": {
+          "size": [ 9, 9 ],
+          "bindings": [
+            {
+              "binding_name": "(#texture_name = 'textures/ui/Ping_Red_Dark')",
+              "binding_name_override": "#visible",
+              "binding_type": "collection",
+              "binding_collection_name": "$collection_name"
+            }
+          ]
+        }
+      },
+      { 
+        "ping_red_icon@old_desktop_textures_common.Ping_Red": {
+          "size": [ 9, 9 ],
+          "bindings": [
+            {
+              "binding_name": "(#texture_name = 'textures/ui/Ping_Red')",
+              "binding_name_override": "#visible",
+              "binding_type": "collection",
+              "binding_collection_name": "$collection_name"
+            }
+          ]
+        }
+      },
+      { 
+        "ping_offline_dark_icon@old_desktop_textures_common.Ping_Offline_Red": {
+          "size": [ 9, 9 ],
+          "bindings": [
+            {
+              "binding_name": "(#texture_name = 'textures/ui/Ping_Offline_Red_Dark')",
+              "binding_name_override": "#visible",
+              "binding_type": "collection",
+              "binding_collection_name": "$collection_name"
+            }
+          ]
+        }
+      },
+      { 
+        "ping_offline_icon@old_desktop_textures_common.Ping_Offline_Red": {
+          "size": [ 9, 9 ],
+          "bindings": [
+            {
+              "binding_name": "(#texture_name = 'textures/ui/Ping_Offline_Red')",
+              "binding_name_override": "#visible",
+              "binding_type": "collection",
+              "binding_collection_name": "$collection_name"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

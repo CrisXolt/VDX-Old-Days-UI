@@ -1,0 +1,689 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "controls_pocket_midalpha_old",
+
+  ////*/ Keyboard and Mouse Section /*////
+  
+  "binding_button_label@common_buttons_old.button_label": {
+    "text": "#binding_button_text",
+    "bindings": [
+      {
+        "binding_name": "#binding_button_text",
+        "binding_condition": "none",
+        "binding_type": "collection",
+        "binding_collection_name": "$keymapping_collection"
+      }
+    ]
+  },
+
+  "keymapping_item": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "layer": 1,
+    "size": [ "100%", 23 ],
+    "$binding_button_content": "controls_pocket_midalpha_old.binding_button_label",
+    "controls": [
+      {
+        "option_info_label_control": {
+          "type": "panel",
+          "size": [ "fill", "100% - 4px" ],
+          "controls": [
+            {
+              "keymapping_label_control@common_old.global_label": {
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "offset": [ 20, 2 ],
+                "size": [ "100% - 30px", "default" ],
+                "layer": 5,
+                "color": [ 0.75, 0.75, 0.75 ],
+                "shadow": true,
+                "locked_alpha": 0.5,
+                "text": "#keymapping_name",
+                "bindings": [
+                  {
+                    "binding_name": "#keymapping_name",
+                    "binding_type": "collection",
+                    "binding_collection_name": "$keymapping_collection"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "control_name_0": {
+          "type": "panel",
+          "size": [ "100%c", "100%" ],
+          "controls": [
+            {
+              "binding_button@common_buttons_old.main_button": {
+                "size": [ 80, 21 ],
+                "anchor_from": "right_middle",
+                "anchor_to": "right_middle",
+                "$pressed_button_name": "button.binding_button",
+                "$button_content": "$binding_button_content",
+                "bindings": [
+                  {
+                    "binding_type": "collection_details",
+                    "binding_collection_name": "$keymapping_collection"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "spacer_0": {
+          "type": "panel",
+          "size": [ 10, 1 ]
+        }
+      },
+      {
+        "control_name_1": {
+          "type": "panel",
+          "size": [ "100%c", "100%" ],
+          "controls": [
+            {
+              "binding_button@common_buttons_old.main_button": {
+                "size": [ 80, 21 ],
+                "anchor_from": "right_middle",
+                "anchor_to": "right_middle",
+                "$pressed_button_name": "button.reset_binding",
+                "$button_text": "controls.reset",
+                "bindings": [
+                  {
+                    "binding_type": "collection_details",
+                    "binding_collection_name": "$keymapping_collection"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "spacer_1": {
+          "type": "panel",
+          "size": [ 10, 1 ]
+        }
+      }
+    ]
+  },
+
+  "keymapping_grid": {
+    "type": "grid",
+    "size": [ "100%", "default" ],
+    "layer": 1,
+    "grid_dimension_binding": "$keymapping_grid_dimension",
+    "collection_name": "$keymapping_collection",
+    "anchor_to": "top_right",
+    "anchor_from": "top_right",
+    "bindings": [
+      {
+        "binding_name": "$keymapping_grid_dimension"
+      }
+    ]
+  },
+
+  "keyboard_and_mouse_section": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "controls": [
+      {
+        "title_label@settings_common_pocket_midalpha_old.option_group_text": {
+          "$option_label": "options.keyboardAndMouse"
+        }
+      },
+      {
+        "option_slider_0@settings_common_pocket_midalpha_old.option_slider": {
+          "$side_steps_visible": false,
+          "$option_label": "#keyboard_mouse_sensitivity_slider_label",
+          "$slider_name": "keyboard_mouse_sensitivity",
+          "$slider_value_binding_name": "#keyboard_mouse_sensitivity",
+          "$option_enabled_binding_name": "#keyboard_mouse_sensitivity_enabled",
+          "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+
+          "$label_bindings": [
+            {
+              "binding_name": "#keyboard_mouse_sensitivity_slider_label"
+            }
+          ]
+        }
+      },
+      {
+        "option_toggle_0@settings_common_pocket_midalpha_old.option_toggle": {
+          "$option_label": "options.invertYAxis",
+          "$option_binding_name": "#keyboard_mouse_invert_y_axis",
+          "$option_enabled_binding_name": "#keyboard_mouse_invert_y_axis_enabled",
+          "$toggle_name": "keyboard_mouse_invert_y_axis",
+          "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+        }
+      },
+      {
+        "option_toggle_1@settings_common_pocket_midalpha_old.option_toggle": {
+          "$option_label": "options.autojump",
+          "$option_binding_name": "#keyboard_mouse_autojump",
+          "$option_enabled_binding_name": "#keyboard_mouse_autojump_enabled",
+          "$toggle_name": "keyboard_mouse_autojump",
+          "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+        }
+      },
+      {
+        "option_toggle_full_keyboard_gameplay@settings_common_pocket_midalpha_old.option_toggle": {
+          "$option_label": "options.fullKeyboardGameplay",
+          "$option_binding_name": "#keyboard_show_full_keyboard_options",
+          "$option_enabled_binding_name": "#keyboard_show_full_keyboard_options_enabled",
+          "$toggle_name": "keyboard_show_full_keyboard_options",
+          "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+        }
+      },
+      {
+        "keyboard_section": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%c" ],
+          "bindings": [
+            {
+              "binding_name": "#keyboard_show_standard_keyboard_options",
+              "binding_name_override": "#visible"
+            }
+          ],
+          "controls": [
+            {
+              "title_label@settings_common_pocket_midalpha_old.option_group_text": {
+                "$option_label": "options.keyboardLayout"
+              }
+            },
+            {
+              "keyboard_keymapping_grid@controls_pocket_midalpha_old.keymapping_grid": {
+                "grid_item_template": "controls_pocket_midalpha_old.keymapping_item",
+                "$keymapping_grid_dimension": "#keyboard_standard_grid_dimension",
+                "$keymapping_collection": "keyboard_standard_collection"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "full_keyboard_section": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%c" ],
+          "bindings": [
+            {
+              "binding_name": "#keyboard_show_full_keyboard_options",
+              "binding_name_override": "#visible"
+            }
+          ],
+          "controls": [
+            {
+              "option_slider_smooth_rotation_speed@settings_common_pocket_midalpha_old.option_slider": {
+                "$side_steps_visible": false,
+                "$option_label": "#keyboard_smooth_rotation_speed_slider_label",
+                "$slider_name": "keyboard_smooth_rotation_speed",
+                "$slider_value_binding_name": "#keyboard_smooth_rotation_speed",
+                "$option_enabled_binding_name": "#keyboard_smooth_rotation_speed_enabled",
+                "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+                "$label_bindings": [
+                  {
+                    "binding_name": "#keyboard_smooth_rotation_speed_slider_label"
+                  }
+                ]
+              }
+            },
+            {
+              "title_label@settings_common_pocket_midalpha_old.option_group_text": {
+                "$option_label": "options.fullKeyboardLayout"
+              }
+            },
+            {
+              "keyboard_full_keymapping_grid@controls_pocket_midalpha_old.keymapping_grid": {
+                "grid_item_template": "controls_pocket_midalpha_old.keymapping_item",
+                "$keymapping_grid_dimension": "#keyboard_full_grid_dimension",
+                "$keymapping_collection": "keyboard_full_collection"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "reset_button": {
+          "type": "panel",
+          "size": [ "100%", 23 ],
+          "ignored": "(not $is_pregame)",
+          "controls": [
+            {
+              "action_button@common_buttons_old.main_button": {
+                "$pressed_button_name": "button.reset_keyboard_bindings",
+                "$button_text": "controllerLayoutScreen.resetAllBindings",
+                "size": [ 200, 18 ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "offset": [ 20, 0 ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  ////*/ Controller Section /*////
+
+  "binding_button_image": {
+    "type": "panel",
+    "controls": [
+      {
+        "base_icon_image": {
+          "type": "image",
+          "size": [ 26, 26 ],
+          "layer": 4,
+          "$gameplay_key_icon|default": "#binding_icon_sprite",
+          "bindings": [
+            {
+              "binding_name": "$gameplay_key_icon",
+              "binding_name_override": "#texture",
+              "binding_type": "collection",
+              "binding_collection_name": "$keymapping_collection"
+            }
+          ]
+        }
+      },
+      {
+        "default_label@common_buttons_old.button_label": {
+          "text": "#binding_button_text",
+          "layer": 4,
+          "bindings": [
+            {
+              "binding_name": "#binding_button_text",
+              "binding_type": "collection",
+              "binding_collection_name": "$keymapping_collection"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "gamepad_mapping_item@controls_pocket_midalpha_old.keymapping_item": {
+    "$binding_button_content": "controls_pocket_midalpha_old.binding_button_image"
+  },
+
+  "controller_section": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "controls": [
+      {
+        "title_label@settings_common_pocket_midalpha_old.option_group_text": {
+          "$option_label": "options.controller"
+        }
+      },
+      {
+        "option_slider_0@settings_common_pocket_midalpha_old.option_slider": {
+          "$side_steps_visible": false,
+          "ignored": "($is_holographic and not $is_living_room_mode)",
+          "$option_label": "#controller_sensitivity_slider_label",
+          "$slider_name": "controller_sensitivity",
+          "$slider_value_binding_name": "#controller_sensitivity",
+          "$option_enabled_binding_name": "#controller_sensitivity_enabled",
+          "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+          "$label_bindings": [
+            {
+              "binding_name": "#controller_sensitivity_slider_label"
+            }
+          ]
+        }
+      },
+      {
+        "option_toggle_0@settings_common_pocket_midalpha_old.option_toggle": {
+          "$option_label": "options.invertYAxis",
+          "$option_binding_name": "#controller_invert_y_axis",
+          "$option_enabled_binding_name": "#controller_invert_y_axis_enabled",
+          "$toggle_name": "controller_invert_y_axis",
+          "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+        }
+      },
+      {
+        "option_toggle_1@settings_common_pocket_midalpha_old.option_toggle": {
+          "ignored": "($is_holographic and not $is_living_room_mode)",
+          "$option_label": "options.autojump",
+          "$option_binding_name": "#controller_autojump",
+          "$option_enabled_binding_name": "#controller_autojump_enabled",
+          "$toggle_name": "controller_autojump",
+          "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+        }
+      },
+      {
+        "option_toggle9@settings_common_pocket_midalpha_old.option_toggle": {
+          "$option_label": "options.hidetooltips",
+          "$option_binding_name": "#hide_tooltips",
+          "$option_enabled_binding_name": "#hide_tooltips_enabled",
+          "$toggle_name": "hide_tooltips",
+          "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+        }
+      },
+      {
+        "option_toggle10@settings_common_pocket_midalpha_old.option_toggle": {
+          "$option_label": "options.hidegamepadcursor",
+          "$option_binding_name": "#hide_gamepad_cursor",
+          "$option_enabled_binding_name": "#hide_gamepad_cursor_enabled",
+          "$toggle_name": "hide_gamepad_cursor",
+          "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+        }
+      },
+      {
+        "gamepad_swap_ab@settings_common_pocket_midalpha_old.option_toggle": {
+          "$option_label": "options.swapGamepadAB",
+          "$option_binding_name": "#swap_gamepad_ab_buttons",
+          "$option_enabled_binding_name": "#swap_gamepad_ab_buttons_enabled",
+          "$toggle_name": "swap_gamepad_ab_buttons",
+          "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+        }
+      },
+      {
+        "gamepad_swap_xy@settings_common_pocket_midalpha_old.option_toggle": {
+          "$option_label": "options.swapGamepadXY",
+          "$option_binding_name": "#swap_gamepad_xy_buttons",
+          "$option_enabled_binding_name": "#swap_gamepad_xy_buttons_enabled",
+          "$toggle_name": "swap_gamepad_xy_buttons",
+          "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+        }
+      },
+      {
+        "gamepad_cursor_sensitivity_option_slider@settings_common_pocket_midalpha_old.option_slider": {
+          "$side_steps_visible": false,
+          "$option_label": "#gamepad_cursor_sensitivity_slider_label",
+          "$slider_name": "gamepad_cursor_sensitivity",
+          "$slider_value_binding_name": "#gamepad_cursor_sensitivity",
+          "$option_enabled_binding_name": "#gamepad_cursor_sensitivity_enabled",
+          "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+          "$label_bindings": [
+            {
+              "binding_name": "#gamepad_cursor_sensitivity_slider_label"
+            }
+          ]
+        }
+      },
+      {
+        "title_label@settings_common_pocket_midalpha_old.option_group_text": {
+          "$option_label": "options.controllerLayout"
+        }
+      },
+      {
+        "gamepad_keymapping_grid@controls_pocket_midalpha_old.keymapping_grid": {
+          "grid_item_template": "controls_pocket_midalpha_old.gamepad_mapping_item",
+          "$keymapping_grid_dimension": "#gamepad_grid_dimension",
+          "$keymapping_collection": "gamepad_collection"
+        }
+      },
+      {
+        "reset_button": {
+          "type": "panel",
+          "size": [ "100%", 23 ],
+          "ignored": "(not $is_pregame)",
+          "controls": [
+            {
+              "action_button@common_buttons_old.main_button": {
+                "$pressed_button_name": "button.reset_gamepad_bindings",
+                "$button_text": "controllerLayoutScreen.resetAllBindings",
+                "size": [ 200, 18 ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "offset": [ 20, 0 ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  ////*/ Touch Section /*////
+
+  "touch_section": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "controls": [
+      {
+        "title_label@settings_common_pocket_midalpha_old.option_group_text": {
+          "$option_label": "options.touch"
+        }
+      },
+      {
+        "option_slider_0@settings_common_pocket_midalpha_old.option_slider": {
+          "$option_label": "#touch_sensitivity_slider_label",
+          "$slider_name": "touch_sensitivity",
+          "$slider_value_binding_name": "#touch_sensitivity",
+          "$option_enabled_binding_name": "#touch_sensitivity_enabled",
+          "$label_bindings": [
+            {
+              "binding_name": "#touch_sensitivity_slider_label"
+            }
+          ]
+        }
+      },
+      {
+        "option_toggle_0@settings_common_pocket_midalpha_old.option_toggle": {
+          "$option_label": "options.invertYAxis",
+          "$option_binding_name": "#touch_invert_y_axis",
+          "$option_enabled_binding_name": "#touch_invert_y_axis_enabled",
+          "$toggle_name": "touch_invert_y_axis"
+        }
+      },
+      {
+        "option_toggle_5@settings_common_pocket_midalpha_old.option_toggle": {
+          "$option_label": "options.lefthanded",
+          "$option_binding_name": "#left_handed",
+          "$option_enabled_binding_name": "#left_handed_enabled",
+          "$toggle_name": "left_handed"
+        }
+      },
+      {
+        "option_toggle_4@settings_common_pocket_midalpha_old.option_toggle": {
+          "$option_label": "options.usetouchpad",
+          "$option_binding_name": "#split_controls",
+          "$option_enabled_binding_name": "#split_controls_enabled",
+          "$toggle_name": "split_controls"
+        }
+      },
+      {
+        "option_toggle_6@settings_common_pocket_midalpha_old.option_toggle": {
+          "$option_label": "options.swapJumpAndSneak",
+          "$option_binding_name": "#swap_jump_and_sneak",
+          "$option_enabled_binding_name": "#swap_jump_and_sneak_enabled",
+          "$toggle_name": "swap_jump_and_sneak"
+        }
+      },
+      {
+        "option_slider_1@settings_common_pocket_midalpha_old.option_slider": {
+          "$option_label": "#button_size_slider_label",
+          "$slider_name": "button_size",
+          "$slider_value_binding_name": "#button_size",
+          "$option_enabled_binding_name": "#button_size_enabled",
+          "$label_bindings": [
+            {
+              "binding_name": "#button_size_slider_label"
+            }
+          ]
+        }
+      },
+      {
+        "option_toggle_1@settings_common_pocket_midalpha_old.option_toggle": {
+          "$option_label": "options.autojump",
+          "$option_binding_name": "#touch_autojump",
+          "$option_enabled_binding_name": "#touch_autojump_enabled",
+          "$toggle_name": "touch_autojump"
+        }
+      },
+      {
+        "hotbar_only_touch_toggle@settings_common_pocket_midalpha_old.option_toggle": {
+          "$option_label": "options.hotbarOnlyTouch",
+          "$option_binding_name": "#hotbar_only_touch",
+          "$option_enabled_binding_name": "#hotbar_only_touch_enabled",
+          "$toggle_name": "hotbar_only_touch"
+        }
+      },
+      {
+        "feedback_label@settings_common_pocket_midalpha_old.option_group_text": {
+          "$option_label": "options.group.feedback"
+        }
+      },
+      {
+        "option_toggle_2@settings_common_pocket_midalpha_old.option_toggle": {
+          "$option_label": "options.destroyvibration",
+          "$option_binding_name": "#touch_vibration",
+          "$option_enabled_binding_name": "#touch_vibration_enabled",
+          "$toggle_name": "touch_vibration"
+        }
+      },
+      {
+        "reset_button": {
+          "type": "panel",
+          "size": [ "100%", 23 ],
+          "ignored": "(not $is_pregame)",
+          "controls": [
+            {
+              "action_button@common_buttons_old.main_button": {
+                "$pressed_button_name": "button.reset_touch_bindings",
+                "$button_text": "controllerLayoutScreen.resetAllBindings",
+                "size": [ 200, 18 ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "offset": [ 20, 0 ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  ////*/ Screen /*////
+
+  "button_tab@common_toggles_old.toggle_panel": {
+    "offset": [ -4, 4 ],
+    "size": [ 75, 18 ],
+    "layer": 10,
+
+    "$unchecked_control": "common_buttons_old.main_button_default",
+    "$checked_control": "common_buttons_old.main_button_pressed",
+    "$unchecked_hover_control": "common_buttons_old.main_button_hover",
+    "$checked_hover_control": "common_buttons_old.main_button_pressed_hover",
+
+    "$button_content": "common_buttons_old.button_label",
+
+    "$toggle_focus_enabled": true,
+    "$radio_toggle_group": true,
+    "$toggle_name": "controls_type_tab"
+  },
+
+  "controls_section": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "controls": [
+      {
+        "title_label@settings_common_pocket_midalpha_old.option_group_text": {
+          "$option_label": "controls.title"
+        }
+      },
+      {
+        "tabs_button": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "100%", 18 ],
+          "controls": [
+            {
+              "fill": {
+                "type": "panel",
+                "size": [ "fill", "100%" ]
+              }
+            },
+            {
+              "touch_navigation_tab@controls_pocket_midalpha_old.button_tab": {
+                "$button_text": "options.touch",
+                "$tab_view_binding_name": "touch_button_toggle",
+                "$toggle_default_state": true,
+                "$toggle_group_forced_index": 0
+              }
+            },
+            {
+              "spacer_0": {
+                "type": "panel",
+                "size": [ 5, "100%" ]
+              }
+            },
+            {
+              "touch_navigation_tab@controls_pocket_midalpha_old.button_tab": {
+                "$button_text": "options.controller",
+                "$tab_view_binding_name": "controller_button_toggle",
+                "$toggle_group_forced_index": 1
+              }
+            },
+            {
+              "spacer_1": {
+                "type": "panel",
+                "size": [ 5, "100%" ]
+              }
+            },
+            {
+              "touch_navigation_tab@controls_pocket_midalpha_old.button_tab": {
+                "$button_text": "options.keyboardAndMouse",
+                "$tab_view_binding_name": "keyboard_and_mouse_button_toggle",
+                "$toggle_group_forced_index": 2
+              }
+            },
+            {
+              "final_padding": {
+                "type": "panel",
+                "size": [ 10, "100%" ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "padding": {
+          "type": "panel",
+          "size": [ "100%", 5 ]
+        }
+      },
+      { 
+        "keyboard_and_mouse_section@controls_pocket_midalpha_old.keyboard_and_mouse_section": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "keyboard_and_mouse_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      { 
+        "controller_section@controls_pocket_midalpha_old.controller_section": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "controller_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      { 
+        "touch_section@controls_pocket_midalpha_old.touch_section": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "touch_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

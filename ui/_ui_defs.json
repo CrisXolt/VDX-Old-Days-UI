@@ -1,0 +1,56 @@
+/*  (c) CrisXolt. Don't use any code design without permission!  */
+{
+  /*  Alphabetical order please (in each group) :)  */
+  "ui_defs": [
+    ////////*/ Common /*////////
+    "uiold/common_sections/ui_common.uiold",
+    "uiold/common_sections/ui_old_desktop_textures.uiold",
+    "uiold/common_sections/ui_old_pocket_textures.uiold",
+    "uiold/common_sections/ui_template_dialogs.uiold",
+    "uiold/common_sections/ui_template_buttons.uiold",
+    "uiold/common_sections/ui_template_menus.uiold",
+    "uiold/common_sections/ui_template_screens.uiold",
+    "uiold/common_sections/ui_template_scroll.uiold",
+    "uiold/common_sections/ui_template_slider.uiold",
+    "uiold/common_sections/ui_template_toggles.uiold",
+    "uiold/common_sections/ui_template_tooltip.uiold",
+    /* Container Item Sections */
+    "uiold/common_sections/container_item_sections/ui_container_item.uiold",
+    "uiold/common_sections/container_item_sections/ui_item_renderer.uiold",
+    "uiold/common_sections/container_item_sections/ui_selected_icon.uiold",
+    "uiold/common_sections/container_item_sections/ui_template_durability.uiold",
+    ////////*/ Main Screens /*////////
+    "uiold/main_screens/progress_screen.uiold",
+    "uiold/main_screens/progress_animation.uiold",
+    ////////*/ Main Screens Desktop /*////////
+    "uiold/main_screens_desktop_midalpha/start_screen.uiold",
+    /* Play Sections */
+    "uiold/main_screens_desktop_midalpha/play_sections/main_play_screen.uiold",
+    "uiold/main_screens_desktop_midalpha/play_sections/worlds_content.uiold",
+    "uiold/main_screens_desktop_midalpha/play_sections/friends_content.uiold",
+    "uiold/main_screens_desktop_midalpha/play_sections/servers_content.uiold",
+    ////////*/ Main Screens Pocket /*////////
+    "uiold/main_screens_pocket_midalpha/start_screen.uiold",
+    /* Play Sections */
+    "uiold/main_screens_pocket_midalpha/play_sections/main_play_screen.uiold",
+    "uiold/main_screens_pocket_midalpha/play_sections/worlds_content.uiold",
+    "uiold/main_screens_pocket_midalpha/play_sections/friends_content.uiold",
+    "uiold/main_screens_pocket_midalpha/play_sections/servers_content.uiold",
+    /* Settings Sections */
+    "uiold/main_screens_pocket_midalpha/settings_sections/main_settings_screen.uiold",
+    "uiold/main_screens_pocket_midalpha/settings_sections/game_profile_section.uiold",
+    "uiold/main_screens_pocket_midalpha/settings_sections/controls_section.uiold",
+    "uiold/main_screens_pocket_midalpha/settings_sections/graphics_section.uiold",
+    "uiold/main_screens_pocket_midalpha/settings_sections/sounds_section.uiold",
+    "uiold/main_screens_pocket_midalpha/settings_sections/settings_common.uiold",
+    "uiold/main_screens_pocket_midalpha/settings_sections/language_screen.uiold",
+    "uiold/main_screens_pocket_midalpha/settings_sections/global_resources_screen.uiold",
+    "uiold/main_screens_pocket_midalpha/settings_sections/storage_management_screen.uiold",
+    /* World Sections */
+    "uiold/main_screens_pocket_midalpha/world_sections/main_create_world_screen.uiold",
+    "uiold/main_screens_pocket_midalpha/world_sections/game_settings_screen.uiold",
+    "uiold/main_screens_pocket_midalpha/world_sections/world_settings_common.uiold",
+    "uiold/main_screens_pocket_midalpha/world_sections/level_resources_screen.uiold",
+    "uiold/main_screens_pocket_midalpha/world_sections/level_behavior_screen.uiold"
+  ]
+}

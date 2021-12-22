@@ -1,0 +1,46 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "common_menus_old",
+  
+  "menu_screen_template": {
+    "type": "panel",
+    "$menu_panel_conent": "common.empty_panel",
+    "$top_bar_panel_conent": "common.empty_panel",
+    "$ignore_gradient": false,
+    "controls": [
+      {
+        "top_bar@old_pocket_textures_common.top_bar": {
+          "layer": 1,
+          "size": [ "100%", 26 ],
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "controls": [
+            { "panel@$top_bar_panel_conent": { } },
+            { 
+              "top_bar_gradient@old_pocket_textures_common.top_bar_gradient": {
+                "ignored": "$ignore_gradient",
+                "layer": 2,
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "offset": [ 0, 26 ]
+              }
+            }
+          ]
+        }
+      },
+      { 
+        "menu_panel_conent": {
+          "type": "panel",
+          "size": [ "100%", "100%-26px" ],
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "offset": [ 0, 26 ],
+          "controls": [
+            { "panel@$menu_panel_conent": { } }
+          ]
+        }
+      }
+    ]
+  }
+}

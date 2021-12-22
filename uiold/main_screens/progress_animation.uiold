@@ -1,0 +1,93 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "progress_anim_old",
+
+  /*//// Server/Realms Loading  Animation ////*/
+
+  "server_loading_bar": {
+    "type": "stack_panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ 140, "100%c" ],
+    "$duration_per_frame": 0.06,
+    "offset": "@progress_anim_old.server_flipbook_01",
+    "controls": [
+      { "01@progress_anim_old.server_loading_label": { "$left_text": "_ _ _ _ _ ", "$loading_text": "▃ ▄ ▅ ▆ ▇ █" } },
+      { "02@progress_anim_old.server_loading_label": { "$left_text": "_ _ _ _ ", "$loading_text": "▃ ▄ ▅ ▆ ▇ █ ▇" } },
+      { "03@progress_anim_old.server_loading_label": { "$left_text": "_ _ _ ", "$loading_text": "▃ ▄ ▅ ▆ ▇ █ ▇ ▆" } },
+      { "04@progress_anim_old.server_loading_label": { "$left_text": "_ _ ", "$loading_text": "▃ ▄ ▅ ▆ ▇ █ ▇ ▆ ▅" } },
+      { "05@progress_anim_old.server_loading_label": { "$left_text": "_ ", "$loading_text": "▃ ▄ ▅ ▆ ▇ █ ▇ ▆ ▅ ▄" } },
+      { "06@progress_anim_old.server_loading_label": { "$loading_text": "▃ ▄ ▅ ▆ ▇ █ ▇ ▆ ▅ ▄ ▃" } },
+      { "07@progress_anim_old.server_loading_label": { "$right_text": " _", "$loading_text": "▄ ▅ ▆ ▇ █ ▇ ▆ ▅ ▄ ▃" } },
+      { "08@progress_anim_old.server_loading_label": { "$right_text": " _ _", "$loading_text": "▅ ▆ ▇ █ ▇ ▆ ▅ ▄ ▃" } },
+      { "09@progress_anim_old.server_loading_label": { "$right_text": " _ _ _", "$loading_text": "▆ ▇ █ ▇ ▆ ▅ ▄ ▃" } },
+      { "10@progress_anim_old.server_loading_label": { "$right_text": " _ _ _ _", "$loading_text": "▇ █ ▇ ▆ ▅ ▄ ▃" } },
+      { "11@progress_anim_old.server_loading_label": { "$right_text": " _ _ _ _ _", "$loading_text": "█ ▇ ▆ ▅ ▄ ▃" } }
+    ]
+  },
+
+  "loading_label": {
+    "type": "label",
+    "shadow": true,
+    "text": "$loading_text",
+    "size": [ "default", 10 ],
+    "color": [ 0.5, 0.5, 0.5 ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "text_alignment": "center"
+  },
+
+  "server_loading_label": {
+    "type": "panel",
+    "size": [ 140, 10 ],
+    "controls": [
+      {
+        "stack_panel_control": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "100%c", 10 ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "$left_text|default": "",
+          "$right_text|default": "",
+          "$loading_text|default": "",
+          "controls": [
+            { "left_label@progress_anim_old.loading_label": { "text": "$left_text" } },
+            { "middle_label@progress_anim_old.loading_label": { "text": "$loading_text" } },
+            { "right_label@progress_anim_old.loading_label": { "text": "$right_text" } }
+          ]
+        }
+      }
+    ]
+  },
+  
+  "flipbook_base": {
+    "anim_type": "offset",
+    "easing": "linear",
+    "duration": "$duration_per_frame",
+    "from": "$anim_offset",
+    "to": "$anim_offset"
+  },
+  
+  "server_flipbook_01@progress_anim_old.flipbook_base": { "$anim_offset": [ 0, 0    ], "next": "@progress_anim_old.server_flipbook_02" },
+  "server_flipbook_02@progress_anim_old.flipbook_base": { "$anim_offset": [ 0, -10  ], "next": "@progress_anim_old.server_flipbook_03" },
+  "server_flipbook_03@progress_anim_old.flipbook_base": { "$anim_offset": [ 0, -20  ], "next": "@progress_anim_old.server_flipbook_04" },
+  "server_flipbook_04@progress_anim_old.flipbook_base": { "$anim_offset": [ 0, -30  ], "next": "@progress_anim_old.server_flipbook_05" },
+  "server_flipbook_05@progress_anim_old.flipbook_base": { "$anim_offset": [ 0, -40  ], "next": "@progress_anim_old.server_flipbook_06" },
+  "server_flipbook_06@progress_anim_old.flipbook_base": { "$anim_offset": [ 0, -50  ], "next": "@progress_anim_old.server_flipbook_07" },
+  "server_flipbook_07@progress_anim_old.flipbook_base": { "$anim_offset": [ 0, -60  ], "next": "@progress_anim_old.server_flipbook_08" },
+  "server_flipbook_08@progress_anim_old.flipbook_base": { "$anim_offset": [ 0, -70  ], "next": "@progress_anim_old.server_flipbook_09" },
+  "server_flipbook_09@progress_anim_old.flipbook_base": { "$anim_offset": [ 0, -80  ], "next": "@progress_anim_old.server_flipbook_10" },
+  "server_flipbook_10@progress_anim_old.flipbook_base": { "$anim_offset": [ 0, -90  ], "next": "@progress_anim_old.server_flipbook_11" },
+  "server_flipbook_11@progress_anim_old.flipbook_base": { "$anim_offset": [ 0, -100 ], "next": "@progress_anim_old.server_flipbook_12" },
+  "server_flipbook_12@progress_anim_old.flipbook_base": { "$anim_offset": [ 0, -90  ], "next": "@progress_anim_old.server_flipbook_13" },
+  "server_flipbook_13@progress_anim_old.flipbook_base": { "$anim_offset": [ 0, -80  ], "next": "@progress_anim_old.server_flipbook_14" },
+  "server_flipbook_14@progress_anim_old.flipbook_base": { "$anim_offset": [ 0, -70  ], "next": "@progress_anim_old.server_flipbook_15" },
+  "server_flipbook_15@progress_anim_old.flipbook_base": { "$anim_offset": [ 0, -60  ], "next": "@progress_anim_old.server_flipbook_16" },
+  "server_flipbook_16@progress_anim_old.flipbook_base": { "$anim_offset": [ 0, -50  ], "next": "@progress_anim_old.server_flipbook_17" },
+  "server_flipbook_17@progress_anim_old.flipbook_base": { "$anim_offset": [ 0, -40  ], "next": "@progress_anim_old.server_flipbook_18" },
+  "server_flipbook_18@progress_anim_old.flipbook_base": { "$anim_offset": [ 0, -30  ], "next": "@progress_anim_old.server_flipbook_19" },
+  "server_flipbook_19@progress_anim_old.flipbook_base": { "$anim_offset": [ 0, -20  ], "next": "@progress_anim_old.server_flipbook_20" },
+  "server_flipbook_20@progress_anim_old.flipbook_base": { "$anim_offset": [ 0, -10  ], "next": "@progress_anim_old.server_flipbook_01" }
+}

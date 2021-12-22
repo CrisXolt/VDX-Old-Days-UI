@@ -1,0 +1,16 @@
+/*File modified by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "start_screen": {
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_content": "start_desktop_midalpha_old.start_screen_content"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "start_pocket_midalpha_old.start_screen_content"
+      }
+    ]
+  }
+}

@@ -1,0 +1,453 @@
+{
+  "namespace": "old_pocket_textures_common",
+
+  /*//// Classic Button ////*/
+
+  "classic_button_default": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/buttons/classic_button_default"
+  },
+
+  "classic_button_hover": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/buttons/classic_button_hover"
+  },
+
+  "classic_button_pressed": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/buttons/classic_button_pressed"
+  },
+
+  /*//// Main Button ////*/
+
+  "main_button_default": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/buttons/main_button_default"
+  },
+
+  "main_button_hover": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/buttons/main_button_hover"
+  },
+
+  "main_button_pressed": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/buttons/main_button_pressed"
+  },
+
+  "main_button_pressed_hover": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/buttons/main_button_pressed_hover"
+  },
+
+  "main_button_selected": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/buttons/main_button_selected"
+  },
+
+  "main_button_locked": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/buttons/main_button_locked"
+  },
+  
+  /*//// Secondary Button ////*/
+
+  "secondary_button_default": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/buttons/secondary_button_default"
+  },
+
+  "secondary_button_hover": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/buttons/secondary_button_hover"
+  },
+
+  "secondary_button_pressed": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/buttons/secondary_button_pressed"
+  },
+
+  "secondary_button_checked": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/buttons/secondary_button_checked"
+  },
+
+  "secondary_button_checked_hover": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/buttons/secondary_button_checked_hover"
+  },
+  
+  /*//// Close Button ////*/
+
+  "close_button_default": {
+    "type": "image",
+    "size": [ 18, 18 ],
+    "texture": "textures/uiold_pocket/buttons/close_button_default"
+  },
+
+  "close_button_hover": {
+    "type": "image",
+    "size": [ 18, 18 ],
+    "texture": "textures/uiold_pocket/buttons/close_button_hover"
+  },
+
+  "close_button_pressed": {
+    "type": "image",
+    "size": [ 18, 18 ],
+    "texture": "textures/uiold_pocket/buttons/close_button_pressed"
+  },
+
+  /*//// Icons ////*/
+
+  "settings_button_icon": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/icons/settings_button_icon",
+    "size": [ 22, 22 ]
+  },
+
+  "achievements_button_icon": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/icons/achievements_button_icon",
+    "size": [ 22, 22 ]
+  },
+
+  "lock_icon": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/icons/lock_icon",
+    "size": [ 10, 10 ]
+  },
+
+  "lan_icon": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/icons/lan_icon",
+    "size": [ 16, 16 ]
+  },
+
+  "friends_server_icon": {
+    "type": "image",
+    "size": [ 16, 16 ],
+    "texture": "textures/uiold_pocket/icons/xbox_icon"
+  },
+
+  "game_icon": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/icons/game_icon",
+    "size": [ 11, 11 ]
+  },
+
+  "worlds_icon": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/icons/worlds_icon",
+    "size": [ 11, 11 ]
+  },
+
+  "friends_icon": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/icons/friends_icon",
+    "size": [ 11, 11 ]
+  },
+
+  "servers_icon": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/icons/servers_icon",
+    "size": [ 11, 11 ]
+  },
+
+  "join_realm_icon": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/icons/join_realm_icon",
+    "size": [ 11, 11 ]
+  },
+
+  "notification_icon": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/icons/notification_icon",
+    "size": [ 11, 11 ]
+  },
+
+  "add_server_icon": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/icons/add_server_icon",
+    "size": [ 11, 11 ]
+  },
+
+  "edit_icon": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/icons/edit_icon",
+    "size": [ 11, 11 ]
+  },
+
+  "feed_icon": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/icons/feed_icon",
+    "size": [ 11, 11 ]
+  },
+
+  "remove_icon": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/icons/remove_icon",
+    "size": [ 11, 11 ]
+  },
+
+  /*//// Options ////*/
+
+  "options_game_icon": {
+    "type": "image",
+    "size": [ 28, 28 ],
+    "texture": "textures/uiold_pocket/options/options_game_icon"
+  },
+
+  "options_controller_icon": {
+    "type": "image",
+    "size": [ 28, 28 ],
+    "texture": "textures/uiold_pocket/options/options_controller_icon"
+  },
+
+  "options_graphics_icon": {
+    "type": "image",
+    "size": [ 28, 28 ],
+    "texture": "textures/uiold_pocket/options/options_graphics_icon"
+  },
+
+  "options_sounds_icon": {
+    "type": "image",
+    "size": [ 28, 28 ],
+    "texture": "textures/uiold_pocket/options/options_sounds_icon"
+  },
+
+  /*//// Network ////*/
+
+  "dot_1": {
+    "type": "image",
+    "size": [ 9, 10 ],
+    "texture": "textures/uiold_pocket/network/dot_1"
+  },
+
+  "dot_2": {
+    "type": "image",
+    "size": [ 9, 10 ],
+    "texture": "textures/uiold_pocket/network/dot_2"
+  },
+
+  "dot_3": {
+    "type": "image",
+    "size": [ 9, 10 ],
+    "texture": "textures/uiold_pocket/network/dot_3"
+  },
+
+  "Ping_Green": {
+    "type": "image",
+    "size": [ 9, 10 ],
+    "texture": "textures/uiold_pocket/network/Ping_Green"
+  },
+
+  "Ping_Offline_Red": {
+    "type": "image",
+    "size": [ 9, 10 ],
+    "texture": "textures/uiold_pocket/network/Ping_Offline_Red"
+  },
+
+  "Ping_Red": {
+    "type": "image",
+    "size": [ 9, 10 ],
+    "texture": "textures/uiold_pocket/network/Ping_Red"
+  },
+
+  "Ping_Yellow": {
+    "type": "image",
+    "size": [ 9, 10 ],
+    "texture": "textures/uiold_pocket/network/Ping_Yellow"
+  },
+  
+  /*//// Slider ////*/
+
+  "slider_box_default": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/slider/slider_box_default"
+  },
+
+  "slider_box_hover": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/slider/slider_box_hover"
+  },
+
+  "slider_box_locked": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/slider/slider_box_default",
+    "alpha": 0.5
+  },
+
+  "slider_line": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/slider/slider_line"
+  },
+
+  "slider_step": {
+    "type": "image",
+    "size": [ 4, 7 ],
+    "layer": 2,
+    "texture": "textures/uiold_pocket/slider/slider_step",
+    "offset": "$step_offset"
+  },
+
+  /*//// Text Input ////*/
+
+  "text_input": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/text_input/text_input"
+  },
+
+  "text_input_hover": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/text_input/text_input_hover"
+  },
+
+  "text_input_locked": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/text_input/text_input",
+    "alpha": 0.5
+  },
+
+  /*//// Arrows ////*/
+
+  "down_arrow_icon": {
+    "type": "image",
+    "size": [ 12, 12 ],
+    "texture": "textures/uiold_pocket/arrows/down_arrow_icon"
+  },
+
+  "right_arrow_icon": {
+    "type": "image",
+    "size": [ 12, 12 ],
+    "texture": "textures/uiold_pocket/arrows/right_arrow_icon"
+  },
+
+  /*//// Toggles ////*/
+
+  "toggle_off": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/toggles/toggle_off"
+  },
+  
+  "toggle_off_hover": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/toggles/toggle_off_hover"
+  },
+
+  "toggle_on": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/toggles/toggle_on"
+  },
+  
+  "toggle_on_hover": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/toggles/toggle_on_hover"
+  },
+
+  "toggle_off_locked": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/toggles/toggle_off",
+    "alpha": 0.5
+  },
+
+  "toggle_on_locked": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/toggles/toggle_on",
+    "alpha": 0.5
+  },
+
+  /*//// Panels ////*/
+
+  "dialog_background": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/panels/dialog_background"
+  },
+
+  "main_panel": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/panels/main_panel"
+  },
+
+  "top_bar": {
+    "type": "image",
+    "size": [ "100%", 32 ],
+    "texture": "textures/uiold_pocket/panels/top_bar"
+  },
+
+  "top_bar_gradient": {
+    "type": "image",
+    "size": [ "100%", 32 ],
+    "texture": "textures/uiold_pocket/panels/top_bar_gradient"
+  },
+
+  "scroll_panel": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/panels/scroll_panel"
+  },
+
+  "scroll_box": {
+    "type": "image",
+    "layer": 42,
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/panels/scroll_box"
+  },
+
+  "scroll_track": {
+    "type": "image",
+    "layer": 40,
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/panels/scroll_track"
+  },
+
+  "tab_panel": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/panels/tab_panel"
+  },
+
+  /*//// Cell Images ////*/
+
+  "cell_image_normal_default": {
+    "type": "image",
+    "size": [ 32, 32 ],
+    "texture": "textures/uiold_pocket/cell_images/cell_image_normal_default"
+  },
+
+  "cell_image_slot": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/cell_images/cell_image_slot"
+  },
+
+  /*//// Global ////*/
+
+  "title": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/global/title"
+  },
+
+  "options_background": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/global/options_background",
+    "color": [ 0.25, 0.25, 0.25, 1.0 ],
+    "size": [ "100%", "100%" ],
+    "tiled_scale": [ 2, 2 ],
+    "layer": 1,
+    "tiled": true
+  }
+}

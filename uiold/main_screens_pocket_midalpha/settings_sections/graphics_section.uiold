@@ -1,0 +1,384 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "graphics_pocket_midalpha_old",
+
+  "graphics_section": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "$not_win10_or_osx": "(not $win10_edition and not $osx_edition and not $education_edition)",
+    "controls": [
+      {
+        "title_label@settings_common_pocket_midalpha_old.option_group_text": {
+          "$option_label": "options.video"
+        }
+      },
+      {
+        "brightness_slider@settings_common_pocket_midalpha_old.option_slider": {
+          "ignored": "($is_holographic)",
+          "$option_label": "#gamma_slider_label",
+          "$slider_name": "gamma",
+          "$slider_value_binding_name": "#gamma",
+          "$option_enabled_binding_name": "#gamma_enabled",
+          "$focus_override_up": "FOCUS_OVERRIDE_STOP",
+          "$label_bindings": [
+            {
+              "binding_name": "#gamma_slider_label"
+            }
+          ]
+        }
+      },
+      {
+        "fullscreen_toggle@settings_common_pocket_midalpha_old.option_toggle": {
+          "ignored": "($is_holographic or $not_win10_or_osx)",
+          "$option_label": "options.fullscreen",
+          "$option_binding_name": "#full_screen",
+          "$option_enabled_binding_name": "#full_screen_enabled",
+          "$toggle_name": "full_screen"
+        }
+      },
+      {
+        "option_toggle_hidehand@settings_common_pocket_midalpha_old.option_toggle": {
+          "ignored": "($is_holographic)",
+          "$option_label": "options.hidehand",
+          "$option_binding_name": "#hide_hand",
+          "$option_enabled_binding_name": "#hide_hand_enabled",
+          "$toggle_name": "hide_hand"
+        }
+      },
+      {
+        "hide_paperdoll_toggle@settings_common_pocket_midalpha_old.option_toggle": {
+          "$option_label": "options.hidepaperdoll",
+          "$option_binding_name": "#hide_paperdoll",
+          "$option_enabled_binding_name": "#hide_paperdoll_enabled",
+          "$toggle_name": "hide_paperdoll"
+        }
+      },
+      {
+        "option_toggle_hidehud@settings_common_pocket_midalpha_old.option_toggle": {
+          "ignored": "($is_holographic)",
+          "$option_label": "options.hidehud",
+          "$option_binding_name": "#hide_hud",
+          "$option_enabled_binding_name": "#hide_hud_enabled",
+          "$toggle_name": "hide_hud"
+        }
+      },
+      {
+        "option_toggle_screen_animations@settings_common_pocket_midalpha_old.option_toggle": {
+          "ignored": "($is_holographic)",
+          "$option_label": "options.screenAnimations",
+          "$option_binding_name": "#screen_animations",
+          "$option_enabled_binding_name": "#screen_animations_enabled",
+          "$toggle_name": "screen_animations",
+          "bindings": [
+            {
+              "binding_name": "#screen_animations_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "hud_opacity_slider@settings_common_pocket_midalpha_old.option_slider": {
+          "$option_label": "#interface_opacity_slider_label",
+          "$slider_name": "interface_opacity",
+          "$slider_value_binding_name": "#interface_opacity",
+          "$option_enabled_binding_name": "#interface_opacity_enabled",
+          "$label_bindings": [
+            {
+              "binding_name": "#interface_opacity_slider_label"
+            }
+          ]
+        }
+      },
+      {
+        "safezone_button": {
+          "type": "panel",
+          "size": [ "100%", 23 ],
+          "ignored": "(not $supports_user_configured_safezone or (not $is_pregame))",
+          "controls": [
+            {
+              "action_button@common_buttons_old.main_button": {
+                "$pressed_button_name": "setup_safe_zone_button",
+                "$button_text": "options.safeZone.title",
+                "size": [ 200, 18 ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "offset": [ 20, 0 ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "fov_slider@settings_common_pocket_midalpha_old.option_slider": {
+          "$ignored": "($is_holographic and $is_reality_mode and not $is_pregame)",
+          "$option_label": "#field_of_view_slider_label",
+          "$slider_name": "field_of_view",
+          "$slider_value_binding_name": "#field_of_view",
+          "$option_enabled_binding_name": "#field_of_view_enabled",
+          "$label_bindings": [
+            {
+              "binding_name": "#field_of_view_slider_label"
+            }
+          ]
+        }
+      },
+      {
+        "auto_save_icon_toggle@settings_common_pocket_midalpha_old.option_toggle": {
+          "$option_label": "options.showautosaveicon",
+          "$option_binding_name": "#show_auto_save_icon",
+          "$option_enabled_binding_name": "#show_auto_save_icon_enabled",
+          "$toggle_name": "show_auto_save_icon"
+        }
+      },
+      {
+        "outline_selection_toggle@settings_common_pocket_midalpha_old.option_toggle": {
+          "ignored": "($is_holographic)",
+          "$option_label": "options.classic_box_selection",
+          "$option_binding_name": "#classic_box_selection",
+          "$option_enabled_binding_name": "#classic_box_selection_enabled",
+          "$toggle_name": "classic_box_selection"
+        }
+      },
+      {
+        "player_names_toggle@settings_common_pocket_midalpha_old.option_toggle": {
+          "$option_label": "options.ingamePlayerNames",
+          "$option_binding_name": "#ingame_player_names",
+          "$option_enabled_binding_name": "#ingame_player_names_enabled",
+          "$toggle_name": "ingame_player_names"
+        }
+      },
+      {
+        "view_bobbing_toggle@settings_common_pocket_midalpha_old.option_toggle": {
+          "ignored": "($is_holographic and $is_reality_mode and not $is_pregame)",
+          "$option_label": "options.viewBobbing",
+          "$option_binding_name": "#view_bobbing",
+          "$option_enabled_binding_name": "#view_bobbing_enabled",
+          "$toggle_name": "view_bobbing"
+        }
+      },
+      {
+        "fancy_leaves_toggle@settings_common_pocket_midalpha_old.option_toggle": {
+          "ignored": "($pocket_edition or $is_holographic)",
+          "$option_label": "options.transparentleaves",
+          "$option_binding_name": "#transparent_leaves",
+          "$option_enabled_binding_name": "#transparent_leaves_enabled",
+          "$toggle_name": "transparent_leaves"
+        }
+      },
+      {
+        "fancy_bubbles_toggle@settings_common_pocket_midalpha_old.option_toggle": {
+          "$option_label": "options.bubbleparticles",
+          "$option_binding_name": "#bubble_particles",
+          "$option_enabled_binding_name": "#bubble_particles_enabled",
+          "$toggle_name": "bubble_particles"
+        }
+      },
+      {
+        "render_clouds_toggle@settings_common_pocket_midalpha_old.option_toggle": {
+          "$option_label": "options.renderclouds",
+          "$option_binding_name": "#render_clouds",
+          "$option_enabled_binding_name": "#render_clouds_enabled",
+          "$toggle_name": "render_clouds"
+        }
+      },
+      {
+        "fancy_clouds_toggle@settings_common_pocket_midalpha_old.option_toggle": {
+          "$option_label": "options.fancyskies",
+          "$option_binding_name": "#fancy_skies",
+          "$option_enabled_binding_name": "#fancy_skies_enabled",
+          "$toggle_name": "fancy_skies"
+        }
+      },
+      {
+        "smooth_lighting_toggle@settings_common_pocket_midalpha_old.option_toggle": {
+          "ignored": "($is_holographic)",
+          "$option_label": "options.smooth_lighting",
+          "$option_binding_name": "#smooth_lighting",
+          "$option_enabled_binding_name": "#smooth_lighting_enabled",
+          "$toggle_name": "smooth_lighting"
+        }
+      },
+      {
+        "graphics_toggle@settings_common_pocket_midalpha_old.option_toggle": {
+          "ignored": "($is_holographic)",
+          "$option_label": "options.graphics",
+          "$option_binding_name": "#graphics_toggle",
+          "$option_enabled_binding_name": "#graphics_toggle_enabled",
+          "$toggle_name": "graphics_toggle"
+        }
+      },
+      {
+        "field_of_view_toggle@settings_common_pocket_midalpha_old.option_toggle": {
+          "$option_label": "options.fov.toggle",
+          "$option_binding_name": "#field_of_view_toggle",
+          "$option_enabled_binding_name": "#field_of_view_toggle_enabled",
+          "$toggle_name": "field_of_view_toggle"
+        }
+      },
+
+      {
+        "gui_scale_slider@settings_common_pocket_midalpha_old.option_slider": {
+          "$side_steps_visible": true,
+          "ignored": "($is_holographic)",
+          "$option_label": "#gui_scale_slider_label",
+          "$slider_name": "gui_scale",
+          "$slider_value_binding_name": "#gui_scale",
+          "$option_enabled_binding_name": "#gui_scale_enabled",
+          "$slider_steps_binding_name": "#gui_scale_steps",
+          "$label_bindings": [
+            {
+              "binding_name": "#gui_scale_slider_label"
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#gui_scale_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "ui_profile_dropdown@settings_common_pocket_midalpha_old.option_dropdown": {
+          "ignored": "($console_edition)",
+          "$option_label": "options.uiprofile",
+          "$dropdown_content": "general_section.ui_profile_dropdown_content",
+          "$dropdown_area": "content_area",
+          "$dropdown_name": "ui_profile_dropdown",
+          "$option_enabled_binding_name": "#ui_profile_dropdown_enabled",
+          "$options_dropdown_toggle_label_binding": "#ui_profile_dropdown_toggle_label",
+          "$dropdown_scroll_content_size": [ "100%", "220%" ]
+        }
+      },
+      {
+        "render_distance_slider@settings_common_pocket_midalpha_old.option_slider": {
+          "$side_steps_visible": true,
+          "ignored": "($is_holographic)",
+          "$option_label": "#render_distance_slider_label",
+          "$slider_name": "render_distance",
+          "$slider_value_binding_name": "#render_distance",
+          "$option_enabled_binding_name": "#render_distance_enabled",
+          "$slider_steps_binding_name": "#render_distance_steps",
+          "$label_bindings": [
+            {
+              "binding_name": "#render_distance_slider_label"
+            }
+          ]
+        }
+      },
+      {
+        "msaa_slider@settings_common_pocket_midalpha_old.option_slider": {
+          "$side_steps_visible": true,
+          "ignored": "($is_holographic or $is_win10_arm)",
+          "$option_label": "#msaa_slider_label",
+          "$slider_name": "msaa",
+          "$slider_value_binding_name": "#msaa",
+          "$option_enabled_binding_name": "#msaa_enabled",
+          "$slider_steps_binding_name": "#msaa_steps",
+          "$label_bindings": [
+            {
+              "binding_name": "#msaa_slider_label"
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#show_msaa",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "texel_anti_aliasing_toggle@settings_common_pocket_midalpha_old.option_toggle": {
+          "$option_label": "options.texelAA",
+          "$option_binding_name": "#texel_aa",
+          "$option_enabled_binding_name": "#texel_aa_enabled",
+          "$toggle_name": "texel_aa",
+          "bindings": [
+            {
+              "binding_name": "#show_texel_aa",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "raytracing_toggle@settings_common_pocket_midalpha_old.option_toggle": {
+          "ignored": "($is_holographic or not $pre_release)",
+          "$option_label": "options.raytracing",
+          "$option_binding_name": "#raytracing",
+          "$option_enabled_binding_name": "#raytracing_enabled",
+          "$toggle_name": "raytracing",
+          "bindings": [
+            {
+              "binding_name": "#raytracing_enabled",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "upscaling_toggle@settings_common_pocket_midalpha_old.option_toggle": {
+          "ignored": "($is_holographic or not $pre_release)",
+          "$option_label": "options.upscaling",
+          "$option_binding_name": "#graphics_upscaling",
+          "$option_enabled_binding_name": "#graphics_upscaling_enabled",
+          "$toggle_name": "graphics_upscaling",
+          "bindings": [
+            {
+              "binding_name": "#graphics_upscaling_enabled",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "raytracing_render_distance_slider@settings_common_pocket_midalpha_old.option_slider": {
+          "$side_steps_visible": true,
+          "ignored": "($is_holographic or not $pre_release)",
+          "$option_label": "#raytracing_render_distance_slider_label",
+          "$slider_name": "raytracing_render_distance",
+          "$slider_value_binding_name": "#raytracing_render_distance",
+          "$slider_tts_text_value": "#raytracing_render_distance_text_value",
+          "$option_enabled_binding_name": "#raytracing_render_distance_enabled",
+          "$slider_steps_binding_name": "#raytracing_render_distance_steps",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#show_raytracing_render_distance",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "reset_button": {
+          "type": "panel",
+          "size": [ "100%", 23 ],
+          "ignored": "(not $is_pregame)",
+          "controls": [
+            {
+              "action_button@common_buttons_old.main_button": {
+                "$pressed_button_name": "button.reset_settings",
+                "$button_text": "options.resetSettings",
+                "size": [ 200, 18 ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "offset": [ 20, 0 ],
+                "property_bag": {
+                  "reset_group": "video"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

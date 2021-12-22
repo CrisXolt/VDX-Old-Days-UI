@@ -1,0 +1,212 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "start_desktop_midalpha_old",
+
+  /*//// Skin Panel ////*/
+  
+  "skin_panel": {
+    "type": "panel",
+    "anchor_from": "right_middle",
+    "anchor_to": "top_right",
+    "size": [ "50% - 50px", 80 ],
+    "offset": [ 0, "-5% +26px" ],
+    "controls": [
+      { 
+        "viewer_panel@start.skin_viewer_panel": {
+          "size": [ "100%", "100% +10px" ],
+          "controls": [
+            {
+              "paper_doll_panel": {
+                "type": "panel",
+                "size": [ "100%", "100% - 10px" ],
+      
+                "controls": [
+                  {
+                    "paper_doll": {
+                      "type": "custom",
+                      "renderer": "paper_doll_renderer",
+                      "layer": 2,
+                      "anchor_from": "bottom_middle",
+                      "anchor_to": "bottom_middle",
+                      "rotation": "gesture_x",
+                      "size": [ "100%", "100%" ],
+                      "offset": [ 0, -22 ],
+                      "animation_reset_name": "screen_animation_reset",
+                      "anims": [
+                        "@common.screen_exit_size_animation_push",
+                        "@common.screen_exit_size_animation_pop",
+                        "@common.screen_entrance_size_animation_push",
+                        "@common.screen_entrance_size_animation_pop"
+                      ],
+                      "bindings": [
+                        {
+                          "binding_type": "view",
+                          "source_control_name": "viewer_panel",
+                          "source_property_name": "#gesture_delta_source",
+                          "target_property_name": "#gesture_delta_source"
+                        },
+                        {
+                          "binding_type": "view",
+                          "source_control_name": "viewer_panel",
+                          "source_property_name": "#gesture_mouse_delta_x",
+                          "target_property_name": "#gesture_mouse_delta_x"
+                        },
+                        {
+                          "binding_name": "#is_appearance_visible",
+                          "binding_name_override": "#visible",
+                          "binding_condition": "always"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "appearacne_loading_panel@common_store.progress_loading": {
+                      "$hide_failure_text": true,
+                      "$hide_progress_loading_outline": true,
+                      "$source_control_name": "paper_doll",
+                      "$source_property_name": "(not #visible)"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "paper_doll_name_tag": {
+                "type": "custom",
+                "renderer": "name_tag_renderer",
+                "layer": 2,
+                "anchor_from": "top_middle",
+                "anchor_to": "bottom_middle",
+                "size": [ 8, 8 ],
+                "bindings": [
+                  {
+                    "binding_name": "#playername"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*//// Buttons ////*/
+
+  "start_main_button@common_buttons_old.menu_button": {
+    "size": [ "100%", 20 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left"
+  },
+
+  "play_button@start_desktop_midalpha_old.start_main_button": {
+    "$pressed_button_name": "button.menu_play",
+    "$button_text": "menu.play"
+  },
+
+  "achievements_button@start_desktop_midalpha_old.start_main_button": {
+    "$pressed_button_name": "button.menu_achievements",
+    "$button_text": "menu.achievements"
+  },
+
+  "settings_button@start_desktop_midalpha_old.start_main_button": {
+    "size": [ 49, 20 ],
+    "$pressed_button_name": "button.menu_settings",
+    "$button_text": "menu.options"
+  },
+
+  "profile_button@start_desktop_midalpha_old.start_main_button": {
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "size": [ 49, 20 ],
+    "$pressed_button_name": "button.to_profile_screen",
+    "$button_text": "menu.skins"
+  },
+
+  "stacked_row": {
+    "type": "panel",
+    "size": [ "100%", 22 ]
+  },
+
+  "main_buttons_panel": {
+    "type": "stack_panel",
+    "anchor_from": "center",
+    "anchor_to": "top_middle",
+    "offset": [ 0, "-5%" ],
+    "size": [ 100, "100%-108px" ],
+    "controls": [
+      { "stacked_row_0@start_desktop_midalpha_old.stacked_row": { "controls": [ { "play_button@start_desktop_midalpha_old.play_button": { } } ] } },
+      { "stacked_row_1@start_desktop_midalpha_old.stacked_row": { "controls": [ { "achievements_button@start_desktop_midalpha_old.achievements_button": { } } ] } },
+      { "stacked_row_2@start_desktop_midalpha_old.stacked_row": { "controls": [ { "settings_button@start_desktop_midalpha_old.settings_button": { } }, { "profile_button@start_desktop_midalpha_old.profile_button": { } } ] } },
+      { "gamepad_helpers@start_desktop_midalpha_old.stacked_row": { "size": [ "100%", "fill" ], "controls": [ { "gamepad_helpers@start.gamepad_helpers": {} } ] } }
+    ]
+  },
+
+  /*//// Panels ////*/
+
+  "title_panel": {
+    "type": "panel",
+    "offset":  [0, "10%"],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": [ "55%", "18.85%x" ],
+    "controls": [
+      { 
+        "title_image@old_desktop_textures_common.titleOriginal": {
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "layer": 1
+        }
+      },
+      {
+        "splash_text@common_art.splash_text": {
+          "offset": [ -8, 10 ],
+          "layer": 2
+        }
+      }
+    ]
+  },
+
+  /*//// Screens ////*/
+  
+  "start_screen_content": {
+    "type": "panel",
+    "controls": [
+      { 
+        "version_text@start_pocket_midalpha_old.version_text": {
+          "anchor_from": "bottom_right",
+          "anchor_to": "bottom_right",
+          "offset": [ -2, -1 ]
+        }
+      },
+      { "copyright_text@start_pocket_midalpha_old.copyright_text": { } },
+      { "title_panel_content@start_desktop_midalpha_old.title_panel": { } },
+      { "main_buttons_panel@start_desktop_midalpha_old.main_buttons_panel": { } },
+      { "skin_panel@start_desktop_midalpha_old.skin_panel": { "layer": 1 } },
+      {
+        "feedback_button@common_buttons_old.menu_button": {
+          "size": [ 24, 24 ],
+          "$pressed_button_name": "button.menu_open_uri",
+          "$button_content": "old_desktop_textures_common.feedback_icon",
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+          "offset": [ 21, -24 ],
+          "property_bag": {
+            "#hyperlink": "https://aka.ms/minecraftfb"
+          }
+        }
+      },
+      {
+        "store_button@common_buttons_old.menu_button": {
+          "size": [ 24, 24 ],
+          "$pressed_button_name": "button.menu_store",
+          "$button_content": "old_desktop_textures_common.store_icon",
+          "anchor_from": "bottom_right",
+          "anchor_to": "bottom_right",
+          "offset": [ -21, -24 ]
+        }
+      }
+    ]
+  }
+}
