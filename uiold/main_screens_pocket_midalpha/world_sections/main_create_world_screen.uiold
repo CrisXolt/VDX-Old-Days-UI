@@ -107,7 +107,7 @@
           "bindings": "$not_advance_bindings",
           "controls": [
             { 
-              "option_label_control@world_settings_common_pocket_midalpha_old.option_label_control": {
+              "creative_desc@world_settings_common_pocket_midalpha_old.option_label_control": {
                 "size": [ "100%", "default" ],
                 "$option_label": "createWorldScreen.gameMode.creative.desc",
                 "bindings": [
@@ -119,12 +119,37 @@
               } 
             },
             { 
-              "option_label_control@world_settings_common_pocket_midalpha_old.option_label_control": {
+              "survival_desc@world_settings_common_pocket_midalpha_old.option_label_control": {
                 "size": [ "100%", "default" ],
                 "$option_label": "createWorldScreen.gameMode.survival.desc",
                 "bindings": [
                   {
                     "binding_name": "#world_game_mode_radio_survival",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              } 
+            },
+            { 
+              "adventure_desc_1@world_settings_common_pocket_midalpha_old.option_label_control": {
+                "size": [ "100%", "default" ],
+                "$option_label": "selectWorld.gameMode.adventure.line1",
+                "bindings": [
+                  {
+                    "binding_name": "#world_game_mode_radio_adventure",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              } 
+            },
+            { 
+              "adventure_desc_2@world_settings_common_pocket_midalpha_old.option_label_control": {
+                "size": [ "100%", "default" ],
+                "offset": [ 1, 10 ],
+                "$option_label": "selectWorld.gameMode.adventure.line2",
+                "bindings": [
+                  {
+                    "binding_name": "#world_game_mode_radio_adventure",
                     "binding_name_override": "#visible"
                   }
                 ]
@@ -213,7 +238,7 @@
           "controls": [
             {
               "survival_toggle@world_settings_common_pocket_midalpha_old.dropdown_radio_button": {
-                "size": [ "50%-1px", 20 ],
+                "size": [ "fill", 20 ],
                 "$toggle_state_binding_name": "#world_game_mode_radio_survival",
                 "$button_text": "createWorldScreen.gameMode.survival"
               }
@@ -221,9 +246,27 @@
             { "fill_panel_1": { "type": "panel", "size": [ 2, 1 ] } },
             {
               "creative_toggle@world_settings_common_pocket_midalpha_old.dropdown_radio_button": {
-                "size": [ "50%-1px", 20 ],
+                "size": [ "fill", 20 ],
                 "$toggle_state_binding_name": "#world_game_mode_radio_creative",
                 "$button_text": "createWorldScreen.gameMode.creative"
+              }
+            },
+            { 
+              "adventure_panel": {
+                "type": "panel",
+                "size": [ "fill", 20 ],
+                "ignored": "($is_world_create or $trial)",
+                "controls": [
+                  {
+                    "adventure_toggle@world_settings_common_pocket_midalpha_old.dropdown_radio_button": {
+                      "anchor_from": "top_right",
+                      "anchor_to": "top_right",
+                      "size": [ "100%-2px", 20 ],
+                      "$toggle_state_binding_name": "#world_game_mode_radio_adventure",
+                      "$button_text": "createWorldScreen.gameMode.adventure"
+                    }
+                  }
+                ]
               }
             }
           ]
@@ -248,6 +291,7 @@
                 "$with_button": true,
                 "$button_content": "old_pocket_textures_common.right_arrow_icon",
                 "$option_label": "createWorldScreen.levelSeed",
+                "$option_place_holder_text": "selectWorld.seedInfo",
                 "$option_binding_name": "#world_seed",
                 "$option_enabled_binding_name": "#world_seed_enabled",
                 "$text_box_name": "world_seed_text_box",
@@ -288,7 +332,7 @@
           "controls": [
             {
               "survival_toggle@world_settings_common_pocket_midalpha_old.dropdown_radio_button": {
-                "size": [ "50%-1px", 26 ],
+                "size": [ "fill", 26 ],
                 "$toggle_state_binding_name": "#world_game_mode_radio_survival",
                 "$button_text": "createWorldScreen.gameMode.survival"
               }
@@ -296,25 +340,65 @@
             { "fill_panel_1": { "type": "panel", "size": [ 2, 1 ] } },
             {
               "creative_toggle@world_settings_common_pocket_midalpha_old.dropdown_radio_button": {
-                "size": [ "50%-1px", 26 ],
+                "size": [ "fill", 26 ],
                 "$toggle_state_binding_name": "#world_game_mode_radio_creative",
                 "$button_text": "createWorldScreen.gameMode.creative"
+              }
+            },
+            { 
+              "adventure_panel": {
+                "type": "panel",
+                "size": [ "fill", 26 ],
+                "ignored": "($is_world_create or $trial)",
+                "controls": [
+                  {
+                    "adventure_toggle@world_settings_common_pocket_midalpha_old.dropdown_radio_button": {
+                      "anchor_from": "top_right",
+                      "anchor_to": "top_right",
+                      "size": [ "100%-2px", 26 ],
+                      "$toggle_state_binding_name": "#world_game_mode_radio_adventure",
+                      "$button_text": "createWorldScreen.gameMode.adventure"
+                    }
+                  }
+                ]
               }
             }
           ]
         }
       },
       { "padding": { "type": "panel", "size": [ "100%", 10 ] } },
-      {
-        "create_or_play_button@common_buttons_old.main_button": {
+      { 
+        "create_or_play_panel": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
           "size": [ "100%", 26 ],
-          "$button_text": "menu.play",
-          "$pressed_button_name": "play_world_button",
-          "variables": {
-            "requires": "(not $is_world_edit)",
-            "$button_text": "createWorldScreen.create",
-            "$pressed_button_name": "create_world_button"
-          }
+          "controls": [
+            {
+              "create_or_play_button@common_buttons_old.main_button": {
+                "size": [ "fill", 26 ],
+                "$button_text": "menu.play",
+                "$pressed_button_name": "play_world_button",
+                "variables": {
+                  "requires": "(not $is_world_edit)",
+                  "$button_text": "createWorldScreen.create",
+                  "$pressed_button_name": "create_world_button"
+                }
+              }
+            },
+            {
+              "play_on_realms_button@common_buttons_old.secondary_button": {
+                "size": [ 26, 26 ],
+                "$button_content": "old_pocket_textures_common.realm_icon",
+                "$pressed_button_name": "play_world_on_realm_button",        
+                "bindings": [
+                  {
+                    "binding_name": "#create_on_realm_visible",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            }
+          ]
         }
       }
     ]

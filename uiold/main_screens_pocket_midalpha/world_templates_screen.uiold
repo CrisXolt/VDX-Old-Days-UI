@@ -1,0 +1,513 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "world_templates_pocket_midalpha_old",
+
+  ////*/ Scrolling Panel Content /*////
+
+  "template_scroll_panel": {
+    "type": "panel",
+    "size": [ "100%", "100%c" ],
+    "controls": [
+      {
+        "stack_panel": {
+          "type": "stack_panel",
+          "orientation": "vertical",
+          "size": [ "100%-2px", "100%c" ],
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "controls": [
+            {
+              "generate_random_button@common_buttons_old.main_button": {
+                "size": [ "100%", 32 ],
+                "$pressed_button_name": "button.generate_random",
+                "$button_text": "selectTemplate.generateRandom"
+              }
+            },
+            {
+              "generate_random_button_bottom_padding": {
+                "type": "panel",
+                "size": [ "100%", 2 ]
+              }
+            },
+            {
+              "imported_templates_panel": {
+                "type": "stack_panel",
+                "size": [ "100%", "100%c" ],
+                "bindings": [
+                  {
+                    "binding_name": "#custom_template_list_visible",
+                    "binding_name_override": "#visible"
+                  }
+                ],
+                "controls": [
+                  {
+                    "label_panel": {
+                      "type": "panel",
+                      "size": [ "100%", 14 ],
+                      "controls": [
+                        {
+                          "label@common_old.global_label": {
+                            "shadow": true,
+                            "size": [ "default", 10 ],
+                            "anchor_from": "left_middle",
+                            "anchor_to": "left_middle",
+                            "text": "selectTemplate.importedTemplates",
+                            "layer": 10
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  { 
+                    "custom_world_template_item_grid@world_templates.custom_world_template_item_grid": {
+                      "grid_item_template": "world_templates_pocket_midalpha_old.world_template_item"
+                    }
+                  },
+                  { 
+                    "inventory_button@common_buttons_old.main_button": {
+                      "size": [ "100%", 32 ],
+                      "$pressed_button_name": "button.more_custom_templates",
+                      "$button_text": "selectTemplate.seeMore"
+                    }
+                  },
+                  {
+                    "bottom_padding": {
+                      "type": "panel",
+                      "size": [ "100%", 4 ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "my_world_templates_panel": {
+                "type": "stack_panel",
+                "size": [ "100%", "100%c" ],
+                "bindings": [
+                  {
+                    "binding_name": "#template_list_visible",
+                    "binding_name_override": "#visible"
+                  }
+                ],
+                "controls": [
+                  {
+                    "label_panel": {
+                      "type": "panel",
+                      "size": [ "100%", 14 ],
+                      "controls": [
+                        {
+                          "label@common_old.global_label": {
+                            "shadow": true,
+                            "size": [ "default", 10 ],
+                            "anchor_from": "left_middle",
+                            "anchor_to": "left_middle",
+                            "text": "selectTemplate.myTemplates",
+                            "layer": 10
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  { 
+                    "world_template_item_grid@world_templates.world_template_item_grid": {
+                      "grid_item_template": "world_templates_pocket_midalpha_old.world_template_item"
+                    }
+                  },
+                  { 
+                    "inventory_button@common_buttons_old.main_button": {
+                      "size": [ "100%", 32 ],
+                      "$pressed_button_name": "button.inventory",
+                      "$button_text": "selectTemplate.seeMore"
+                    }
+                  },
+                  {
+                    "bottom_padding": {
+                      "type": "panel",
+                      "size": [ "100%", 4 ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "features_realms_plus_templates_panel": {
+                "type": "stack_panel",
+                "size": [ "100%", "100%c" ],
+                "bindings": [
+                  {
+                    "binding_name": "#realms_plus_list_visible",
+                    "binding_name_override": "#visible"
+                  }
+                ],
+                "controls": [
+                  {
+                    "label_panel": {
+                      "type": "panel",
+                      "size": [ "100%", 14 ],
+                      "controls": [
+                        {
+                          "label@common_old.global_label": {
+                            "shadow": true,
+                            "size": [ "default", 10 ],
+                            "anchor_from": "left_middle",
+                            "anchor_to": "left_middle",
+                            "text": "selectTemplate.realmsPlus",
+                            "layer": 10
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  { 
+                    "realms_plus_template_item_grid@world_templates.realms_plus_template_item_grid": {
+                      "grid_item_template": "world_templates_pocket_midalpha_old.world_template_item"
+                    }
+                  },
+                  { 
+                    "inventory_button@common_buttons_old.main_button": {
+                      "size": [ "100%", 32 ],
+                      "$pressed_button_name": "button.more_realms_plus_templates",
+                      "$button_text": "selectTemplate.seeMore"
+                    }
+                  },
+                  {
+                    "bottom_padding": {
+                      "type": "panel",
+                      "size": [ "100%", 4 ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "features_marketplace_templates_panel": {
+                "type": "stack_panel",
+                "size": [ "100%", "100%c" ],
+                "bindings": [
+                  {
+                    "binding_name": "#suggested_content_visible",
+                    "binding_name_override": "#visible"
+                  }
+                ],
+                "controls": [
+                  {
+                    "label_panel": {
+                      "type": "panel",
+                      "size": [ "100%", 14 ],
+                      "controls": [
+                        {
+                          "label@common_old.global_label": {
+                            "shadow": true,
+                            "size": [ "default", 10 ],
+                            "anchor_from": "left_middle",
+                            "anchor_to": "left_middle",
+                            "text": "selectTemplate.suggestedContent.title",
+                            "layer": 10
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "suggested_template_grid": {
+                      "type": "grid",
+                      "size": [ "100%", "default" ],
+                      "layer": 1,
+                      "grid_item_template": "world_templates_pocket_midalpha_old.world_template_item",
+                      "grid_dimension_binding": "#suggested_offers_item_grid_dimension",
+                      "collection_name": "#suggested_offers_collection",
+                      "$collection_name": "#suggested_offers_collection",
+                      "$collection_prefix": "offer",
+                      "$pressed_button_name": "button.select_offer",
+                      "$world_template_description_binding_name": "#created_by_label",
+                      "$world_template_name_binding_name": "#title_label",
+                      "$screenshot_texture_name": "#offer_texture_name",
+                      "$screenshot_file_system": "#offer_texture_file_system",
+                      "$screenshot_zip_folder_binding_type": "none",
+                      "$lock_ignore": false,
+                      "bindings": [
+                        {
+                          "binding_name": "(not #realms_info_visible)",
+                          "binding_name_override": "#visible"
+                        },
+                        {
+                          "binding_name": "#suggested_offers_item_grid_dimension"
+                        }
+                      ]
+                    }
+                  },
+                  { 
+                    "see_more_templates_button@common_buttons_old.main_button": {
+                      "size": [ "100%", 32 ],
+                      "$pressed_button_name": "button.more_suggested_content_offers",
+                      "$button_text": "selectTemplate.seeMore"
+                    }
+                  },
+                  {
+                    "bottom_padding": {
+                      "type": "panel",
+                      "size": [ "100%", 4 ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  ////*/ Grid Item /*////
+
+  "world_template_item": {
+    "type": "stack_panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "layer": 1,
+    "size": [ "100%", 32 ],
+    "orientation": "horizontal",
+    "controls": [
+      {
+        "world_template_item_button@common_buttons_old.main_button": {
+          "size": [ "100%", 32 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "focus_change_left": "FOCUS_OVERRIDE_STOP",
+          "focus_change_right": "FOCUS_OVERRIDE_STOP",
+          "layer": 1,
+          "$button_content": "world_templates_pocket_midalpha_old.world_template_content_panel",
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "$collection_name",
+              "binding_collection_prefix": "$collection_prefix"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "world_template_content_panel": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "size": [ "100%-10px", "100%-8px" ],
+    "controls": [
+      {
+        "world_template_screenshot@world_templates.world_template_screenshot": {
+          "texture": "textures/uiold_pocket/buttons/default_indent"
+        }
+      },
+      {
+        "padding_0": {
+          "type": "panel",
+          "size": [ 5, 0 ]
+        }
+      },
+      {
+        "world_template_text_panel": {
+          "type": "panel",
+          "size": [ "fill", "100%" ],
+          "controls": [
+            {
+              "top_text": {
+                "type": "stack_panel",
+                "orientation": "horizontal",
+                "size": [ "100%", "50%" ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "controls": [
+                  {
+                    "world_template_name@common_old.global_label": {
+                      "shadow": true,
+                      "size": [ "fill", 9 ],
+                      "color": "$text_color",
+                      "layer": 1,
+                      "text": "$world_template_name_binding_name",
+                      "$world_template_name_binding_name|default": "#world_template_name",
+                      "bindings": [
+                        {
+                          "binding_name": "$world_template_name_binding_name",
+                          "binding_type": "collection",
+                          "binding_collection_name": "$collection_name",
+                          "binding_condition": "visible"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "download_text_label@common_old.global_label": {
+                      "shadow": true,
+                      "size": [ "default", 9 ],
+                      "color": [ 0.75, 0.75, 0.75 ],
+                      "layer": 1,
+                      "text": "#template_download_text",
+                      "bindings": [
+                        {
+                          "binding_name": "#template_download_text",
+                          "binding_type": "collection",
+                          "binding_collection_name": "$collection_name",
+                          "binding_condition": "visible"
+                        },
+                        {
+                          "binding_name": "#download_text_visible",
+                          "binding_type": "collection",
+                          "binding_collection_name": "$collection_name",
+                          "binding_name_override": "#visible"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "bottom_text": {
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "type": "stack_panel",
+                "orientation": "horizontal",
+                "size": [ "100%", "50%" ],
+                "controls": [
+                  {
+                    "world_template_description@common_old.global_label": {
+                      "shadow": true,
+                      "size": [ "default", 9 ],
+                      "offset": [ 0, -1 ],
+                      "color": [ 0.75, 0.75, 0.75 ],
+                      "layer": 1,
+                      "text": "$world_template_description_binding_name",
+                      "$world_template_description_binding_name|default": "#world_template_description",
+                      "bindings": [
+                        {
+                          "binding_name": "$world_template_description_binding_name",
+                          "binding_type": "collection",
+                          "binding_collection_name": "$collection_name",
+                          "binding_condition": "visible"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "padding_0": {
+                      "type": "panel",
+                      "size": [ "fill", 0 ]
+                    }
+                  },
+                  {
+                    "world_template_version@common_old.global_label": {
+                      "shadow": true,
+                      "size": [ "default", 9 ],
+                      "offset": [ 0, -1 ],
+                      "color": [ 0.75, 0.75, 0.75 ],
+                      "layer": 1,
+                      "text": "#world_template_version",
+                      "bindings": [
+                        {
+                          "binding_name": "#world_template_version",
+                          "binding_type": "collection",
+                          "binding_collection_name": "$collection_name",
+                          "binding_condition": "visible"
+                        },
+                        {
+                          "binding_name": "(not #lock_visible)",
+                          "binding_type": "collection",
+                          "binding_collection_name": "$collection_name",
+                          "binding_name_override": "#visible"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "lock_panel": {
+          "type": "panel",
+          "size": [ "100%c + 4px", "100%" ],
+          "controls": [
+            { "lock_icon@old_pocket_textures_common.lock_icon": { "color": "$text_color" } }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#lock_visible",
+              "binding_collection_name": "$collection_name",
+              "binding_type": "collection",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  ////*/ Panels /*////
+
+  "top_bar": {
+    "type": "panel",
+    "size": [ "100%-8px", "100%-8px" ],
+    "controls": [
+      {
+        "back_button@common_buttons_old.main_button": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "size": [ "100%c", "100%" ],
+          "$button_size": [ "100%c", "100%" ],
+          "$button_texture_size": [ "100%c+16px", "100%" ],
+          "$pressed_button_name": "button.menu_exit",
+          "$button_text": "gui.back"
+        }
+      },
+      {
+        "title_label@common_old.global_label": {
+          "layer": 10,
+          "shadow": true,
+          "size": [ "default", "default" ],
+          "color": "$main_menu_button_default_color",
+          "text": "selectTemplate.create"
+        }
+      }
+    ]
+  },
+
+  "main_panel_content@old_pocket_textures_common.dialog_background": {
+    "size": [ "100%-6px", "100%-6px" ],
+    "controls": [
+      {
+        "scrolling_panel@common.scrolling_panel": {
+          "layer": 1,
+          "$scrolling_pane_size": [ "100%", "100%" ],
+          "$scrolling_content": "world_templates_pocket_midalpha_old.template_scroll_panel",
+          "$show_background": false,
+      
+          "$scroll_size": [ 12, "100%" ],
+          "$scroll_track_image_control": "old_pocket_textures_common.scroll_track",
+          "$scroll_box_mouse_image_control": "old_pocket_textures_common.scroll_box",
+      
+          "size": [ "100% - 10px", "100% - 10px" ],
+          "anchor_from": "center",
+          "anchor_to": "center"
+        }
+      }
+    ]
+  },
+  
+  ////*/ Screen /*////
+
+  "world_templates_picker_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "main_control@common_menus_old.menu_screen_template": {
+          "$top_bar_panel_conent": "world_templates_pocket_midalpha_old.top_bar",
+          "$menu_panel_conent": "world_templates_pocket_midalpha_old.main_panel_content"
+        }
+      }
+    ]
+  }
+}

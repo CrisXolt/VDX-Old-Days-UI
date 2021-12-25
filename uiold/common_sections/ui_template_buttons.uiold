@@ -28,7 +28,7 @@
   },
 
   "classic_button_locked@common_buttons_old.locked_base": {
-    "$button_texture": "old_pocket_textures_common.main_button_locked"
+    "$button_texture": "old_pocket_textures_common.classic_button_default"
   },
 
   /*//// Main Button ////*/
@@ -63,6 +63,10 @@
     "$button_texture": "old_pocket_textures_common.main_button_pressed_hover"
   },
 
+  "main_button_pressed_locked@common_buttons_old.locked_base": {
+    "$button_texture": "old_pocket_textures_common.main_button_pressed_locked"
+  },
+
   /*//// Secondary Button ////*/
 
   "secondary_button@common.button": {
@@ -88,7 +92,7 @@
   },
 
   "secondary_button_locked@common_buttons_old.locked_base": {
-    "$button_texture": "old_pocket_textures_common.main_button_locked"
+    "$button_texture": "old_pocket_textures_common.secondary_button_locked"
   },
 
   "secondary_button_checked@common_buttons_old.default_base": {
@@ -97,6 +101,10 @@
 
   "secondary_button_checked_hover@common_buttons_old.hover_base": {
     "$button_texture": "old_pocket_textures_common.secondary_button_checked_hover"
+  },
+
+  "secondary_button_checked_locked@common_buttons_old.locked_base": {
+    "$button_texture": "old_pocket_textures_common.secondary_button_checked_locked"
   },
 
   /*//// Desktop menu Button ////*/
@@ -202,6 +210,7 @@
   },
 
   "button_label@common_old.global_label": {
+    "locked_alpha": 0.5,
     "shadow": true,
     "size": [ "default", "default" ],
     "color": "$text_color",

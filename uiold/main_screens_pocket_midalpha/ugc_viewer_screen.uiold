@@ -1,0 +1,190 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "ugc_viewer_pocket_midalpha_old",
+
+  "button_content": {
+    "type": "panel",
+    "size": [ "100% - 6px", "100% - 6px" ],
+    "controls": [
+      {
+        "stack_panel": {
+          "type": "stack_panel",
+          "orientation": "vertical",
+          "size": [ "100%", "100%" ],
+          "controls": [
+            {
+              "world_label@common_old.global_label": {
+                "color": "$text_color",
+                "shadow": true,
+                "text": "#text",
+                "size": [ "100%", "default" ],
+                "bindings": [
+                  {
+                    "binding_type": "collection",
+                    "binding_collection_name": "ugc_items",
+                    "binding_name": "#text"
+                  }
+                ]
+              }
+            },
+            {
+              "world_panel": {
+                "type": "panel",
+                "size": [ "100%", "fill" ],
+                "controls": [
+                  {
+                    "background": {
+                      "type": "image",
+                      "texture": "textures/ui/White",
+                      "size": [ "177.78%y", "100%" ],
+                      "layer": 1,
+                      "color": "$text_color",
+                      "anchor_from": "bottom_middle",
+                      "anchor_to": "bottom_middle",
+                      "controls": [
+                        {
+                          "world_image@ugc_viewer.world_image": {
+                            "layer": 1
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "grid_item": {
+    "type": "panel",
+    "size": [ "33.33%", "56.25%x + 15px" ],
+    "controls": [
+      {
+        "button@common_buttons_old.main_button": {
+          "$pressed_button_name": "button.ugc_item",
+          "size": [ "100% - 2px", "100% - 2px" ],
+          "$button_content": "ugc_viewer_pocket_midalpha_old.button_content",
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "ugc_items"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  
+  "scrolling_content": {
+    "type": "panel",
+    "size": [ "100%", "100%c" ],
+    "$scrolling_content_anchor_from": "top_middle",
+    "$scrolling_content_anchor_to": "top_middle",
+    "controls": [
+      { 
+        "grid_content@ugc_viewer.grid_content": {
+          "size": [ "100%-2px", "default" ],
+          "grid_item_template": "ugc_viewer_pocket_midalpha_old.grid_item"
+        }
+      }
+    ]
+  },
+
+  ////*/ Panels /*////
+
+  "top_bar": {
+    "type": "panel",
+    "size": [ "100%-8px", "100%-8px" ],
+    "controls": [
+      {
+        "back_button@common_buttons_old.main_button": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "size": [ "100%c", "100%" ],
+          "$button_size": [ "100%c", "100%" ],
+          "$button_texture_size": [ "100%c+16px", "100%" ],
+          "$pressed_button_name": "button.menu_exit",
+          "$button_text": "gui.back"
+        }
+      },
+      {
+        "title_label@common_old.global_label": {
+          "layer": 10,
+          "shadow": true,
+          "size": [ "default", "default" ],
+          "color": "$main_menu_button_default_color",
+          "text": "seedPicker.title"
+        }
+      }
+    ]
+  },
+
+  "main_panel_content@old_pocket_textures_common.dialog_background": {
+    "size": [ "100% -14px", "100% -6px" ],
+    "controls": [
+      {
+        "main_panel": {
+          "type": "stack_panel",
+          "size": [ "100% - 10px", "100% - 10px" ],
+          "orientation": "vertical",
+          "controls": [
+            { "padding_0@ugc_viewer.padding": { } },
+            {
+              "centerer_panel_0": {
+                "type": "panel",
+                "size": [ "100%", 20 ],
+                "controls": [
+                  { 
+                    "search_box@ugc_viewer.search_box": {
+                      "$place_holder_text_color": [ 0.5, 0.5, 0.5 ],
+                      "$text_background_default": "old_pocket_textures_common.text_input",
+                      "$text_background_hover": "old_pocket_textures_common.text_input_hover",
+                      "$text_background_locked": "old_pocket_textures_common.text_input_locked"
+                    }
+                  }
+                ]
+              }
+            },
+            { "padding_1@ugc_viewer.padding": { "$padding_size": [ 0, 1 ] } },
+            {
+              "scrolling_panel@common.scrolling_panel": {
+                "layer": 1,
+                "$scrolling_pane_size": [ "100%", "100%" ],
+                "$scrolling_content": "ugc_viewer_pocket_midalpha_old.scrolling_content",
+                "$show_background": false,
+            
+                "$scroll_size": [ 12, "100%" ],
+                "$scroll_track_image_control": "old_pocket_textures_common.scroll_track",
+                "$scroll_box_mouse_image_control": "old_pocket_textures_common.scroll_box",
+            
+                "size": [ "100%", "fill" ],
+                "anchor_from": "center",
+                "anchor_to": "center"
+              }
+            },
+            { "padding_2@ugc_viewer.padding": { "$padding_size": [ 0, 1 ] } }
+          ]
+        }
+      }
+    ]
+  },
+  
+  ////*/ Screen /*////
+
+  "screen_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "main_control@common_menus_old.menu_screen_template": {
+          "$top_bar_panel_conent": "ugc_viewer_pocket_midalpha_old.top_bar",
+          "$menu_panel_conent": "ugc_viewer_pocket_midalpha_old.main_panel_content"
+        }
+      }
+    ]
+  }
+}

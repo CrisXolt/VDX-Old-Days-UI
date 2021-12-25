@@ -1,0 +1,254 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "add_external_server_pocket_midalpha_old",
+
+  ////*/ Panels /*////
+
+  "top_bar": {
+    "type": "panel",
+    "controls": [
+      {
+        "title_label@common_old.global_label": {
+          "layer": 10,
+          "shadow": true,
+          "size": [ "default", "default" ],
+          "color": "$main_menu_button_default_color",
+          "text": "#title_text",
+          "bindings": [
+            {
+              "binding_name": "#title_text",
+              "binding_condition": "once"
+            }
+          ]
+        }
+      },
+      {
+        "inside_stack_panel": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "100%-8px", "100%-8px" ],
+          "controls": [
+            {
+              "back_button@common_buttons_old.main_button": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "size": [ "100%c", "100%" ],
+                "$button_size": [ "100%c", "100%" ],
+                "$button_texture_size": [ "100%c+16px", "100%" ],
+                "$pressed_button_name": "button.menu_exit",
+                "$button_text": "gui.back"
+              }
+            },
+            {
+              "fill_padding": {
+                "type": "panel",
+                "size": [ "fill", "100%" ]
+              }
+            },
+            {
+              "remove_button@common_buttons_old.main_button": {
+                "size": [ "100%c", "100%" ],
+                "$button_size": [ "100%c", "100%" ],
+                "$button_texture_size": [ "100%c+16px", "100%" ],
+                "$button_content": "common_buttons_old.button_label_remove",
+                "$pressed_button_name": "button.remove_button",
+                "$button_text": "addExternalServerScreen.removeButtonLabel",
+                "visible": "($edit_mode)"
+              }
+            },
+            {
+              "play_button@common_buttons_old.main_button": {
+                "size": [ "100%c", "100%" ],
+                "$button_size": [ "100%c", "100%" ],
+                "$button_texture_size": [ "100%c+16px", "100%" ],
+                "$pressed_button_name": "button.play_button",
+                "$button_text": "addExternalServerScreen.playButtonLabel",
+                "ignored": "$edit_mode",
+                "bindings": [
+                  {
+                    "binding_name": "#play_button_enabled",
+                    "binding_name_override": "#enabled"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "text_edit_group": {
+    "type": "panel",
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "size": [ "100%", 31 ],
+    "$max_length|default": 30,
+    "$text_type|default": "ExtendedASCII",
+    "controls": [
+      {
+        "name_label@common_old.global_label": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "layer": 2,
+          "shadow": true,
+          "color": "$main_menu_button_default_color",
+          "size": [ "100%", "10px" ],
+          "text": "$header"
+        }
+      },
+      {
+        "edit_box@common.text_edit_box": {
+          "layer": 4,
+          "$place_holder_text_color": [ 0.5, 0.5, 0.5 ],
+          "$text_background_default": "old_pocket_textures_common.text_input",
+          "$text_background_hover": "old_pocket_textures_common.text_input_hover",
+          "$text_background_locked": "old_pocket_textures_common.text_input_locked",
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+          "size": [ "100%", 18 ],
+          "$text_box_name": "$text_box_name",
+          "$text_edit_box_content_binding_name": "$content_binding_name",
+          "max_length": "$max_length",
+          "text_type": "$text_type",
+          "$place_holder_text": "$placeholder_label",
+          "$text_edit_box_binding_condition": "once"
+        }
+      }
+    ]
+  },
+
+  "main_panel_content@old_pocket_textures_common.dialog_background": {
+    "size": [ "100% -14px", "100% -6px" ],
+    "controls": [
+      {
+        "inner_panel": {
+          "type": "panel",
+          "size": [ "100% -10px", "100% -8px" ],
+          "controls": [
+            { 
+              "left_panel": {
+                "type": "stack_panel",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "size": [ "50%", "100%" ],
+                "controls": [
+                  {
+                    "name_edit@add_external_server_pocket_midalpha_old.text_edit_group": {
+                      "$header": "addExternalServerScreen.nameTextBoxLabel",
+                      "$placeholder_label": "addExternalServerScreen.namePlaceholder",
+                      "$text_box_name": "#name_text_box",
+                      "$max_length": 16,
+                      "$content_binding_name": "#name_text_box_content"
+                    }
+                  },
+                  { "fill_panel_1": { "type": "panel", "size": [ 1, 5 ] } },
+                  {
+                    "ip_edit@add_external_server_pocket_midalpha_old.text_edit_group": {
+                      "$header": "addExternalServerScreen.ipTextBoxLabel",
+                      "$placeholder_label": "addExternalServerScreen.ipPlaceholder",
+                      "$text_box_name": "#ip_text_box",
+                      "$max_length": 256,
+                      "$content_binding_name": "#ip_text_box_content"
+                    }
+                  },
+                  { "fill_panel_2": { "type": "panel", "size": [ 1, 5 ] } },
+                  {
+                    "port_edit@add_external_server_pocket_midalpha_old.text_edit_group": {
+                      "$header": "addExternalServerScreen.portTextBoxLabel",
+                      "$placeholder_label": "",
+                      "$max_length": 6,
+                      "$text_type": "NumberChars",
+                      "$text_box_name": "#port_text_box",
+                      "$content_binding_name": "#port_text_box_content"
+                    }
+                  },
+                  { "fill_panel_3": { "type": "panel", "size": [ 1, "fill" ] } }
+                ]
+              }
+            },
+            { 
+              "right_panel": {
+                "type": "panel",
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "size": [ "50%", "100%" ],
+                "controls": [
+                  {
+                    "desc_label@common_old.global_label": {
+                      "anchor_from": "top_middle",
+                      "anchor_to": "top_middle",
+                      "layer": 2,
+                      "shadow": true,
+                      "color": "$main_menu_button_default_color",
+                      "size": [ "100%-20px", "32px" ],
+                      "text": "externalServerScreen.label"
+                    }
+                  },
+                  {
+                    "save_button@common_buttons_old.main_button": {
+                      "anchor_from": "top_middle",
+                      "anchor_to": "top_middle",
+                      "offset": [ 0, 51 ],
+                      "layer": 3,
+                      "size": [ 91, 26 ],
+                      "$pressed_button_name": "button.save_button",
+                      "$button_text": "addExternalServerScreen.saveButtonLabel",
+                      "bindings": [
+                        {
+                          "binding_name": "#save_button_enabled",
+                          "binding_name_override": "#visible"
+                        },
+                        {
+                          "binding_name": "#save_button_enabled",
+                          "binding_name_override": "#enabled"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "save_disabled_button@common_buttons_old.main_button_locked": {
+                      "anchor_from": "top_middle",
+                      "anchor_to": "top_middle",
+                      "offset": [ 0, 51 ],
+                      "size": [ 91, 26 ],
+                      "$text_color": "$main_menu_button_locked_color",
+                      "$button_content": "common_buttons_old.button_label",
+                      "$button_text": "addExternalServerScreen.saveButtonLabel",
+                      "layer": 2,
+                      "bindings": [
+                        {
+                          "binding_name": "#save_button_disabled",
+                          "binding_name_override": "#visible"
+                        },
+                        {
+                          "binding_name": "#save_button_enabled",
+                          "binding_name_override": "#enabled"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  
+  ////*/ Screen /*////
+
+  "add_external_server_screen_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "main_control@common_menus_old.menu_screen_template": {
+          "$top_bar_panel_conent": "add_external_server_pocket_midalpha_old.top_bar",
+          "$menu_panel_conent": "add_external_server_pocket_midalpha_old.main_panel_content"
+        }
+      }
+    ]
+  }
+}

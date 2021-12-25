@@ -1,0 +1,11 @@
+/*File modified by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "world_templates_screen": {
+    "$screen_content": "world_templates_pocket_midalpha_old.world_templates_picker_content",
+    "$screen_bg_content": "common.empty_panel",
+    "$header_safezone_control": "common.empty_panel",
+    "$header_bar_control": "common.empty_panel",
+    "$is_full_screen_layout": false
+  }
+}

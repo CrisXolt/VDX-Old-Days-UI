@@ -948,7 +948,7 @@
     "anchor_to": "top_middle",
     "controls": [
       {
-        "more_scrolling_panel@common.scrolling_panel": {
+        "scrolling_panel@common.scrolling_panel": {
           "layer": 1,
           "$scrolling_pane_size": [ "100%", "100%" ],
           "$scrolling_content": "world_game_settings_pocket_midalpha_old.more_full_panel",

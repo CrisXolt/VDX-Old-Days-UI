@@ -82,9 +82,9 @@
           "$checked_hover_control": "common_buttons_old.main_button_pressed_hover",
 
           "$unchecked_locked_control": "common_buttons_old.main_button_locked",
-          "$checked_locked_control": "common_buttons_old.main_button_locked",
+          "$checked_locked_control": "common_buttons_old.main_button_pressed_locked",
           "$unchecked_locked_hover_control": "common_buttons_old.main_button_locked",
-          "$checked_locked_hover_control": "common_buttons_old.main_button_locked"
+          "$checked_locked_hover_control": "common_buttons_old.main_button_pressed_locked"
         }
       }
     ]
@@ -112,6 +112,7 @@
                 "$text_edit_box_label_offset": [ 1, 0 ],
                 "anchor_from": "bottom_left",
                 "anchor_to": "bottom_left",
+                "$place_holder_text_color": [ 0.5, 0.5, 0.5 ],
                 "$text_background_default": "old_pocket_textures_common.text_input",
                 "$text_background_hover": "old_pocket_textures_common.text_input_hover",
                 "$text_background_locked": "old_pocket_textures_common.text_input_locked",

@@ -311,7 +311,7 @@
     "anchor_to": "top_middle"
   },
 
-  "main_panel_cotent@old_pocket_textures_common.dialog_background": {
+  "main_panel_content@old_pocket_textures_common.dialog_background": {
     "size": [ "100%-12px", "100%-6px" ],
     "controls": [
       { 
@@ -370,7 +370,7 @@
       {
         "main_control@common_menus_old.menu_screen_template": {
           "$top_bar_panel_conent": "play_pocket_midalpha_old.top_bar",
-          "$menu_panel_conent": "play_pocket_midalpha_old.main_panel_cotent"
+          "$menu_panel_conent": "play_pocket_midalpha_old.main_panel_content"
         }
       },
       {

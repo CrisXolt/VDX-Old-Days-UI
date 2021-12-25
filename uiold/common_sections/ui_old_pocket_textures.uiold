@@ -47,6 +47,13 @@
     "texture": "textures/uiold_pocket/buttons/main_button_pressed_hover"
   },
 
+  "main_button_pressed_locked": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/buttons/main_button_pressed",
+    "alpha": 0.5
+  },
+
   "main_button_selected": {
     "type": "image",
     "size": [ "100%", "100%" ],
@@ -56,7 +63,8 @@
   "main_button_locked": {
     "type": "image",
     "size": [ "100%", "100%" ],
-    "texture": "textures/uiold_pocket/buttons/main_button_locked"
+    "texture": "textures/uiold_pocket/buttons/main_button_default",
+    "alpha": 0.5
   },
   
   /*//// Secondary Button ////*/
@@ -78,6 +86,13 @@
     "texture": "textures/uiold_pocket/buttons/secondary_button_pressed"
   },
 
+  "secondary_button_locked": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/buttons/secondary_button_default",
+    "alpha": 0.5
+  },
+
   "secondary_button_checked": {
     "type": "image",
     "size": [ "100%", "100%" ],
@@ -88,6 +103,13 @@
     "type": "image",
     "size": [ "100%", "100%" ],
     "texture": "textures/uiold_pocket/buttons/secondary_button_checked_hover"
+  },
+
+  "secondary_button_checked_locked": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/buttons/secondary_button_checked",
+    "alpha": 0.5
   },
   
   /*//// Close Button ////*/
@@ -111,6 +133,12 @@
   },
 
   /*//// Icons ////*/
+
+  "button_icon_base": {
+    "type": "image",
+    "color": "$text_color",
+    "$text_color|default": [ 1.0, 1.0, 1.0 ]
+  },
 
   "settings_button_icon": {
     "type": "image",
@@ -172,6 +200,12 @@
     "size": [ 11, 11 ]
   },
 
+  "realm_icon": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/icons/realm_icon",
+    "size": [ 11, 11 ]
+  },
+
   "notification_icon": {
     "type": "image",
     "texture": "textures/uiold_pocket/icons/notification_icon",
@@ -196,10 +230,34 @@
     "size": [ 11, 11 ]
   },
 
+  "take_screenshot_icon": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/icons/take_screenshot_icon",
+    "size": [ 11, 11 ]
+  },
+
+  "skins_icon": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/icons/skins_icon",
+    "size": [ 11, 11 ]
+  },
+
   "remove_icon": {
     "type": "image",
     "texture": "textures/uiold_pocket/icons/remove_icon",
     "size": [ 11, 11 ]
+  },
+
+  /*//// Arrows ////*/
+
+  "down_arrow_icon@old_pocket_textures_common.button_icon_base": {
+    "size": [ 12, 12 ],
+    "texture": "textures/uiold_pocket/arrows/down_arrow_icon"
+  },
+
+  "right_arrow_icon@old_pocket_textures_common.button_icon_base": {
+    "size": [ 12, 12 ],
+    "texture": "textures/uiold_pocket/arrows/right_arrow_icon"
   },
 
   /*//// Options ////*/
@@ -321,20 +379,6 @@
     "alpha": 0.5
   },
 
-  /*//// Arrows ////*/
-
-  "down_arrow_icon": {
-    "type": "image",
-    "size": [ 12, 12 ],
-    "texture": "textures/uiold_pocket/arrows/down_arrow_icon"
-  },
-
-  "right_arrow_icon": {
-    "type": "image",
-    "size": [ 12, 12 ],
-    "texture": "textures/uiold_pocket/arrows/right_arrow_icon"
-  },
-
   /*//// Toggles ////*/
 
   "toggle_off": {
@@ -380,6 +424,12 @@
     "type": "image",
     "size": [ "100%", "100%" ],
     "texture": "textures/uiold_pocket/panels/main_panel"
+  },
+
+  "panel": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/panels/panel"
   },
 
   "top_bar": {

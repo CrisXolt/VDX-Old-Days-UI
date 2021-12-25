@@ -1,0 +1,9 @@
+/*File modified by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "pause_screen": {
+    "$screen_content": "pause_pocket_midalpha_old.pause_screen_content",
+    "$screen_bg_content": "pause_pocket_midalpha_old.screen_background",
+    "variables": [ ]
+  }
+}

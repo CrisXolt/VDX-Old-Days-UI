@@ -1,0 +1,7 @@
+/*File modified by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "add_external_server_screen": {
+    "$screen_content": "add_external_server_pocket_midalpha_old.add_external_server_screen_content"
+  }
+}

@@ -30,7 +30,11 @@
     "uiold/main_screens_desktop_midalpha/play_sections/friends_content.uiold",
     "uiold/main_screens_desktop_midalpha/play_sections/servers_content.uiold",
     ////////*/ Main Screens Pocket /*////////
+    "uiold/main_screens_pocket_midalpha/add_external_server_screen.uiold",
+    "uiold/main_screens_pocket_midalpha/pause_screen.uiold",
     "uiold/main_screens_pocket_midalpha/start_screen.uiold",
+    "uiold/main_screens_pocket_midalpha/ugc_viewer_screen.uiold",
+    "uiold/main_screens_pocket_midalpha/world_templates_screen.uiold",
     /* Play Sections */
     "uiold/main_screens_pocket_midalpha/play_sections/main_play_screen.uiold",
     "uiold/main_screens_pocket_midalpha/play_sections/worlds_content.uiold",
