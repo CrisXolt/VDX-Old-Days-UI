@@ -214,11 +214,8 @@
                     }
                   },
                   { 
-                    "player_local_icon": {
-                      "type": "image",
-                      "texture": "textures/uidx/lan_icon",
-                      "size": [ 16, 16 ],
-                      "layer": 1,
+                    "player_local_icon@old_pocket_textures_common.lan_icon": {
+                      "layer": 4,
                       "bindings": [
                         {
                           "binding_name": "#local_icon_visible",

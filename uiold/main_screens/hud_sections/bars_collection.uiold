@@ -1,0 +1,107 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "CrisXolt_bars_dx",
+
+  /*//// Boss Health Panel ////*/
+  
+  "boss_health_main_panel": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "boss_hud_padding": {
+          "type": "panel",
+          "size": [ "100%", 20 ],
+          "visible": "#boss_hud_padding", //Make this visible to move the boss hud panel down
+          "bindings": [
+            {
+              "binding_name": "#boss_hud_padding",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "boss_hud_panel": {
+          "type": "panel",
+          "controls": [
+            {
+              "boss_health_grid@hud.boss_health_grid": {
+                "size": [ 182, "100%" ],
+                "grid_item_template": "CrisXolt_bars_dx.bar_panel",
+                "offset": [ 0, 0 ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*//// Boss Collection ////*/
+
+  "bar_name": {
+    "type": "label",
+    "color": "$boss_name_text_color",
+    "text": "#bossName",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "offset": [ 0, 2 ],
+    "shadow": true,
+    "bindings": [
+      {
+        "binding_name": "#bossName",
+        "binding_type": "collection",
+        "binding_collection_name": "$collection_name"
+      }
+    ]
+  },
+
+  "bar_panel": {
+    "type": "panel",
+    "size": [ 182, 18 ],
+    "$collection_name": "boss_bars",
+    "$progress_bar_collection": "boss_bars",
+    "controls": [
+      { "bar_name@CrisXolt_bars_dx.bar_name": { } },
+      { "boss_bar_panel@CrisXolt_bars_dx.boss_bar_panel": { } }
+    ]
+  },
+
+  "boss_bar_panel@common.progress_bar_for_collections": {
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "offset": [ 0, 12 ],
+    "size": [ 182, 5 ],
+    "controls": [
+      { 
+        "magenta_bar_empty": {
+          "type": "image",
+          "texture": "textures/uiold/hud/boss_bar_empty",
+          "size": [ 182, 5 ],
+          "layer": 1
+        }
+      },
+      { 
+        "magenta_bar_full": {
+          "type": "image",
+          "texture": "textures/uiold/hud/boss_bar_full",
+          "size": [ 182, 5 ],
+          "layer": 2,
+          "clip_direction": "left",
+          "clip_pixelperfect": true,
+          "bindings": [
+            {
+              "binding_name": "#progress_percentage",
+              "binding_name_override": "#clip_ratio",
+              "binding_type": "collection",
+              "binding_collection_name": "$progress_bar_collection"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

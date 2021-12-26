@@ -1,0 +1,279 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "chat_pocket_midalpha_old",
+
+  "scroll_box": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/ui/White",
+    "color": [ 0.8, 0.8, 1.0 ],
+    "alpha": 0.5
+  },
+
+  /*//// Text Edit BG ////*/
+
+  "text_bg_default": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/ui/White",
+    "color": [ 0.0, 0.0, 0.0 ]
+  },
+
+  "text_bg_hover@chat_pocket_midalpha_old.text_bg_default": {
+    "controls": [
+      {
+        "border": {
+          "layer": 5,
+          "type": "image",
+          "size": [ "100%", "100%" ],
+          "texture": "textures/ui/focus_border_white"
+        }
+      }
+    ]
+  },
+
+  /*//// Touch Buttons ////*/
+
+  "chat_touch_buttons": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "size": [ "100%c", 20 ],
+    "controls": [
+      {
+        "chat_previous_message_button@common_buttons_old.secondary_button": {
+          "size": [ 20, "100%" ],
+          "$pressed_button_name": "button.chat_previous_message",
+          "$button_content": "old_pocket_textures_common.chat_previous_message_icon",
+          "layer": 1
+        }
+      },
+      {
+        "chat_next_message_button@common_buttons_old.secondary_button": {
+          "size": [ 20, "100%" ],
+          "$pressed_button_name": "button.chat_next_message",
+          "$button_content": "old_pocket_textures_common.chat_next_message_icon",
+          "layer": 1
+        }
+      },
+      {
+        "chat_autocomplete_up_button@common_buttons_old.secondary_button": {
+          "size": [ 20, "100%" ],
+          "$pressed_button_name": "button.chat_autocomplete_back",
+          "$button_content": "old_pocket_textures_common.chat_autocomplete_up_icon",
+          "layer": 1,
+          "bindings": [
+            {
+              "binding_name": "(not #chat_visible)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "chat_autocomplete_down_button@common_buttons_old.secondary_button": {
+          "size": [ 20, "100%" ],
+          "$pressed_button_name": "button.chat_autocomplete",
+          "$button_content": "old_pocket_textures_common.chat_autocomplete_down_icon",
+          "layer": 1,
+          "bindings": [
+            {
+              "binding_name": "(not #chat_visible)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*//// Image Panels ////*/
+
+  "send_image_panel": {
+    "type": "panel",
+    "controls": [
+      { "send_icon@old_pocket_textures_common.send_icon": { } }
+    ]
+  }, 
+
+  "keyboard_image_panel": {
+    "type": "panel",
+    "controls": [
+      {
+        "keyboard_icon@old_pocket_textures_common.keyboard_icon": {
+          "bindings": [
+            {
+              "binding_name": "(not #keyboard_being_used)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "down_arrow_icon@old_pocket_textures_common.down_arrow_icon": {
+          "bindings": [
+            {
+              "binding_name": "#keyboard_being_used",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*//// Panels ////*/
+
+  "screen_background": {
+    "type": "image",
+    "texture": "textures/ui/Black",
+    "size": [ "100%", "100%" ],
+    "alpha": 0.5
+  },
+
+  "chat_screen_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "back_button@common_buttons_old.main_button": {
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "offset": [ -4, 4 ],
+          "size": [ "100%c", 18 ],
+          "$button_size": [ "100%c", 18 ],
+          "$button_texture_size": [ "100%c+16px", 18 ],
+          "$pressed_button_name": "button.menu_exit",
+          "$button_text": "gui.back"
+        }
+      },
+      {
+        "chat_settings_button@common_buttons_old.main_button": {
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "offset": [ -4, 26 ],
+          "size": [ "100%c", 18 ],
+          "$button_size": [ "100%c", 18 ],
+          "$button_texture_size": [ "100%c+16px", 18 ],
+          "$pressed_button_name": "button.open_chat_settings",
+          "$button_text": "menu.settings"
+        }
+      },
+      {
+        "messages_scrolling_panel@common.scrolling_panel": {
+          "type": "panel",
+          "size": [ "100%-1px", "100%-20px" ],
+          "offset": [ 1, 0 ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "$scrolling_content": "chat.messages_stack_panel",
+          "$jump_to_bottom_on_update": true,
+          "$show_background": false,
+      
+          "$scroll_size": [ 2, "100%" ],
+          "$scroll_track_image_control": "common.empty_panel",
+          "$scroll_box_mouse_image_control": "chat_pocket_midalpha_old.scroll_box",
+          "$scroll_box_touch_image_control": "chat_pocket_midalpha_old.scroll_box",
+          "$always_handle_scrolling": true
+        }
+      },
+      {
+        "commands_panel": {
+          "type": "panel",
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+          "offset": [ 0, -20 ],
+          "size": [ "100%", "100%-50px" ],
+          "controls": [
+            {
+              "auto_complete_panel@chat.auto_complete_panel": {
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left"
+              }
+            }
+          ]
+        }
+      },
+      { 
+        "chat_bottom_panel": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "size": [ "100%", 20 ],
+          "controls": [
+            {
+              "host_main_button@common_buttons_old.secondary_button": {
+                "layer": 4,
+                "size": [ 20, 20 ],
+                "$pressed_button_name": "button.host_toggle",
+                "$button_text": "/",
+                "bindings": [
+                  {
+                    "binding_name": "#cheats_on",
+                    "binding_name_override": "#visible"
+                  },
+                  {
+                    "binding_name": "#host_main_button_focus_override_up",
+                    "binding_name_override": "#focus_change_up"
+                  },
+                  {
+                    "binding_name": "#host_main_button_focus_override_down",
+                    "binding_name_override": "#focus_change_down"
+                  }
+                ]
+              }
+            },
+            { "chat_touch_buttons@chat_pocket_midalpha_old.chat_touch_buttons": { "ignored": "(not $touch)" } },
+            { 
+              "text_box@chat.text_edit_box": {
+                "size": [ "fill", 20 ],
+                "$text_background_default": "chat_pocket_midalpha_old.text_bg_default",
+                "$text_background_hover": "chat_pocket_midalpha_old.text_bg_hover",
+                "$text_background_locked": "chat_pocket_midalpha_old.text_bg_default"
+              }
+            },
+            { 
+              "keyboard_button@common_buttons_old.secondary_button": {
+                "layer": 4,
+                "size": [ 20, 20 ],
+                "$pressed_button_name": "button.host_toggle",
+                "$button_content": "chat_pocket_midalpha_old.keyboard_image_panel",
+                "bindings": [
+                  {
+                    "binding_name": "#keyboard_button_focus_override_up",
+                    "binding_name_override": "#focus_change_up"
+                  },
+                  {
+                    "binding_name": "#keyboard_button_focus_override_down",
+                    "binding_name_override": "#focus_change_down"
+                  }
+                ]
+              }
+            },
+            {
+              "send_button@common_buttons_old.secondary_button": {
+                "layer": 4,
+                "size": [ 20, 20 ],
+                "$pressed_button_name": "button.send",
+                "$button_content": "chat_pocket_midalpha_old.send_image_panel",
+                "bindings": [
+                  {
+                    "binding_name": "#send_button_visible",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      { 
+        "host_main_panel@host_options_pocket_midalpha_old.host_panel": {
+          "offset": [ 0, -20 ],
+          "layer": 12
+        }
+      },
+      { "popup_factory@chat_settings.popup_factory": {} }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+/*File modified by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "hud_screen": {
+    "$screen_content": "hud_old.hud_content_old"
+  }
+}

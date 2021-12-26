@@ -152,6 +152,18 @@
     "size": [ 22, 22 ]
   },
 
+  "keyboard_icon": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/icons/keyboard_icon",
+    "size": [ 12, 12 ]
+  },
+
+  "send_icon": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/icons/send_icon",
+    "size": [ 12, 12 ]
+  },
+
   "lock_icon": {
     "type": "image",
     "texture": "textures/uiold_pocket/icons/lock_icon",
@@ -246,6 +258,28 @@
     "type": "image",
     "texture": "textures/uiold_pocket/icons/remove_icon",
     "size": [ 11, 11 ]
+  },
+
+  /*//// Chat ////*/
+
+  "chat_autocomplete_down_icon@old_pocket_textures_common.button_icon_base": {
+    "size": [ 12, 12 ],
+    "texture": "textures/uiold_pocket/chat/chat_autocomplete_down_icon"
+  },
+
+  "chat_autocomplete_up_icon@old_pocket_textures_common.button_icon_base": {
+    "size": [ 12, 12 ],
+    "texture": "textures/uiold_pocket/chat/chat_autocomplete_up_icon"
+  },
+
+  "chat_next_message_icon@old_pocket_textures_common.button_icon_base": {
+    "size": [ 12, 12 ],
+    "texture": "textures/uiold_pocket/chat/chat_next_message_icon"
+  },
+
+  "chat_previous_message_icon@old_pocket_textures_common.button_icon_base": {
+    "size": [ 12, 12 ],
+    "texture": "textures/uiold_pocket/chat/chat_previous_message_icon"
   },
 
   /*//// Arrows ////*/

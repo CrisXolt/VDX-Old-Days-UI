@@ -1,0 +1,8 @@
+/*File modified by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "chat_screen": {
+    "$screen_content": "chat_pocket_midalpha_old.chat_screen_content",
+    "$screen_bg_content": "chat_pocket_midalpha_old.screen_background"
+  }
+}

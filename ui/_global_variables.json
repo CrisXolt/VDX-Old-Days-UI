@@ -10,5 +10,12 @@
   "$main_menu_button_locked_color": [ 0.62, 0.62, 0.62 ],
 
   //////// Progress Screen ////////
-  "$classic_progress_bar_color": [ 0.5, 1.0, 0.5, 1.0 ]
+  "$classic_progress_bar_color": [ 0.5, 1.0, 0.5, 1.0 ],
+
+  ////*/ HUD /*////
+  "$experience_outline_text_color": [ 0.0, 0.0, 0.0 ],
+  "$chat_size": [ "40%", 184 ],
+  "$ignore_scoreboard_scores": false,
+  "$scoreboard_text_shadow": false,
+  "$player_score_color": [ 1.0, 0.333, 0.333, 1.0 ]
 }

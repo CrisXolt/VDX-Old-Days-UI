@@ -22,6 +22,14 @@
     ////////*/ Main Screens /*////////
     "uiold/main_screens/progress_screen.uiold",
     "uiold/main_screens/progress_animation.uiold",
+    /* HUD Sections */
+    "uiold/main_screens/hud_sections/bars_collection.uiold",
+    "uiold/main_screens/hud_sections/chat_panel.uiold",
+    "uiold/main_screens/hud_sections/hud_resources.uiold",
+    "uiold/main_screens/hud_sections/hud_screen.uiold",
+    "uiold/main_screens/hud_sections/item_text_factory.uiold",
+    "uiold/main_screens/hud_sections/rgb_text.uiold",
+    "uiold/main_screens/hud_sections/scoreboards.uiold",
     ////////*/ Main Screens Desktop /*////////
     "uiold/main_screens_desktop_midalpha/start_screen.uiold",
     /* Play Sections */
@@ -31,6 +39,8 @@
     "uiold/main_screens_desktop_midalpha/play_sections/servers_content.uiold",
     ////////*/ Main Screens Pocket /*////////
     "uiold/main_screens_pocket_midalpha/add_external_server_screen.uiold",
+    "uiold/main_screens_pocket_midalpha/chat_screen.uiold",
+    "uiold/main_screens_pocket_midalpha/host_options_screen.uiold",
     "uiold/main_screens_pocket_midalpha/pause_screen.uiold",
     "uiold/main_screens_pocket_midalpha/start_screen.uiold",
     "uiold/main_screens_pocket_midalpha/ugc_viewer_screen.uiold",
