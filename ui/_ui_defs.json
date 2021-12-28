@@ -19,6 +19,10 @@
     "uiold/common_sections/container_item_sections/ui_item_renderer.uiold",
     "uiold/common_sections/container_item_sections/ui_selected_icon.uiold",
     "uiold/common_sections/container_item_sections/ui_template_durability.uiold",
+    ////////*/ Inventory Screens Pocket /*////////
+    "uiold/inventory_screens_pocket_midalpha/crafting_screen.uiold",
+    "uiold/inventory_screens_pocket_midalpha/creative_screen.uiold",
+    "uiold/inventory_screens_pocket_midalpha/inventory_screen.uiold",
     ////////*/ Main Screens /*////////
     "uiold/main_screens/progress_screen.uiold",
     "uiold/main_screens/progress_animation.uiold",

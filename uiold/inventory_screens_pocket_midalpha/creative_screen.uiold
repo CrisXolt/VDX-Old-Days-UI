@@ -1,0 +1,68 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "creative_pocket_midalpha_old",
+
+  "creative_scroll_panel": {
+    "type": "panel",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "$visible_bind_toggle_source_control",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "scroll_panel@crafting.scroll_panel": {
+          "size": [ "100%", "100%" ],
+          "anchor_to": "top_left",
+          "anchor_from": "top_left",
+          "$scroll_view_port_size": [ "100%", "100%" ],
+          "$scroll_view_port_size_touch": [ "100%", "100%" ],
+          "$scroll_size": [ 12, "100%" ],
+          "$scroll_view_port_offset": [ 0, 0 ],
+          "$scroll_view_port_offset_touch": [ 0, 0 ],
+          "$scroll_bar_left_padding_size": [ 0, 0 ],
+          "$scroll_bar_right_padding_size": [ 0, 0 ],
+          "$show_background": true,
+          "layer": 10,
+          "$scrolling_content": "crafting.scroll_grid",
+          "$grid_item_template": "crafting_pocket_midalpha_old.recipe_book_grid",
+          "$collection_name": "recipe_book",
+          "$item_collection_name": "recipe_book",
+          "$scroll_background_image_control": "old_pocket_textures_common.scroll_panel",
+          "$scroll_track_image_control": "old_pocket_textures_common.scroll_track",
+          "$scroll_box_mouse_image_control": "old_pocket_textures_common.scroll_box"
+        }
+      }
+    ]
+  },
+
+  "creative_panel": {
+    "type": "panel",
+    "controls": [
+      {
+        "construction_panel@creative_pocket_midalpha_old.creative_scroll_panel": {
+          "$visible_bind_toggle_source_control": "construction_tab_toggle"
+        }
+      },
+      {
+        "equipment_panel@creative_pocket_midalpha_old.creative_scroll_panel": {
+          "$visible_bind_toggle_source_control": "equipment_tab_toggle"
+        }
+      },
+      {
+        "items_panel@creative_pocket_midalpha_old.creative_scroll_panel": {
+          "$visible_bind_toggle_source_control": "items_tab_toggle"
+        }
+      },
+      {
+        "nature_panel@creative_pocket_midalpha_old.creative_scroll_panel": {
+          "$visible_bind_toggle_source_control": "nature_tab_toggle"
+        }
+      }
+    ]
+  }
+}

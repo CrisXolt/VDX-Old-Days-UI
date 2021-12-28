@@ -1,0 +1,17 @@
+/*File modified by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "crafting_screen_pocket": {
+    "$screen_content": "inventory_pocket_midalpha_old.inventory_screen_content",
+    "$is_crafting": true,
+    "$screen_bg_content": "common.screen_background",
+    "$top_half_variant": "crafting_pocket_midalpha_old.crafting_panel_3x3"
+  },
+
+  "inventory_screen_pocket": {
+    "$screen_content": "inventory_pocket_midalpha_old.inventory_screen_content",
+    "$is_crafting": false,
+    "$screen_bg_content": "common.screen_background",
+    "$top_half_variant": "crafting_pocket_midalpha_old.crafting_panel_2x2"
+  }
+}

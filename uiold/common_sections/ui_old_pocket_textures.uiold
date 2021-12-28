@@ -447,6 +447,32 @@
     "alpha": 0.5
   },
 
+  /*//// Craft Toggles ////*/
+
+  "craft_toggle_off": {
+    "type": "image",
+    "size": [ 38, 19 ],
+    "texture": "textures/uiold_pocket/toggles/craft_toggle_off"
+  },
+
+  "craft_toggle_off_hover": {
+    "type": "image",
+    "size": [ 38, 19 ],
+    "texture": "textures/uiold_pocket/toggles/craft_toggle_off_hover"
+  },
+
+  "craft_toggle_on": {
+    "type": "image",
+    "size": [ 38, 19 ],
+    "texture": "textures/uiold_pocket/toggles/craft_toggle_on"
+  },
+
+  "craft_toggle_on_hover": {
+    "type": "image",
+    "size": [ 38, 19 ],
+    "texture": "textures/uiold_pocket/toggles/craft_toggle_on_hover"
+  },
+
   /*//// Panels ////*/
 
   "dialog_background": {
@@ -502,6 +528,72 @@
     "type": "image",
     "size": [ "100%", "100%" ],
     "texture": "textures/uiold_pocket/panels/tab_panel"
+  },
+  
+  /*//// Vertical Tabs ////*/
+
+  /*Left*/
+
+  "TabLeftBack": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/tabs/TabLeftBack"
+  },
+
+  "TabLeftBackBottomMost": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/tabs/TabLeftBackBottomMost"
+  },
+
+  "TabLeftBackTopMost": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/tabs/TabLeftBackTopMost"
+  },
+
+  "TabLeftFront": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/tabs/TabLeftFront"
+  },
+
+  "TabLeftFrontBottomMost": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/tabs/TabLeftFrontBottomMost"
+  },
+
+  "TabLeftFrontTopMost": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/tabs/TabLeftFrontTopMost"
+  },
+
+  /*Right*/
+
+  "TabRightBack": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/tabs/TabRightBack"
+  },
+
+  "TabRightBackBottomMost": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/tabs/TabRightBackBottomMost"
+  },
+
+  "TabRightBackTopMost": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/tabs/TabRightBackTopMost"
+  },
+  
+  "TabRightFront": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/tabs/TabRightFront"
+  },
+
+  "TabRightFrontBottomMost": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/tabs/TabRightFrontBottomMost"
+  },
+
+  "TabRightFrontTopMost": {
+    "type": "image",
+    "texture": "textures/uiold_pocket/tabs/TabRightFrontTopMost"
   },
 
   /*//// Cell Images ////*/
