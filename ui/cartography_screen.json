@@ -1,0 +1,16 @@
+{
+  "cartography_screen": {
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_content": "cartography.cartography_panel",
+        "$screen_bg_content": "common.screen_background"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "cartography_pocket_old.cartography_panel",
+        "$screen_bg_content": "common.screen_background"
+      }
+    ]
+  }
+}

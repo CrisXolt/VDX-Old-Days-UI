@@ -512,14 +512,12 @@
 
   "scroll_box": {
     "type": "image",
-    "layer": 42,
     "size": [ "100%", "100%" ],
     "texture": "textures/uiold_pocket/panels/scroll_box"
   },
 
   "scroll_track": {
     "type": "image",
-    "layer": 40,
     "size": [ "100%", "100%" ],
     "texture": "textures/uiold_pocket/panels/scroll_track"
   },
@@ -602,6 +600,12 @@
     "type": "image",
     "size": [ 32, 32 ],
     "texture": "textures/uiold_pocket/cell_images/cell_image_normal_default"
+  },
+
+  "cell_image_normal_nineslice": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "texture": "textures/uiold_pocket/cell_images/cell_image_normal_nineslice"
   },
 
   "cell_image_slot": {

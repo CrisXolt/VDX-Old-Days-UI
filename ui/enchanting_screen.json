@@ -1,0 +1,15 @@
+{
+  "enchanting_screen": {
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_content": "enchanting.enchanting_panel",
+        "$screen_bg_content": "common.screen_background"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "enchanting_pocket_old.enchanting_panel"
+      }
+    ]
+  }
+}

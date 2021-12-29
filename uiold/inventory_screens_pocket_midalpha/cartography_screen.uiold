@@ -1,0 +1,379 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "cartography_pocket_old",
+  
+  ////*/ Tab Naviugation /*////
+
+  "tab_navigation_panel_layout": {
+    "type": "panel",
+    "layer": 4,
+    "size": [ "100%+52px", "100%" ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "controls": [
+      {
+        "left_navigation_tabs": {
+          "type": "panel",
+          "size": [ 30, "100%" ],
+          "anchor_to": "top_left",
+          "anchor_from": "top_left",
+          "controls": [
+            {
+              "close_tab@old_pocket_textures_common.TabLeftFrontTopMost": { 
+                "size": [ 30, 28 ],
+                "anchor_to": "top_left",
+                "anchor_from": "top_left",
+                "layer": 4,
+                "controls": [
+                  { 
+                    "close_button@inventory_pocket_midalpha_old.close_button": {
+                      "anchor_to": "top_left",
+                      "anchor_from": "top_left",
+                      "layer": 6,
+                      "offset": [ 5, 6 ]
+                    }   
+                  }
+                ]
+              } 
+            },
+            { 
+              "left_tab_inventory@old_pocket_textures_common.TabLeftFront": {
+                "anchor_to": "bottom_left",
+                "anchor_from": "bottom_left",
+                "offset": [ 0, -2 ],
+                "size": [ 30, 28 ],
+                "layer": 4,
+                "controls": [
+                  { "icon@inventory_pocket_midalpha_old.survival_inv_icon": { "layer": 6 } }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "right_navigation_tabs": {
+          "type": "panel",
+          "size": [ 30, "100%" ],
+          "anchor_to": "top_right",
+          "anchor_from": "top_right",
+          "controls": [
+            { 
+              "right_tab_cartography@old_pocket_textures_common.TabRightFront": {
+                "anchor_to": "bottom_left",
+                "anchor_from": "bottom_left",
+                "offset": [ 0, -2 ],
+                "size": [ 30, 28 ],
+                "layer": 4,
+                "controls": [
+                  { "default@cartography_pocket.cartography_item_renderer": { "layer": 6 } }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  
+  ////*/ Right Panel /*////
+
+  "cartography_content_stack_panel": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "label_holder": {
+          "type": "panel",
+          "size": [ "100%", "100%c" ],
+          "controls": [
+            { 
+              "cartography_label@common_old.global_label": {
+                "shadow": true,
+                "text": "tile.cartography_table.name",
+                "color": "$main_menu_button_default_color"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "padding_1": {
+          "type": "panel",
+          "size": [ 0, 2 ]
+        }
+      },
+      {
+        "panel": {
+          "type": "panel",
+          "size": [ "100%", 28 ],
+          "controls": [
+            {
+              "input_slots": {
+                "type": "stack_panel",
+                "size": [ "default", 28 ],
+                "orientation": "horizontal",
+                "controls": [
+                  {
+                    "input_item_slot@common.pocket_ui_container_item": {
+                      "$background_images": "old_pocket_textures_common.cell_image_slot",
+                      "$item_renderer_size": [ 16, 16 ],
+                      "anchor_from": "top_middle",
+                      "anchor_to": "top_middle",
+                      "offset": [ 0, 1 ],
+                      "$item_collection_name": "cartography_input_items",
+            
+                      "$focus_id_binding_type": "none",
+                      "$focus_id": "cartography_input",
+            
+                      "$focus_override_down_binding_type": "none",
+                      "$focus_override_down": "cartography_result",
+            
+                      "$focus_override_right_binding_type": "none",
+                      "$focus_override_right": "cartography_additional"
+                    }
+                  },
+                  {
+                    "plus_centerer": {
+                      "type": "panel",
+                      "size": [ "100%c+14px", "100%" ],
+                      "controls": [
+                        {
+                          "plus_sign_icon": {
+                            "type": "image",
+                            "texture": "textures/uiold_pocket/cartography/plus",
+                            "size": [ 13, 13 ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "additional_item_slot@common.pocket_ui_container_item": {
+                      "$background_images": "old_pocket_textures_common.cell_image_slot",
+                      "$item_renderer_size": [ 16, 16 ],
+                      "anchor_from": "bottom_middle",
+                      "anchor_to": "bottom_middle",
+                      "offset": [ 0, -1 ],
+                      "$item_collection_name": "cartography_additional_items",
+            
+                      "$focus_id_binding_type": "none",
+                      "$focus_id": "cartography_additional",
+            
+                      "$focus_override_left_binding_type": "none",
+                      "$focus_override_left": "cartography_input",
+            
+                      "$focus_override_down_binding_type": "none",
+                      "$focus_override_down": "cartography_result"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "padding_2": {
+          "type": "panel",
+          "size": [ 0, 4 ]
+        }
+      },
+      {
+        "map_centerer": {
+          "type": "panel",
+          "size": [ "100%", "fill" ],
+          "max_size": [ "100%", 66 ],
+          "controls": [
+            {
+              "map_image_panel@cartography.map_image_panel": {
+                "size": [ "100%y", "100%" ],
+                "max_size": [ 66, 66 ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "description_centerer": {
+          "type": "panel",
+          "size": [ "100%", "100%c+10px" ],
+          "controls": [
+            {
+              "output_description_label@common_old.global_label": {
+                "shadow": true,
+                "color": "$main_menu_button_default_color",
+                "anchor_from": "bottom_middle",
+                "anchor_to": "bottom_middle",
+                "offset": [ 0, 0 ],
+                "text": "#text",
+                "text_alignment": "center",
+                "bindings": [
+                  {
+                    "binding_name": "#output_description",
+                    "binding_name_override": "#text"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "padding_3": {
+          "type": "panel",
+          "size": [ 0, 10 ]
+        }
+      },
+      {
+        "arrow_centerer": {
+          "type": "panel",
+          "size": [ "100%", 22 ],
+          "controls": [
+            {
+              "vertical_arrow_icon": {
+                "type": "image",
+                "texture": "textures/uiold_pocket/cartography/arrow_down_large",
+                "size": [ 15, 22 ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "padding_4": {
+          "type": "panel",
+          "size": [ 0, 4 ]
+        }
+      },
+      {
+        "result_centerer": {
+          "type": "panel",
+          "size": [ "100%", "100%c" ],
+          "controls": [
+            {
+              "result_item_slot@common.pocket_ui_container_item": {
+                "$background_images": "old_pocket_textures_common.cell_image_slot",
+                "$item_renderer_size": [ 16, 16 ],
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "$item_collection_name": "cartography_result_items",
+                "$focus_override_up_binding_type": "none",
+                "$focus_override_up": "cartography_input",
+                "$button_ref": "cartography.cartography_output_slot_button"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "filling_panel": {
+          "type": "panel",
+          "size": [ "100%", 4 ]
+        }
+      },
+      {
+        "text_box_centerer": {
+          "type": "panel",
+          "size": [ "100%", "100%c" ],
+          "controls": [
+            { 
+              "text_box_panel": {
+                "type": "stack_panel",
+                "offset": [ 4, 0 ],
+                "controls": [
+                  {
+                    "map_name_label@common_old.global_label": {
+                      "text": "map.name",
+                      "shadow": true,
+                      "color": "$main_menu_button_default_color"
+                    }
+                  },
+                  {
+                    "text_edit_control@cartography.text_edit_control": {
+                      "$text_background_default": "old_pocket_textures_common.text_input",
+                      "$text_background_hover": "old_pocket_textures_common.text_input_hover",
+                      "$text_background_locked": "old_pocket_textures_common.text_input_locked",
+                      "size": [ "100%-4px", 18 ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  
+  ////*/ Panels /*////
+
+  "panels@old_pocket_textures_common.dialog_background": {
+    "size": [ "100% - 64px", "100% - 26px" ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "offset": [ 0, 3 ],
+    "controls": [
+      { "tab_navigation_panel@cartography_pocket_old.tab_navigation_panel_layout": { } },
+      { 
+        "both_panels": {
+          "type": "stack_panel",
+          "size": [ "100%-10px", "100%-8px" ],
+          "orientation": "horizontal",
+          "controls": [
+            {
+              "inventory_scroll_panel@crafting.scroll_panel": {
+                "size": [ "fill", "100%" ],
+                "anchor_to": "top_left",
+                "anchor_from": "top_left",
+                "$scroll_view_port_size": [ "100%", "100%" ],
+                "$scroll_view_port_size_touch": [ "100%", "100%" ],
+                "$scroll_size": [ 12, "100%" ],
+                "$scroll_view_port_offset": [ 0, 0 ],
+                "$scroll_view_port_offset_touch": [ 0, 0 ],
+                "$scroll_bar_left_padding_size": [ 0, 0 ],
+                "$scroll_bar_right_padding_size": [ 0, 0 ],
+                "$show_background": true,
+                "layer": 10,
+                "$scrolling_content": "inventory_pocket_midalpha_old.pocket_container_grid",
+                "$collection_name": "inventory_items",
+                "$scroll_background_image_control": "old_pocket_textures_common.scroll_panel",
+                "$scroll_track_image_control": "old_pocket_textures_common.scroll_track",
+                "$scroll_box_mouse_image_control": "old_pocket_textures_common.scroll_box"
+              }
+            },
+            {
+              "right_panel": {
+                "type": "panel",
+                "layer": 2,
+                "size": [ "47%", "100%" ],
+                "controls": [
+                  { "cartography_content_stack_panel@cartography_pocket_old.cartography_content_stack_panel": { } }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  
+  ////*/ Screen /*////
+
+  "cartography_panel": {
+    "type": "panel",
+    "controls": [
+      { "panels@cartography_pocket_old.panels": {} },
+      { "hotbar_panel@inventory_pocket_midalpha_old.hotbar_panel": { "offset": [ 0, 0 ] } },
+      { "root_panel@common.root_panel": { "layer": -1 } },
+      { "container_gamepad_helpers@common.container_gamepad_helpers": { "layer": 40 } },
+      { "inventory_selected_icon_button@common.inventory_selected_icon_button": {} },
+      { "hold_icon@common.inventory_take_progress_icon_button": {} },
+      { "flying_item_renderer@common.flying_item_renderer": {} },
+      { "selected_item_details_factory@common.selected_item_details_factory": {} },
+      { "item_lock_notification_factory@common.item_lock_notification_factory": { "$offset": [ 0, "85%" ] } }
+    ]
+  }
+}

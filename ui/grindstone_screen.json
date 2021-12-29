@@ -1,0 +1,16 @@
+{
+  "grindstone_screen": {
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_content": "grindstone.grindstone_panel",
+        "$screen_bg_content": "common.screen_background"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "grindstone_pocket_old.grindstone_panel",
+        "$screen_bg_content": "common.screen_background"
+      }
+    ]
+  }
+}

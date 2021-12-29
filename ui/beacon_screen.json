@@ -1,0 +1,16 @@
+{
+  "beacon_screen": {
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_content": "beacon.beacon_panel",
+        "$screen_bg_content": "common.screen_background"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "beacon_pocket_old.beacon_panel",
+        "$screen_bg_content": "common.screen_background"
+      }
+    ]
+  }
+}

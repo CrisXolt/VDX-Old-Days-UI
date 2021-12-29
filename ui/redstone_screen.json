@@ -1,0 +1,55 @@
+{
+  "hopper_screen": {
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_label": "redstone.hopper_label",
+        "$screen_dimensions": [ 176, 133 ],
+        "$grid_dimensions": [ 5, 1 ],
+        "$grid_offset": [ 0, -7 ],
+        "$screen_content": "redstone.panel",
+        "$screen_bg_content": "common.screen_background"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "pocket_containers_old.hopper_panel"
+      }
+    ]
+  },
+
+  "dispenser_screen": {
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_label": "redstone.dispenser_label",
+        "$screen_dimensions": [ 176, 166 ],
+        "$grid_dimensions": [ 3, 3 ],
+        "$grid_offset": [ 0, 0 ],
+        "$screen_content": "redstone.panel",
+        "$screen_bg_content": "common.screen_background"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "pocket_containers_old.dispenser_panel"
+      }
+    ]
+  },
+
+  "dropper_screen": {
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_label": "redstone.dropper_label",
+        "$screen_dimensions": [ 176, 166 ],
+        "$grid_dimensions": [ 3, 3 ],
+        "$grid_offset": [ 0, 0 ],
+        "$screen_content": "redstone.panel",
+        "$screen_bg_content": "common.screen_background"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "pocket_containers_old.dropper_panel"
+      }
+    ]
+  }
+}

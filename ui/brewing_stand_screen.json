@@ -1,0 +1,16 @@
+{
+  "brewing_stand_screen": {
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_content": "brewing_stand.brewing_stand_panel",
+        "$screen_bg_content": "common.screen_background"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "brewing_stand_pocket_old.brewing_stand_panel",
+        "$screen_bg_content": "common.screen_background"
+      }
+    ]
+  }
+}

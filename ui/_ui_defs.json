@@ -20,9 +20,17 @@
     "uiold/common_sections/container_item_sections/ui_selected_icon.uiold",
     "uiold/common_sections/container_item_sections/ui_template_durability.uiold",
     ////////*/ Inventory Screens Pocket /*////////
+    "uiold/inventory_screens_pocket_midalpha/anvil_screen.uiold",
+    "uiold/inventory_screens_pocket_midalpha/beacon_screen.uiold",
+    "uiold/inventory_screens_pocket_midalpha/brewing_stand_screen.uiold",
+    "uiold/inventory_screens_pocket_midalpha/cartography_screen.uiold",
     "uiold/inventory_screens_pocket_midalpha/crafting_screen.uiold",
     "uiold/inventory_screens_pocket_midalpha/creative_screen.uiold",
+    "uiold/inventory_screens_pocket_midalpha/enchanting_screen.uiold",
+    "uiold/inventory_screens_pocket_midalpha/furnace_screen.uiold",
+    "uiold/inventory_screens_pocket_midalpha/grindstone_screen.uiold",
     "uiold/inventory_screens_pocket_midalpha/inventory_screen.uiold",
+    "uiold/inventory_screens_pocket_midalpha/pocket_containers.uiold",
     ////////*/ Main Screens /*////////
     "uiold/main_screens/progress_screen.uiold",
     "uiold/main_screens/progress_animation.uiold",

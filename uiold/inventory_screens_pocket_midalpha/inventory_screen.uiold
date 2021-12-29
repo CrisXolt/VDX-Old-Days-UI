@@ -3,6 +3,57 @@
 {
   "namespace": "inventory_pocket_midalpha_old",
 
+  /*//// Normal Inventory Grid ////*/
+
+  "normal_inventory_grid_template@common.pocket_ui_container_item": {
+    "$scrolling_grid_item_size": [ 32, 32 ],
+    "$item_renderer_panel_size": [ 18, 18 ],
+    "$item_renderer_size": [ 16, 16 ],
+    "$cell_image_size": [ 32, 32 ],
+    "size": "$scrolling_grid_item_size",
+    "$background_images": "old_pocket_textures_common.cell_image_normal_default"
+  },
+
+  "normal_inventory_grid": {
+    "type": "grid",
+    "grid_rescaling_type": "horizontal",
+    "anchor_to": "top_left",
+    "anchor_from": "top_left",
+    "size": [ "100%", "default" ],
+    "maximum_grid_items": 36,
+    "collection_name": "combined_hotbar_and_inventory_items",
+    "grid_item_template": "inventory_pocket_midalpha_old.normal_inventory_grid_template",
+    "$item_collection_name": "combined_hotbar_and_inventory_items"
+  },
+
+  /*//// Pocket Inventory Grid ////*/
+
+  "pocket_container_grid": {
+    "type": "grid",
+    "grid_rescaling_type": "horizontal",
+
+    "size": [ "100%", "default" ],
+    "anchor_to": "top_left",
+    "anchor_from": "top_left",
+
+    "$item_collection_name|default": "inventory_items",
+    "$grid_item_template|default": "common.container_item",
+
+    "collection_name": "$item_collection_name",
+    "grid_item_template": "$grid_item_template",
+
+    "bindings": [
+      {
+        "binding_name": "#collection_total_items",
+        "binding_name_override": "#maximum_grid_items",
+        "binding_condition": "visible",
+        "binding_type": "collection",
+        "binding_collection_name": "$item_collection_name"
+      }
+    ],
+    "$grid_item_template": "inventory_pocket_midalpha_old.grid_item"
+  },
+
   /*//// Inventory Grid ////*/
 
   "grid_item@common.container_item": {
@@ -27,12 +78,26 @@
     "$background_images": "common.empty_panel",
     "$item_collection_name": "hotbar_items"
   },
+
+  "grid_item_for_hotbar_inventory@common.container_item": {
+    "$button_ref": "crafting.inventory_container_slot_button",
+    "$background_images": "common.empty_panel",
+    "$item_collection_name": "hotbar_items"
+  },
+
+  "grid_item_for_hotbar_creative@common.container_item": {
+    "$button_ref": "crafting.creative_hotbar_container_slot_button",
+    "$background_images": "common.empty_panel",
+    "$item_collection_name": "hotbar_items"
+  },
   
   "hotbar_panel": {
     "type": "panel",
     "size": [ 182, 22 ],
     "anchor_from": "bottom_middle",
     "anchor_to": "bottom_middle",
+    "offset": [ 0, 29 ],
+    "layer": 10,
     "controls": [
       { "hotbar_item_bg@hud_old.hotbar_item_bg": { } },
       { 
@@ -43,7 +108,8 @@
           "anchor_to": "bottom_left",
           "offset": [ 2, -2 ],
           "grid_dimensions": [ 9, 1 ],
-          "grid_item_template": "inventory_pocket_midalpha_old.grid_item_for_hotbar",
+          "$hotbar_grid_item_template|default": "inventory_pocket_midalpha_old.grid_item_for_hotbar",
+          "grid_item_template": "$hotbar_grid_item_template",
           "collection_name": "hotbar_items"
         }
       },
@@ -359,8 +425,8 @@
     "anchor_to": "bottom_left",
     "anchor_from": "bottom_left",
     "controls": [
-      { "left_armor_tab@inventory_pocket_midalpha_old.left_armor_tab": { "ignored": "$is_crafting" } },
-      { "fill_panel_1": { "type": "panel", "size": [ 1, 2 ], "ignored": "$is_crafting" } },
+      { "left_armor_tab@inventory_pocket_midalpha_old.left_armor_tab": { } },
+      { "fill_panel_1": { "type": "panel", "size": [ 1, 2 ] } },
       { "search_tab@inventory_pocket_midalpha_old.search_tab": { } },
       { "fill_panel_2": { "type": "panel", "size": [ 1, 2 ] } },
       { "left_inventory_tab@inventory_pocket_midalpha_old.left_inventory_tab": { } },
@@ -377,12 +443,11 @@
     "controls": [
       { 
         "left_armor_tab@inventory_pocket_midalpha_old.icon_panel": {
-          "ignored": "$is_crafting",
           "$visible_binding_name": "armor_left_tab_toggle",
           "$tab_icon": "inventory_pocket_midalpha_old.armor_icon"
         }
       },
-      { "fill_panel_1": { "type": "panel", "size": [ 1, 2 ], "ignored": "$is_crafting" } },
+      { "fill_panel_1": { "type": "panel", "size": [ 1, 2 ] } },
       { 
         "search_tab@inventory_pocket_midalpha_old.search_icon_panel": {
           "$tab_icon": "inventory_pocket_midalpha_old.crafting_and_search_icon"
@@ -465,6 +530,31 @@
         "inventory_panel": {
           "type": "panel",
           "controls": [
+            { 
+              "hotbar_panel@inventory_pocket_midalpha_old.hotbar_panel": {
+                "$hotbar_grid_item_template": "inventory_pocket_midalpha_old.grid_item_for_hotbar_inventory",
+                "offset": [ -13, 29 ],
+                "bindings": [
+                  {
+                    "binding_type": "global",
+                    "binding_name": "(not #is_creative_mode)",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            { 
+              "hotbar_panel@inventory_pocket_midalpha_old.hotbar_panel": {
+                "$hotbar_grid_item_template": "inventory_pocket_midalpha_old.grid_item_for_hotbar_inventory",
+                "bindings": [
+                  {
+                    "binding_type": "global",
+                    "binding_name": "#is_creative_mode",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
             {
               "inventory_scroll_panel@crafting.scroll_panel": {
                 "size": [ "100%", "100%" ],
@@ -508,8 +598,87 @@
         }
       },
       {
+        "hotbar_panel_crafting": {
+          "type": "panel",
+          "controls": [
+            { 
+              "hotbar_panel_crafting@inventory_pocket_midalpha_old.hotbar_panel": {
+                "$hotbar_grid_item_template": "inventory_pocket_midalpha_old.grid_item_for_hotbar_inventory",
+                "offset": [ -13, 29 ],
+                "bindings": [
+                  {
+                    "binding_type": "global",
+                    "binding_name": "(not #is_creative_mode)",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            { 
+              "hotbar_panel_creative@inventory_pocket_midalpha_old.hotbar_panel": {
+                "$hotbar_grid_item_template": "inventory_pocket_midalpha_old.grid_item_for_hotbar_creative",
+                "bindings": [
+                  {
+                    "binding_type": "global",
+                    "binding_name": "#is_creative_mode",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "search_tab_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "hotbar_panel_armor": {
+          "type": "panel",
+          "controls": [
+            { 
+              "hotbar_panel@inventory_pocket_midalpha_old.hotbar_panel": {
+                "$hotbar_grid_item_template": "inventory_pocket_midalpha_old.grid_item_for_hotbar_inventory",
+                "offset": [ -13, 29 ],
+                "bindings": [
+                  {
+                    "binding_type": "global",
+                    "binding_name": "(not #is_creative_mode)",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            { 
+              "hotbar_panel@inventory_pocket_midalpha_old.hotbar_panel": {
+                "$hotbar_grid_item_template": "inventory_pocket_midalpha_old.grid_item_for_hotbar_inventory",
+                "bindings": [
+                  {
+                    "binding_type": "global",
+                    "binding_name": "#is_creative_mode",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "armor_left_tab_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
         "armor_panel": {
-          "ignored": "$is_crafting",
           "type": "stack_panel",
           "orientation": "horizontal",
           "size": [ "100%", "100%" ],
@@ -725,17 +894,34 @@
     "size": [ 18, 18 ],
     "layer": 6,
     "$pressed_button_name": "button.menu_exit",
+    "default_control": "x_default",
+    "hover_control": "x_hover",
+    "pressed_control": "x_pressed",
     "controls": [
-      { "default@old_pocket_textures_common.close_button_default": { } },
-      { "hover@old_pocket_textures_common.close_button_hover": { } },
-      { "pressed@old_pocket_textures_common.close_button_pressed": { } }
+      { "x_default@old_pocket_textures_common.close_button_default": { } },
+      { "x_hover@old_pocket_textures_common.close_button_hover": { } },
+      { "x_pressed@old_pocket_textures_common.close_button_pressed": { } }
     ]
   },
 
   "inventory_screen_content": {
     "type": "panel",
-    "controls": [
-      { "hotbar_panel@inventory_pocket_midalpha_old.hotbar_panel": { } },
+    "controls": [/* 
+      { 
+        "hotbar_panel@inventory_pocket_midalpha_old.hotbar_panel": {
+          
+        }
+      },
+      { 
+        "armor_hotbar_panel@inventory_pocket_midalpha_old.hotbar_panel": {
+          
+        }
+      },
+      { 
+        "creative_hotbar_panel@inventory_pocket_midalpha_old.hotbar_panel": {
+          
+        }
+      }, */
       {
         "main_stack_panel": {
           "type": "stack_panel",
@@ -764,7 +950,7 @@
                       "layer": 4,
                       "controls": [
                         { 
-                          "default@inventory_pocket_midalpha_old.close_button": {
+                          "close_button@inventory_pocket_midalpha_old.close_button": {
                             "anchor_to": "top_left",
                             "anchor_from": "top_left",
                             "layer": 6,

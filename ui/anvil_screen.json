@@ -1,0 +1,16 @@
+{
+  "anvil_screen": {
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_content": "anvil.anvil_panel",
+        "$screen_bg_content": "common.screen_background"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "anvil_pocket_old.anvil_panel",
+        "$screen_bg_content": "common.screen_background"
+      }
+    ]
+  }
+}

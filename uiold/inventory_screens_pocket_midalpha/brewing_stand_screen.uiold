@@ -1,0 +1,300 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "brewing_stand_pocket_old",
+  
+  ////*/ Panels /*////
+
+  "top_bar": {
+    "type": "panel",
+    "controls": [
+      {
+        "title_label@common_old.global_label": {
+          "shadow": true,
+          "layer": 10,
+          "size": [ "default", "default" ],
+          "color": "$main_menu_button_default_color",
+          "text": "$container_title"
+        }
+      },
+      { 
+        "close_button@inventory_pocket_midalpha_old.close_button": {
+          "anchor_to": "top_right",
+          "anchor_from": "top_right",
+          "layer": 6
+        }   
+      }
+    ]
+  },
+
+  "output_slot@common.pocket_ui_large_container_item": {
+    "$background_images": "old_pocket_textures_common.cell_image_slot",
+    "$item_renderer_size": [ 16, 16 ],
+    "$item_collection_name": "brewing_result_items",
+    "$cell_overlay_ref": "brewing_stand.bottle_empty_image"
+  },
+
+  "main_panel_content": {
+    "type": "panel",
+    "controls": [
+      { 
+        "bg@old_pocket_textures_common.dialog_background": {
+          "layer": 1,
+          "size": [ "100%-2px", "100%+20px" ],
+          "offset": [ 0, -1 ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle"
+        }
+      },
+      {
+        "content": {
+          "type": "stack_panel",
+          "size": [ "100%-16px", "100%-14px" ],
+          "orientation": "horizontal",
+          "controls": [
+            {
+              "inventory_scroll_panel@crafting.scroll_panel": {
+                "size": [ "fill", "100%" ],
+                "$scroll_view_port_size": [ "100%", "100%" ],
+                "$scroll_view_port_size_touch": [ "100%", "100%" ],
+                "$scroll_size": [ 12, "100%" ],
+                "$scroll_view_port_offset": [ 0, 0 ],
+                "$scroll_view_port_offset_touch": [ 0, 0 ],
+                "$scroll_bar_left_padding_size": [ 0, 0 ],
+                "$scroll_bar_right_padding_size": [ 0, 0 ],
+                "$show_background": true,
+                "layer": 10,
+                "$scrolling_content": "inventory_pocket_midalpha_old.normal_inventory_grid",
+                "$collection_name": "combined_hotbar_and_inventory_items",
+                "$scroll_background_image_control": "old_pocket_textures_common.scroll_panel",
+                "$scroll_track_image_control": "old_pocket_textures_common.scroll_track",
+                "$scroll_box_mouse_image_control": "old_pocket_textures_common.scroll_box"
+              }
+            },
+            {
+              "middle_padding": {
+                "type": "panel",
+                "size": [ 8, "100%" ]
+              }
+            },
+            {
+              "right_panel": {
+                "type": "panel",
+                "size": [ "fill", "100%" ],
+                "layer": 10,
+                "controls": [
+                  {
+                    "slots_panel": {
+                      "type": "panel",
+                      "size": [ 172, 96 ],
+                      "offset": [ -5, -10 ],
+                      "controls": [
+                        {
+                          "brewing_input_slot@common.pocket_ui_large_container_item": {
+                            "$background_images": "old_pocket_textures_common.cell_image_slot",
+                            "$item_renderer_size": [ 16, 16 ],
+                            "size": [ 32, 32 ],
+                            "offset": [ -48, 2 ],
+                            "anchor_from": "top_right",
+                            "anchor_to": "top_right",
+                            "$item_collection_name": "brewing_input_item",
+                            "$focus_id": "input_slot",
+                            "$focus_override_left": "fuel_slot"
+                          }
+                        },
+                        {
+                          "brewing_fuel_slot@common.pocket_ui_large_container_item": {
+                            "$background_images": "old_pocket_textures_common.cell_image_slot",
+                            "$item_renderer_size": [ 16, 16 ],
+                            "size": [ 32, 32 ],
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "$item_collection_name": "brewing_fuel_item",
+                            "$cell_overlay_ref": "brewing_stand.fuel_empty_image",
+                            "$focus_id": "fuel_slot",
+                            "$focus_override_right": "input_slot"
+                          }
+                        },
+                        {
+                          "brewing_out_slots": {
+                            "type": "grid",
+                            "size": [ 128, 42 ],
+                            "anchor_from": "bottom_right",
+                            "anchor_to": "bottom_right",
+                            "grid_dimensions": [ 3, 1 ],
+                            "collection_name": "brewing_result_items",
+                            "controls": [
+                              {
+                                "left_offset": {
+                                  "type": "panel",
+                                  "grid_position": [ 0, 0 ],
+                                  "controls": [
+                                    {
+                                      "output_slot1@brewing_stand_pocket_old.output_slot": {
+                                        "anchor_from": "top_left",
+                                        "anchor_to": "top_left",
+                                        "$focus_override_up": "input_slot"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "middle": {
+                                  "type": "panel",
+                                  "grid_position": [ 1, 0 ],
+                                  "controls": [
+                                    {
+                                      "output_slot2@brewing_stand_pocket_old.output_slot": {
+                                        "anchor_from": "bottom_middle",
+                                        "anchor_to": "bottom_middle"
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "right_offset": {
+                                  "type": "panel",
+                                  "grid_position": [ 2, 0 ],
+                                  "controls": [
+                                    {
+                                      "output_slot3@brewing_stand_pocket_old.output_slot": {
+                                        "anchor_from": "top_right",
+                                        "anchor_to": "top_right"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "brewing_arrow_panel": {
+                            "type": "panel",
+                            "anchor_from": "top_right",
+                            "anchor_to": "top_right",
+                            "size": [ 9, 41 ],
+                            "offset": [ -31, 9 ],
+                            "controls": [
+                              {
+                                "brewing_arrow_empty_image@brewing_stand.brewing_arrow_empty_image": {
+                                  "layer": 0,
+                                  "texture": "textures/uiold_pocket/brewing_stand/brewing_arrow_large_empty",
+                                  "size": [ 9, 41 ],
+                                  "offset": [ 0, 0 ]
+                                }
+                              },
+                              {
+                                "brewing_arrow_full_image@brewing_stand.brewing_arrow_full_image": {
+                                  "layer": 1,
+                                  "texture": "textures/uiold_pocket/brewing_stand/brewing_arrow_large_full",
+                                  "size": [ 9, 41 ],
+                                  "offset": [ 0, 0 ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "brewing_bubbles_panel": {
+                            "type": "panel",
+                            "size": [ 12, 29 ],
+                            "offset": [ 64, 6 ],
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "controls": [
+                              {
+                                "bubbles_empty_image@brewing_stand.bubbles_empty_image": {
+                                  "texture": "textures/uiold_pocket/brewing_stand/bubbles_empty",
+                                  "layer": 0,
+                                  "offset": [ 0, 0 ]
+                                }
+                              },
+                              {
+                                "bubbles_full_image@brewing_stand.bubbles_full_image": {
+                                  "texture": "textures/uiold_pocket/brewing_stand/bubbles_full",
+                                  "layer": 1,
+                                  "offset": [ 0, 0 ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "brewing_fuel_bar_panel": {
+                            "type": "panel",
+                            "size": [ 24, 6 ],
+                            "offset": [ 58, 35 ],
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "controls": [
+                              {
+                                "brewing_fuel_bar_empty_image@brewing_stand.brewing_fuel_bar_empty_image": {
+                                  "texture": "textures/uiold_pocket/brewing_stand/brewing_fuel_bar_empty",
+                                  "layer": 0,
+                                  "offset": [ 0, 0 ]
+                                }
+                              },
+                              {
+                                "brewing_fuel_bar_full_image@brewing_stand.brewing_fuel_bar_full_image": {
+                                  "layer": 2,
+                                  "offset": [ 0, 0 ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "brewing_fuel_pipes@brewing_stand.brewing_fuel_pipes": {
+                            "layer": 3,
+                            "texture": "textures/uiold_pocket/brewing_stand/brewing_fuel_pipes",
+                            "offset": [ 31, 19 ],
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left"
+                          }
+                        },
+                        {
+                          "brewing_pipes@brewing_stand.brewing_pipes": {
+                            "layer": 3,
+                            "texture": "textures/uiold_pocket/brewing_stand/brewing_pipes_large",
+                            "size": [ 66, 32 ],
+                            "offset": [ -31, 33 ],
+                            "anchor_from": "top_right",
+                            "anchor_to": "top_right"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  
+  ////*/ Screen /*////
+
+  "brewing_stand_panel": {
+    "type": "panel",
+    "controls": [
+      {
+        "main_control@common_menus_old.menu_screen_template": {
+          "$top_bar_panel_conent": "brewing_stand_pocket_old.top_bar",
+          "$menu_panel_conent": "brewing_stand_pocket_old.main_panel_content"
+        }
+      },
+      { "root_panel@common.root_panel": { "layer": -1 } },
+      { "container_gamepad_helpers@common.container_gamepad_helpers": { "layer": 40 } },
+      { "inventory_selected_icon_button@common.inventory_selected_icon_button": {} },
+      { "hold_icon@common.inventory_take_progress_icon_button": {} },
+      { "flying_item_renderer@common.flying_item_renderer": {} },
+      { "selected_item_details_factory@common.selected_item_details_factory": {} },
+      { "item_lock_notification_factory@common.item_lock_notification_factory": { "$offset": [ 0, "85%" ] } }
+    ]
+  }
+}
