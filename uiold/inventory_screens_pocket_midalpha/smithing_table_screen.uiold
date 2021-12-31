@@ -1,7 +1,7 @@
 /*File made by @CrisXolt.
 //(c) Don't use any code design without permission!*/
 {
-  "namespace": "anvil_pocket_old",
+  "namespace": "smithing_table_pocket_old",
   
   ////*/ Panels /*////
 
@@ -14,7 +14,7 @@
           "layer": 10,
           "size": [ "default", "default" ],
           "color": "$main_menu_button_default_color",
-          "text": "tile.anvil.name"
+          "text": "tile.smithing_table.name"
         }
       },
       { 
@@ -25,6 +25,14 @@
         }   
       }
     ]
+  },
+
+  "ingot_image": {
+    "type": "image",
+    "anchor_to": "center",
+    "anchor_from": "center",
+    "size": [ 16, 16 ],
+    "texture": "textures/uiold_pocket/smithing/ingot_image"
   },
 
   "main_panel_content": {
@@ -46,7 +54,7 @@
           "orientation": "horizontal",
           "controls": [
             {
-              "inventory_scroll_panel@common.scrolling_panel_with_offset": {
+              "inventory_scroll_panel@crafting.scroll_panel": {
                 "size": [ "32%", "100%" ],
                 "$scroll_view_port_size": [ "100%", "100%" ],
                 "$scroll_view_port_size_touch": [ "100%", "100%" ],
@@ -72,46 +80,34 @@
             },
             {
               "right_panel": {
-                "type": "panel",
+                "type": "stack_panel",
                 "size": [ "fill", "100%" ],
                 "layer": 10,
                 "controls": [
                   {
-                    "red_cost@common_old.global_label": {
-                      "shadow": true,
-                      "text": "#text",
-                      "anchor_from": "left_middle",
-                      "anchor_to": "left_middle",
-                      "offset": [ 40, -27 ],
-                      "color": "$anvil_cost_fail_text_color",
-                      "bindings": [
+                    "smithing_table_title_and_text_panel": {
+                      "type": "panel",
+                      "size": [ "100%", "50%" ],
+                      "anchor_from": "bottom_left",
+                      "anchor_to": "bottom_left",
+                      "controls": [
                         {
-                          "binding_name": "#cost_text",
-                          "binding_name_override": "#text"
+                          "smithing_icon_panel@smithing_table_pocket.smithing_icon_panel": {
+                            "layer": 4,
+                            "anchor_from": "bottom_left",
+                            "anchor_to": "bottom_left",
+                            "offset": [ -10, -10 ]
+                          }
                         },
                         {
-                          "binding_name": "#cost_text_red",
-                          "binding_name_override": "#visible"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "green_cost@common_old.global_label": {
-                      "shadow": true,
-                      "text": "#text",
-                      "anchor_from": "left_middle",
-                      "anchor_to": "left_middle",
-                      "offset": [ 40, -27 ],
-                      "color": "$anvil_cost_success_text_color",
-                      "bindings": [
-                        {
-                          "binding_name": "#cost_text",
-                          "binding_name_override": "#text"
-                        },
-                        {
-                          "binding_name": "#cost_text_green",
-                          "binding_name_override": "#visible"
+                          "upgrade_label@common_old.global_label": {
+                            "shadow": true,
+                            "layer": 4,
+                            "offset": [ 40, -20 ],
+                            "anchor_from": "bottom_left",
+                            "anchor_to": "bottom_left",
+                            "text": "container.smithing_table.upgrade"
+                          }
                         }
                       ]
                     }
@@ -119,18 +115,18 @@
                   {
                     "slots_panel": {
                       "type": "panel",
-                      "anchor_from": "left_middle",
-                      "anchor_to": "left_middle",
-                      "offset": [ 0, -2 ],
+                      "anchor_from": "top_left",
+                      "anchor_to": "top_left",
+                      "size": [ "100%", "50%" ],
                       "controls": [
                         {
                           "input_slot@common.pocket_ui_large_container_item": {
                             "$background_images": "old_pocket_textures_common.cell_image_slot",
                             "$item_renderer_size": [ 16, 16 ],
                             "offset": [ 0, 0 ],
-                            "anchor_from": "left_middle",
-                            "anchor_to": "left_middle",
-                            "$item_collection_name": "anvil_input_items"
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "$item_collection_name": "smithing_table_input_items"
                           }
                         },
                         {
@@ -138,9 +134,10 @@
                             "$background_images": "old_pocket_textures_common.cell_image_slot",
                             "$item_renderer_size": [ 16, 16 ],
                             "offset": [ 48, 0 ],
-                            "anchor_from": "left_middle",
-                            "anchor_to": "left_middle",
-                            "$item_collection_name": "anvil_material_items"
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "$item_collection_name": "smithing_table_material_items",
+                            "$cell_overlay_ref": "smithing_table_pocket_old.ingot_image"
                           }
                         },
                         {
@@ -148,19 +145,19 @@
                             "$background_images": "old_pocket_textures_common.cell_image_slot",
                             "$item_renderer_size": [ 16, 16 ],
                             "offset": [ 109, 0 ],
-                            "anchor_from": "left_middle",
-                            "anchor_to": "left_middle",
-                            "$item_collection_name": "anvil_result_items",
-                            "$button_ref": "anvil.anvil_output_slot_button"
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "$item_collection_name": "smithing_table_result_items",
+                            "$button_ref": "smithing_table.smithing_table_output_slot_button"
                           }
                         },
                         {
                           "plus_sign@common_old.global_label": {
                             "shadow": true,
                             "text": "+",
-                            "offset": [ 38, 0 ],
-                            "anchor_from": "left_middle",
-                            "anchor_to": "left_middle",
+                            "offset": [ 38, 11 ],
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
                             "layer": 1
                           }
                         },
@@ -169,9 +166,9 @@
                             "type": "image",
                             "texture": "textures/uiold_pocket/anvil/arrow_inactive",
                             "size": [ 22, 15 ],
-                            "anchor_from": "left_middle",
-                            "anchor_to": "left_middle",
-                            "offset": [ 83, 0 ],
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "offset": [ 83, 8 ],
                             "layer": 2,
                             "controls": [
                               {
@@ -192,34 +189,6 @@
                         }
                       ]
                     }
-                  },
-                  {
-                    "anvil_title_and_text_panel": {
-                      "type": "panel",
-                      "anchor_from": "left_middle",
-                      "anchor_to": "left_middle",
-                      "offset": [ 0, -50 ],
-                      "controls": [
-                        {
-                          "title_label@common_old.global_label": {
-                            "shadow": true,
-                            "layer": 1,
-                            "offset": [ 5, -8 ],
-                            "anchor_from": "left_middle",
-                            "anchor_to": "left_middle",
-                            "text": "container.repair"
-                          }
-                        },
-                        {
-                          "text_edit_control@anvil_pocket.text_edit_control": {
-                            "$text_background_default": "old_pocket_textures_common.text_input",
-                            "$text_background_hover": "old_pocket_textures_common.text_input_hover",
-                            "$text_background_locked": "old_pocket_textures_common.text_input_locked",
-                            "offset": [ 0, 8 ]
-                          }
-                        }
-                      ]
-                    }
                   }
                 ]
               }
@@ -232,13 +201,13 @@
   
   ////*/ Screen /*////
 
-  "anvil_panel": {
+  "smithing_table_panel": {
     "type": "panel",
     "controls": [
       {
         "main_control@common_menus_old.menu_screen_template": {
-          "$top_bar_panel_conent": "anvil_pocket_old.top_bar",
-          "$menu_panel_conent": "anvil_pocket_old.main_panel_content"
+          "$top_bar_panel_conent": "smithing_table_pocket_old.top_bar",
+          "$menu_panel_conent": "smithing_table_pocket_old.main_panel_content"
         }
       },
       { "root_panel@common.root_panel": { "layer": -1 } },

@@ -74,7 +74,7 @@
     "size": [ "100%c+8px", 12 ],
     //"alpha": "@hud_item_text_old.anim_item_name_background_alpha_in",
     "layer": 30,
-    "clips_children": true,
+    "clips_children": false,
     "anchor_from": "bottom_middle",
     "anchor_to": "bottom_middle",
     "$shadow|default": true,
@@ -84,9 +84,9 @@
       {
         "item_text_label": {
           "type": "label",
-          "anchor_from": "top_middle",
-          "anchor_to": "top_middle",
-          "offset": [ 0, 1 ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "offset": [ 0, -1 ],
           "text_alignment": "center",
           "layer": 31,
           "color": "$tool_tip_text",

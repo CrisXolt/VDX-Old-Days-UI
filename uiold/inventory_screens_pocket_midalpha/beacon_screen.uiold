@@ -245,8 +245,8 @@
     "controls": [
       {
         "title_label@common_old.global_label": {
-          "layer": 10,
           "shadow": true,
+          "layer": 10,
           "size": [ "default", "default" ],
           "color": "$main_menu_button_default_color",
           "text": "container.beacon"
@@ -281,7 +281,7 @@
           "orientation": "horizontal",
           "controls": [
             {
-              "inventory_scroll_panel@crafting.scroll_panel": {
+              "inventory_scroll_panel@common.scrolling_panel_with_offset": {
                 "size": [ "32%", "100%" ],
                 "$scroll_view_port_size": [ "100%", "100%" ],
                 "$scroll_view_port_size_touch": [ "100%", "100%" ],
@@ -429,9 +429,9 @@
                                 "ingredient_item@common.pocket_ui_container_item": {
                                   "$background_images": "old_pocket_textures_common.cell_image_normal_nineslice",
                                   "$item_renderer_size": [ 16, 16 ],
-                                  "offset": [ 0, 0 ],
                                   "size": [ 24, 24 ],
                                   "$cell_image_size": [ 24, 24 ],
+                                  "offset": [ 0, 0 ],
                                   "$item_collection_name": "beacon_payment_items",
                                   "anchor_from": "center",
                                   "anchor_to": "center"
@@ -489,7 +489,7 @@
       { "container_gamepad_helpers@common.container_gamepad_helpers": { "layer": 40 } },
       { "inventory_selected_icon_button@common.inventory_selected_icon_button": {} },
       { "hold_icon@common.inventory_take_progress_icon_button": {} },
-      { "flying_item_renderer@common.flying_item_renderer": {} },
+      { "flying_item_renderer@common.flying_item_renderer": { "layer": 40 } },
       { "selected_item_details_factory@common.selected_item_details_factory": {} },
       { "item_lock_notification_factory@common.item_lock_notification_factory": { "$offset": [ 0, "85%" ] } }
     ]

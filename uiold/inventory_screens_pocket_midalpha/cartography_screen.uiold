@@ -51,28 +51,6 @@
             }
           ]
         }
-      },
-      {
-        "right_navigation_tabs": {
-          "type": "panel",
-          "size": [ 30, "100%" ],
-          "anchor_to": "top_right",
-          "anchor_from": "top_right",
-          "controls": [
-            { 
-              "right_tab_cartography@old_pocket_textures_common.TabRightFront": {
-                "anchor_to": "bottom_left",
-                "anchor_from": "bottom_left",
-                "offset": [ 0, -2 ],
-                "size": [ 30, 28 ],
-                "layer": 4,
-                "controls": [
-                  { "default@cartography_pocket.cartography_item_renderer": { "layer": 6 } }
-                ]
-              }
-            }
-          ]
-        }
       }
     ]
   },
@@ -286,8 +264,8 @@
                 "controls": [
                   {
                     "map_name_label@common_old.global_label": {
-                      "text": "map.name",
                       "shadow": true,
+                      "text": "map.name",
                       "color": "$main_menu_button_default_color"
                     }
                   },
@@ -311,10 +289,11 @@
   ////*/ Panels /*////
 
   "panels@old_pocket_textures_common.dialog_background": {
-    "size": [ "100% - 64px", "100% - 26px" ],
-    "anchor_from": "top_middle",
-    "anchor_to": "top_middle",
-    "offset": [ 0, 3 ],
+    "size": [ "100% - 32px", "100% - 26px" ],
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "offset": [ -3, 3 ],
+    "layer": 1,
     "controls": [
       { "tab_navigation_panel@cartography_pocket_old.tab_navigation_panel_layout": { } },
       { 
@@ -371,7 +350,7 @@
       { "container_gamepad_helpers@common.container_gamepad_helpers": { "layer": 40 } },
       { "inventory_selected_icon_button@common.inventory_selected_icon_button": {} },
       { "hold_icon@common.inventory_take_progress_icon_button": {} },
-      { "flying_item_renderer@common.flying_item_renderer": {} },
+      { "flying_item_renderer@common.flying_item_renderer": { "layer": 40 } },
       { "selected_item_details_factory@common.selected_item_details_factory": {} },
       { "item_lock_notification_factory@common.item_lock_notification_factory": { "$offset": [ 0, "85%" ] } }
     ]

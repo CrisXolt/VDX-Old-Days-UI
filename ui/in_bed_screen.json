@@ -1,0 +1,6 @@
+{
+  "in_bed_screen": {
+    "$screen_content": "bed_old.in_bed_screen_content",
+    "$screen_bg_content": "bed.background"
+  }
+}

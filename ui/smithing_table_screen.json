@@ -1,0 +1,16 @@
+{
+  "smithing_table_screen": {
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_content": "smithing_table.smithing_table_panel",
+        "$screen_bg_content": "common.screen_background"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "smithing_table_pocket_old.smithing_table_panel",
+        "$screen_bg_content": "common.screen_background"
+      }
+    ]
+  }
+}

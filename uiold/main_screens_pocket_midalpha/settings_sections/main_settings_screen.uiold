@@ -59,6 +59,18 @@
     "$toggle_name": "navigation_tab"
   },
 
+  "subscriptions_button_tab@settings_pocket_midalpha_old.left_button_tab": {
+    "size": [ 75, 18 ],
+    "$button_text": "options.manage",
+    "$button_content": "common_buttons_old.button_label",
+    "$tab_view_binding_name": "view_subscriptions_button_toggle",
+    "$toggle_group_forced_index": "$view_subscriptions_forced_index",
+    "$toggle_name": "navigation_tab",
+    "$toggle_property_bag": {
+      "#panel_title": "options.viewSubscriptions"
+    }
+  },
+
   "language_button_tab@settings_pocket_midalpha_old.left_button_tab": {
     "size": [ 75, 18 ],
     "$button_text": "options.change",
@@ -268,6 +280,12 @@
         "source_control_name": "game_settings_button_toggle",
         "source_property_name": "(not #toggle_state)",
         "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "view_subscriptions_button_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
       }
     ]
   },
@@ -306,6 +324,12 @@
             },
             {
               "binding_type": "view",
+              "source_control_name": "view_subscriptions_button_toggle",
+              "source_property_name": "(not #toggle_state)",
+              "target_property_name": "#visible"
+            },
+            {
+              "binding_type": "view",
               "source_control_name": "about_tab_toggle",
               "source_property_name": "(not #toggle_state)",
               "target_property_name": "#visible"
@@ -336,6 +360,31 @@
               "source_control_name": "global_resources_tab_toggle",
               "source_property_name": "#toggle_state",
               "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "subscriptions_hold": {
+          "type": "panel",
+          "bindings": [
+            {
+              "binding_name": "#should_show_subscription_tab",
+              "binding_name_override": "#visible"
+            }
+          ],
+          "controls": [
+            { 
+              "subscriptions_screen@subscriptions_midalpha_old.main_screen_panel": {
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "view_subscriptions_button_toggle",
+                    "source_property_name": "#toggle_state",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
             }
           ]
         }

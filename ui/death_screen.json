@@ -1,0 +1,7 @@
+{
+
+  "death_screen": {
+    "$screen_content": "death_old.death_screen_content",
+    "$screen_bg_content": "death.background_gradient"
+  }
+}

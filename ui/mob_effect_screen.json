@@ -1,0 +1,6 @@
+{
+  "mob_effect_screen": {
+    "$screen_content": "mob_effect_old.main_screen",
+    "$screen_bg_content": "common.screen_background"
+  }
+}

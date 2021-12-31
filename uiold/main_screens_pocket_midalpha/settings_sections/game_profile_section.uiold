@@ -326,6 +326,38 @@
         }
       },
       {
+        "subscriptions": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "100%", 23 ],
+          "$option_label": "options.viewSubscriptions",
+          "bindings": [
+            {
+              "binding_name": "#should_show_subscription_tab",
+              "binding_name_override": "#visible"
+            }
+          ],
+          "controls": [
+            { "option_label_control@settings_common_pocket_midalpha_old.option_label_control": {} },
+            {
+              "button_panel": {
+                "type": "panel",
+                "size": [ 75, "100%" ],
+                "controls": [
+                  { "subscriptions_button_tab@settings_pocket_midalpha_old.subscriptions_button_tab": { } }
+                ]
+              }
+            },
+            {
+              "final_padding": {
+                "type": "panel",
+                "size": [ 10, "100%" ]
+              }
+            }
+          ]
+        }
+      },
+      {
         "game_settings": {
           "type": "panel",
           "size": [ "100%", 23 ],

@@ -176,15 +176,15 @@
   },
 
   "equipment_icon@inventory_pocket_midalpha_old.item_renderer": {
-    "$object_item_id": 322 //  Golden Sword - ID: 322
+    "$object_item_id": 307 //  Iron Sword - ID: 307
   },
 
   "miscellaneous_icon@inventory_pocket_midalpha_old.item_renderer": {
-    "$object_item_id": 373 //  Redstone Dust - ID: 373
+    "$object_item_id": 47 //  Bookshelf - ID: 47
   },
 
   "nature_icon@inventory_pocket_midalpha_old.item_renderer": {
-    "$object_item_id": 257 //  Apple - ID: 257
+    "$object_item_id": 291 //  Wheat Seed - ID: 291
   },
   
   "survival_inv_icon@inventory_pocket_midalpha_old.item_renderer": {
@@ -230,7 +230,7 @@
                   }
                 ],
                 "controls": [
-                  { "crafting_icon@inventory_pocket_midalpha_old.crafting_icon": { "layer": 6, "bindings": [ { "binding_name": "#disabled_filter_visible", "binding_type": "collection" } ] } }
+                  { "crafting_icon@inventory_pocket_midalpha_old.crafting_icon": { "layer": 6/* , "bindings": [ { "binding_name": "#disabled_filter_visible", "binding_type": "collection" } ]  */} }
                 ]
               }
             },
@@ -245,7 +245,7 @@
                   }
                 ],
                 "controls": [
-                  { "search_icon@inventory_pocket_midalpha_old.search_icon": { "layer": 6, "bindings": [ { "binding_name": "#disabled_filter_visible", "binding_type": "collection" } ] } }
+                  { "search_icon@inventory_pocket_midalpha_old.search_icon": { "layer": 6/* , "bindings": [ { "binding_name": "#disabled_filter_visible", "binding_type": "collection" } ] */ } }
                 ]
               }
             }
@@ -316,7 +316,7 @@
             }
           ],
           "controls": [
-            { "tab_icon@$tab_icon": { "layer": 6, "bindings": [ { "binding_name": "#disabled_filter_visible", "binding_type": "collection" } ] } }
+            { "tab_icon@$tab_icon": { "layer": 6/* , "bindings": [ { "binding_name": "#disabled_filter_visible", "binding_type": "collection" } ]*/  } }
           ]
         }
       },
@@ -471,13 +471,13 @@
     "anchor_to": "bottom_right",
     "anchor_from": "bottom_right",
     "controls": [
-      { "construction_tab@inventory_pocket_midalpha_old.construction_tab_toggle": { "size": [ 30, 28 ] } },
-      { "fill_panel_1": { "type": "panel", "size": [ 1, 2 ] } },
-      { "equipment_tab@inventory_pocket_midalpha_old.equipment_tab_toggle": { "size": [ 30, 28 ] } },
-      { "fill_panel_2": { "type": "panel", "size": [ 1, 2 ] } },
-      { "items_tab@inventory_pocket_midalpha_old.items_tab_toggle": { "size": [ 30, 28 ] } },
-      { "fill_panel_3": { "type": "panel", "size": [ 1, 2 ] } },
       { "nature_tab@inventory_pocket_midalpha_old.nature_tab_toggle": { "size": [ 30, 28 ] } },
+      { "fill_panel_1": { "type": "panel", "size": [ 1, 2 ] } },
+      { "items_tab@inventory_pocket_midalpha_old.items_tab_toggle": { "size": [ 30, 28 ] } },
+      { "fill_panel_2": { "type": "panel", "size": [ 1, 2 ] } },
+      { "equipment_tab@inventory_pocket_midalpha_old.equipment_tab_toggle": { "size": [ 30, 28 ] } },
+      { "fill_panel_3": { "type": "panel", "size": [ 1, 2 ] } },
+      { "construction_tab@inventory_pocket_midalpha_old.construction_tab_toggle": { "size": [ 30, 28 ] } },
       { "fill_panel_4": { "type": "panel", "size": [ 1, 2 ] } }
     ]
   },
@@ -490,30 +490,30 @@
     "anchor_from": "bottom_right",
     "controls": [
       { 
-        "construction_tab@inventory_pocket_midalpha_old.icon_panel": {
-          "$visible_binding_name": "construction_tab_toggle",
-          "$tab_icon": "inventory_pocket_midalpha_old.construction_icon"
+        "nature_tab@inventory_pocket_midalpha_old.icon_panel": {
+          "$visible_binding_name": "nature_tab_toggle",
+          "$tab_icon": "inventory_pocket_midalpha_old.nature_icon"
         }
       },
       { "fill_panel_1": { "type": "panel", "size": [ 1, 2 ] } },
-      { 
-        "equipment_tab@inventory_pocket_midalpha_old.icon_panel": {
-          "$visible_binding_name": "equipment_tab_toggle",
-          "$tab_icon": "inventory_pocket_midalpha_old.equipment_icon"
-        }
-      },
-      { "fill_panel_2": { "type": "panel", "size": [ 1, 2 ] } },
       { 
         "items_tab@inventory_pocket_midalpha_old.icon_panel": {
           "$visible_binding_name": "items_tab_toggle",
           "$tab_icon": "inventory_pocket_midalpha_old.miscellaneous_icon"
         }
       },
+      { "fill_panel_2": { "type": "panel", "size": [ 1, 2 ] } },
+      { 
+        "equipment_tab@inventory_pocket_midalpha_old.icon_panel": {
+          "$visible_binding_name": "equipment_tab_toggle",
+          "$tab_icon": "inventory_pocket_midalpha_old.equipment_icon"
+        }
+      },
       { "fill_panel_3": { "type": "panel", "size": [ 1, 2 ] } },
       { 
-        "nature_tab@inventory_pocket_midalpha_old.icon_panel": {
-          "$visible_binding_name": "nature_tab_toggle",
-          "$tab_icon": "inventory_pocket_midalpha_old.nature_icon"
+        "construction_tab@inventory_pocket_midalpha_old.icon_panel": {
+          "$visible_binding_name": "construction_tab_toggle",
+          "$tab_icon": "inventory_pocket_midalpha_old.construction_icon"
         }
       },
       { "fill_panel_4": { "type": "panel", "size": [ 1, 2 ] } }
@@ -1000,7 +1000,7 @@
           ]
         }
       },
-      { "flying_item_renderer@common.flying_item_renderer": { "layer": 14 } },
+      { "flying_item_renderer@common.flying_item_renderer": { "layer": 40 } },
       { "inventory_take_progress_icon_button@common.inventory_take_progress_icon_button": {} },
       { "inventory_selected_icon_button@common.inventory_selected_icon_button": {} },
       { "hold_icon@common.inventory_take_progress_icon_button": {} }

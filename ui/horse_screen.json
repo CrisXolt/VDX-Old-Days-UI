@@ -1,0 +1,17 @@
+{
+  "horse_screen": {
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_content": "horse.horse_panel",
+        "$screen_bg_content": "common.screen_background"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "horse_pocket_old.horse_panel",
+        "$close_on_player_hurt": true,
+        "$screen_bg_content": "common.screen_background"
+      }
+    ]
+  }
+}

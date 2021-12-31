@@ -1,0 +1,92 @@
+{
+  "namespace": "death_old",
+
+  "death_screen_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "death_screen_buttons_and_stuff": {
+          "type": "panel",
+          "controls": [
+            {
+              "you_died_label": {
+                "type": "label",
+                "color": "$death_text_color",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "offset": [ 0, "25%" ],
+                "text": "deathScreen.message",
+                "shadow": true,
+                "font_size": "large"
+              }
+            },
+            {
+              "respawn_button@common_buttons_old.main_button": {
+                "size": [ "25%", 26 ],
+                "$button_text": "deathScreen.respawn",
+                "anchor_from": "center",
+                "anchor_to": "right_middle",
+                "offset": [ -10, 13 ],
+                "$pressed_button_name": "button.respawn_button",
+                "bindings": [
+                  {
+                    "binding_name": "#respawn_enabled",
+                    "binding_name_override": "#enabled"
+                  }
+                ]
+              }
+            },
+            {
+              "main_menu_button@common_buttons_old.main_button": {
+                "size": [ "25%", 26 ],
+                "$button_text": "deathScreen.quit",
+                "anchor_from": "center",
+                "anchor_to": "left_middle",
+                "offset": [ 10, 13 ],
+                "$pressed_button_name": "button.main_menu_button",
+                "variables": [
+                  {
+                    "requires": "$is_secondary_client",
+                    "$button_text": "deathScreen.quit.secondaryClient"
+                  }
+                ],
+                "bindings": [
+                  {
+                    "binding_name": "#quit_enabled",
+                    "binding_name_override": "#enabled"
+                  }
+                ]
+              }
+            },
+            {
+              "select_button@death.a_button_panel": {}
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#buttons_and_deathmessage_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "loading_label": {
+          "type": "label",
+          "color": "$title_command_text_color",
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "offset": [ 0, "85%" ],
+          "text": "progressScreen.generating",
+          "font_size": "normal",
+          "bindings": [
+            {
+              "binding_name": "#loading_message_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

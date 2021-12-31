@@ -1,36 +1,25 @@
 /*File made by @CrisXolt.
 //(c) Don't use any code design without permission!*/
 {
-  "namespace": "storage_management_midalpha_old",
+  "namespace": "subscriptions_midalpha_old",
 
   "main_content_panel": {
-    "type": "stack_panel",
-    "orientation": "vertical",
+    "type": "panel",
     "anchor_from": "bottom_left",
     "anchor_to": "bottom_left",
     "size": [ "100% -16px", "100% -29px" ],
     "offset": [ 10, -7 ],
+    "layer": 2,
     "controls": [
-      { "storage_header_panel@storage_management.storage_header_panel": { "layer": 2 } },
       {
-        "scroll_panel": {
-          "type": "panel",
-          "size": [ "100%", "fill" ],
-          "layer": 2,
-          "controls": [
-            {
-              "panel@common.scrolling_panel": {
-                "size": [ "100%-6px", "100%-4px" ],
-                "$scrolling_content": "storage_management.storage_main_panel",
-                "$show_background": false,
-                "$scroll_size": [ "5px", "100% - 4px" ],
-                "$scroll_bar_left_padding_size": [ 1, 0 ]
-              }
-            }
-          ]
+        "panel@common.scrolling_panel": {
+          "size": [ "100%-6px", "100%-4px" ],
+          "$scrolling_content": "general_section.view_subscriptions_section",
+          "$show_background": false,
+          "$scroll_size": [ "5px", "100% - 4px" ],
+          "$scroll_bar_left_padding_size": [ 1, 0 ]
         }
-      },
-      { "storage_footer_panel@storage_management.storage_footer_panel": { "layer": 2 } }
+      }
     ]
   },
 
@@ -40,20 +29,20 @@
     "bindings": [
       {
         "binding_type": "view",
-        "source_control_name": "storage_management_button_toggle",
+        "source_control_name": "view_subscriptions_button_toggle",
         "source_property_name": "#toggle_state",
         "target_property_name": "#visible"
       }
     ],
     "controls": [
       { "common_panel@common.dialog_background_hollow_3": { "layer": 1 } },
-      { "main_content_panel@storage_management_midalpha_old.main_content_panel": { "layer": 2 } },
+      { "main_content_panel@subscriptions_midalpha_old.main_content_panel": { "layer": 2 } },
       {
         "title@common_old.global_label": {
           "offset": [ 0, 7 ],
           "anchor_from": "top_middle",
           "anchor_to": "top_middle",
-          "text": "menu.storageManagement",
+          "text": "options.viewSubscriptions",
           "color": "$title_text_color",
           "layer": 4
         }
